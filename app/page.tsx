@@ -20,58 +20,52 @@ export default function HomePage() {
       <div className="space-y-8 md:space-y-12">
 
         {/* HERO */}
-        <section className="astrae-hero-shell relative overflow-hidden rounded-[2rem] border border-white/50 px-6 py-12 md:px-10 md:py-16">
-          
-          {/* ambiance */}
-          <div className="astrae-orbit astrae-orbit-1" />
-          <div className="astrae-orbit astrae-orbit-2" />
-          <div className="astrae-glow astrae-glow-1" />
-          <div className="astrae-glow astrae-glow-2" />
+<section className="astrae-hero-shell rounded-[2rem] px-6 py-12 md:px-10 md:py-16">
+  <div className="astrae-orbit astrae-orbit-1" />
+  <div className="astrae-orbit astrae-orbit-2" />
+  <div className="astrae-glow astrae-glow-1" />
+  <div className="astrae-glow astrae-glow-2" />
 
-          <div className="relative mx-auto max-w-3xl text-center">
+  <div className="relative mx-auto max-w-2xl text-center">
+    <p className="text-[11px] uppercase tracking-[0.28em] text-pine/55">
+      Cabinet Astraé · Espace d’accompagnement personnel
+    </p>
 
-            <p className="text-[11px] uppercase tracking-[0.28em] text-pine/55">
-              Cabinet Astraé · Espace d’accompagnement personnel
-            </p>
+    <h1 className="mt-6 text-[2.4rem] font-semibold leading-[1.02] text-pine sm:text-[3.2rem] md:text-[4rem]">
+      Clarifier ce que vous vivez
+      <span className="mt-2 block">pour avancer avec plus de clarté</span>
+    </h1>
 
-            <h1 className="mt-6 text-[2.4rem] font-semibold leading-[1.02] text-pine sm:text-[3.2rem] md:text-[4rem]">
-              Clarifier ce que vous vivez
-              <span className="block mt-2">
-                pour avancer avec plus de clarté
-              </span>
-            </h1>
+    <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-umber/80 md:text-base md:leading-8">
+      Un espace d’analyse sobre et sensible pour mieux comprendre une
+      période de transition, un blocage ou une situation relationnelle
+      délicate, avec une approche humaine et le thème astral comme
+      support de lecture lorsqu’il est pertinent.
+    </p>
 
-            <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-umber/80 md:text-base md:leading-8">
-              Un espace d’analyse sobre et sensible pour mieux comprendre une
-              période de transition, un blocage ou une situation relationnelle
-              délicate, avec une approche humaine et le thème astral comme
-              support de lecture lorsqu’il est pertinent.
-            </p>
+    <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <Link
+        href="/contact"
+        className="rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+      >
+        Prendre contact
+      </Link>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link
-                href="/contact"
-                className="rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
-              >
-                Prendre contact
-              </Link>
+      <Link
+        href="/analyse"
+        className="rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+      >
+        Commencer un diagnostic
+      </Link>
+    </div>
 
-              <Link
-                href="/analyse"
-                className="rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
-              >
-                Commencer un diagnostic
-              </Link>
-            </div>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/65">
-              <span>Écoute structurée</span>
-              <span>Lecture sensible</span>
-              <span>Cadre confidentiel</span>
-            </div>
-
-          </div>
-        </section>
+    <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/65">
+      <span>Écoute structurée</span>
+      <span>Lecture sensible</span>
+      <span>Cadre confidentiel</span>
+    </div>
+  </div>
+</section>
 
         {/* BLOC 2 */}
         <section className="grid gap-4 md:grid-cols-2">
