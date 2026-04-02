@@ -1,353 +1,157 @@
 import Link from "next/link";
 import { PageFrame } from "@/components/projection/PageFrame";
 
-const astraeMethod = [
-  {
-    letter: "A",
-    title: "Accueillir",
-    text: "Créer un espace de confiance où la parole peut se déposer avec simplicité.",
-  },
-  {
-    letter: "S",
-    title: "Situer",
-    text: "Comprendre où en est la personne, ce qui pèse, ce qui hésite et ce qui demande à être regardé.",
-  },
-  {
-    letter: "T",
-    title: "Traduire",
-    text: "Mettre des mots justes sur ce qui est vécu, sans excès d’interprétation ni flou inutile.",
-  },
-  {
-    letter: "R",
-    title: "Relier",
-    text: "Faire apparaître les liens entre les éléments, les répétitions et les dynamiques plus profondes.",
-  },
-  {
-    letter: "A",
-    title: "Ajuster",
-    text: "Faire émerger des pistes plus fines, plus lucides et plus adaptées à la situation réelle.",
-  },
-  {
-    letter: "É",
-    title: "Éclairer",
-    text: "Apporter davantage de clarté pour permettre un repositionnement ou un apaisement.",
-  },
-];
-
-const situations = [
-  "Période de transition personnelle ou professionnelle",
-  "Tension relationnelle, blocage ou impression de tourner en rond",
-  "Besoin de mieux comprendre ce qui se joue avant de décider",
-  "Moment de vie qui appelle une lecture plus claire et plus posée",
-];
-
-const pathway = [
-  {
-    number: "01",
-    title: "Un premier diagnostic",
-    text: "Une première lecture pour faire émerger les lignes essentielles de la situation.",
-  },
-  {
-    number: "02",
-    title: "Une analyse plus approfondie",
-    text: "Un temps plus fin pour comprendre les dynamiques, tensions et répétitions en jeu.",
-  },
-  {
-    number: "03",
-    title: "Un accompagnement dans la continuité",
-    text: "Lorsque c’est juste, un espace plus approfondi peut prolonger le travail engagé.",
-  },
+const astraeSteps = [
+  { letter: "A", title: "Accueillir" },
+  { letter: "S", title: "Situer" },
+  { letter: "T", title: "Traduire" },
+  { letter: "R", title: "Relier" },
+  { letter: "A", title: "Ajuster" },
+  { letter: "É", title: "Éclairer" },
 ];
 
 export default function HomePage() {
   return (
     <PageFrame
-      title="Cabinet Astraé — Clarifier ce que vous vivez pour avancer avec plus de justesse"
-      intro="Cabinet Astraé propose un espace d’analyse et d’accompagnement pour les périodes de questionnement, de transition ou de difficulté relationnelle."
+      title="Cabinet Astraé — Clarifier ce que vous vivez pour avancer avec plus de clarté"
+      intro="Cabinet Astraé propose un espace d’analyse et d’accompagnement pour les périodes de transition, de questionnement ou de difficulté relationnelle."
       showIntro={false}
     >
-      <div className="space-y-10 md:space-y-16">
-        <section className="relative overflow-hidden rounded-[2.25rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(249,246,240,0.72))] px-6 py-8 shadow-[0_20px_80px_rgba(55,72,60,0.07)] backdrop-blur-sm md:px-10 md:py-12">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[-3rem] top-[-3rem] h-40 w-40 rounded-full border border-white/35 bg-[radial-gradient(circle,rgba(255,255,255,0.55),rgba(255,255,255,0.04)_68%,transparent_72%)] blur-sm" />
-            <div className="absolute right-8 top-10 h-28 w-28 rounded-full border border-sage/15 bg-[radial-gradient(circle,rgba(255,255,255,0.4),rgba(214,204,186,0.15)_62%,transparent_72%)]" />
-            <div className="absolute right-[-4rem] top-[-2rem] h-56 w-56 rounded-full bg-sage/10 blur-3xl" />
-            <div className="absolute left-1/3 bottom-[-3rem] h-32 w-32 rounded-full bg-terracotta/10 blur-3xl" />
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-          </div>
+      <div className="space-y-8 md:space-y-12">
+        <section className="astrae-hero-shell relative overflow-hidden rounded-[2rem] border border-white/50 px-6 py-10 shadow-[0_24px_80px_rgba(46,62,53,0.08)] md:rounded-[2.5rem] md:px-10 md:py-14">
+          <div className="astrae-orbit astrae-orbit-1" />
+          <div className="astrae-orbit astrae-orbit-2" />
+          <div className="astrae-orbit astrae-orbit-3" />
+          <div className="astrae-glow astrae-glow-1" />
+          <div className="astrae-glow astrae-glow-2" />
 
-          <div className="relative max-w-4xl">
-            <p className="text-[11px] uppercase tracking-[0.32em] text-pine/60">
+          <div className="relative max-w-3xl">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-pine/55">
               Cabinet Astraé · Espace d’accompagnement personnel
             </p>
 
-            <div className="mt-6 max-w-3xl">
-              <div className="mb-4 flex items-center gap-4">
-                <span className="h-px w-12 bg-pine/20" />
-                <span className="text-[11px] uppercase tracking-[0.28em] text-pine/45">
-                  Pour mieux se comprendre
-                </span>
-              </div>
+            <h1 className="mt-5 max-w-2xl text-[2.35rem] font-semibold leading-[0.98] text-pine sm:text-5xl md:text-6xl">
+              Clarifier ce que vous vivez
+              <span className="block">pour avancer avec plus de clarté</span>
+            </h1>
 
-              <h1 className="text-4xl font-semibold leading-[1.02] text-pine md:text-6xl">
-                Clarifier ce que vous vivez
-                <br className="hidden md:block" />
-                <span className="md:inline"> pour avancer avec plus de clarté</span>
-              </h1>
-            </div>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-umber/88 md:text-lg">
-              Cabinet Astraé propose un espace d’analyse et d’accompagnement
-              pour les périodes de questionnement, de transition ou de difficulté
-              relationnelle. L’approche repose sur l’écoute, l’expérience
-              humaine et, lorsque cela est juste, le thème astral comme support
-              de compréhension.
+            <p className="mt-5 max-w-xl text-sm leading-7 text-umber/82 md:text-base md:leading-8">
+              Un espace sobre et structuré pour mieux comprendre une période de
+              transition, un blocage ou une situation relationnelle délicate,
+              avec une approche humaine et, lorsque cela est juste, le thème
+              astral comme support de lecture.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+                className="inline-flex items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition duration-300 hover:-translate-y-0.5 hover:bg-pine/92"
               >
                 Prendre contact
               </Link>
 
               <Link
                 href="/analyse"
-                className="inline-flex rounded-full border border-pine/20 bg-white/65 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:bg-white"
               >
                 Commencer un diagnostic
               </Link>
             </div>
 
-            <div className="mt-8 grid gap-3 border-t border-pine/10 pt-5 text-sm text-umber/72 md:grid-cols-3">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/68">
               <span>Écoute structurée</span>
-              <span>Lecture sensible et nuancée</span>
-              <span>Cadre calme et confidentiel</span>
+              <span>Lecture sensible</span>
+              <span>Cadre confidentiel</span>
             </div>
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-          <article className="relative overflow-hidden rounded-[2rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(247,243,235,0.68))] p-7 shadow-[0_12px_48px_rgba(55,72,60,0.05)] backdrop-blur-sm md:p-9">
-            <div className="pointer-events-none absolute right-[-2rem] top-[-1rem] h-28 w-28 rounded-full bg-sage/10 blur-2xl" />
-
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              Le cadre du cabinet
+        <section className="grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
+          <article className="rounded-[1.6rem] border border-white/45 bg-white/62 p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
+              Quand quelque chose résiste
             </p>
-
-            <h2 className="mt-3 max-w-2xl text-2xl font-semibold leading-snug text-pine md:text-3xl">
-              Une présence sérieuse, sensible et structurée
+            <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine md:text-[2rem]">
+              Parfois, ce n’est pas qu’il manque une réponse.
             </h2>
-
-            <p className="mt-4 max-w-2xl leading-8 text-umber/88">
-              Cabinet Astraé n’est pas conçu comme un simple dispositif
-              automatisé. C’est un espace d’accompagnement destiné à aider la
-              personne à mieux situer ce qu’elle traverse, à clarifier ce qui
-              reste flou et à retrouver une perception plus juste de sa
-              situation.
-            </p>
-
-            <p className="mt-4 max-w-2xl leading-8 text-umber/88">
-              L’approche reste sobre et maîtrisée. La dimension symbolique peut
-              être présente, mais toujours dans un cadre calme, professionnel et
-              lisible, fidèle à l’esprit du Cabinet.
+            <p className="mt-3 max-w-xl text-sm leading-7 text-umber/82 md:text-base">
+              C’est qu’il devient difficile de situer ce qui se joue, de relier
+              les éléments, ou de savoir comment avancer avec justesse.
             </p>
           </article>
 
-          <article className="relative overflow-hidden rounded-[2rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,230,0.7))] p-7 shadow-[0_12px_48px_rgba(55,72,60,0.05)] backdrop-blur-sm md:p-9">
-            <div className="pointer-events-none absolute left-1/2 top-4 h-24 w-24 -translate-x-1/2 rounded-full border border-white/40 bg-white/20 blur-xl" />
-
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              Pour qui
+          <article className="rounded-[1.6rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(245,241,233,0.78))] p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
+              La promesse
             </p>
-
-            <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine">
-              Pour les moments où quelque chose demande à être éclairé
-            </h2>
-
-            <ul className="mt-6 space-y-4">
-              {situations.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-7 text-umber/88">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pine/65" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-3 max-w-2xl text-xl font-medium leading-relaxed text-pine md:text-2xl">
+              Mettre en lumière ce qui se joue pour avancer avec plus de
+              clarté.
+            </p>
           </article>
         </section>
 
-        <section className="relative overflow-hidden rounded-[2.15rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(246,242,235,0.7))] px-6 py-8 shadow-[0_16px_60px_rgba(55,72,60,0.05)] backdrop-blur-sm md:px-10 md:py-10">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-10 top-10 h-20 w-20 rounded-full bg-sage/8 blur-2xl" />
-            <div className="absolute right-10 bottom-8 h-24 w-24 rounded-full bg-terracotta/8 blur-2xl" />
-          </div>
+        <section className="relative overflow-hidden rounded-[1.9rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(246,242,235,0.75))] px-6 py-7 shadow-[0_18px_54px_rgba(46,62,53,0.05)] backdrop-blur-sm md:px-8 md:py-8">
+          <div className="pointer-events-none absolute inset-y-0 left-[3.15rem] hidden w-px bg-gradient-to-b from-transparent via-pine/14 to-transparent md:block" />
 
-          <div className="relative max-w-3xl">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              La méthode Astraé
+          <div className="max-w-2xl">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
+              L’approche Astraé
             </p>
-
             <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine md:text-3xl">
-              Une approche qui accueille, relie et éclaire
+              Une lecture en six mouvements
             </h2>
-
-            <p className="mt-4 leading-8 text-umber/88">
-              Le nom Astraé porte une logique d’accompagnement en plusieurs
-              temps : accueillir, situer, traduire, relier, ajuster, éclairer.
-              Cette trame donne une structure au travail sans rigidité, dans un
-              esprit humain, lisible et profondément nuancé.
-            </p>
           </div>
 
-          <div className="relative mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {astraeMethod.map((item) => (
+          <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {astraeSteps.map((step, index) => (
               <article
-                key={`${item.letter}-${item.title}`}
-                className="rounded-[1.5rem] border border-white/45 bg-white/55 p-6 backdrop-blur-sm"
+                key={`${step.letter}-${step.title}-${index}`}
+                className="group relative rounded-[1.35rem] border border-white/50 bg-white/58 px-4 py-4 transition duration-500 hover:-translate-y-0.5 hover:bg-white/78"
               >
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pine/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(244,239,230,0.72))] text-base font-semibold text-pine shadow-[0_6px_20px_rgba(55,72,60,0.06)]">
-                    {item.letter}
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pine/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.8))] text-sm font-semibold text-pine shadow-[0_8px_24px_rgba(46,62,53,0.06)] transition duration-500 group-hover:scale-[1.03]">
+                    {step.letter}
                   </span>
-                  <h3 className="text-lg font-semibold text-pine">{item.title}</h3>
+                  <h3 className="text-base font-medium text-pine md:text-lg">
+                    {step.title}
+                  </h3>
                 </div>
-
-                <p className="mt-4 text-sm leading-7 text-umber/88">
-                  {item.text}
-                </p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="relative overflow-hidden rounded-[2rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(247,243,236,0.72))] px-6 py-8 shadow-[0_16px_60px_rgba(55,72,60,0.05)] backdrop-blur-sm md:px-10 md:py-10">
-          <div className="max-w-3xl">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              Le parcours
+        <section className="grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
+          <article className="rounded-[1.6rem] border border-white/45 bg-white/62 p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
+              Crédibilité
             </p>
-
-            <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine md:text-3xl">
-              Un chemin simple, lisible et respectueux du rythme de chacun
-            </h2>
-
-            <p className="mt-4 leading-8 text-umber/88">
-              Le Cabinet s’organise autour d’une progression naturelle : une
-              première lecture, une analyse plus fine lorsque c’est pertinent,
-              puis un accompagnement dans la continuité si la situation le
-              demande.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {pathway.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-[1.5rem] border border-white/45 bg-white/62 p-6 backdrop-blur-sm"
-              >
-                <p className="text-sm font-medium tracking-[0.18em] text-pine/50">
-                  {step.number}
-                </p>
-
-                <h3 className="mt-3 text-lg font-semibold text-pine">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-umber/88">
-                  {step.text}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-[1.95rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(247,243,235,0.72))] p-7 shadow-[0_12px_48px_rgba(55,72,60,0.05)] backdrop-blur-sm md:p-9">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              Point d’entrée
-            </p>
-
             <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine">
-              Commencer par un premier diagnostic
+              25 ans d’expérience dans l’accompagnement
             </h2>
-
-            <p className="mt-4 leading-8 text-umber/88">
-              Le diagnostic en ligne constitue une première porte d’entrée. Il
-              permet de poser un regard initial sur la situation, de faire
-              émerger les lignes essentielles et d’ouvrir, si cela est juste,
-              vers un travail plus approfondi au sein du Cabinet.
+            <p className="mt-3 text-sm leading-7 text-umber/82 md:text-base">
+              Une posture sobre, humaine et rigoureuse, au service d’une lecture
+              plus claire de ce que la personne traverse.
             </p>
-
-            <Link
-              href="/analyse"
-              className="mt-7 inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-umber transition hover:bg-terracotta/85"
-            >
-              Démarrer le diagnostic
-            </Link>
           </article>
 
-          <article className="rounded-[1.95rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(247,243,235,0.72))] p-7 shadow-[0_12px_48px_rgba(55,72,60,0.05)] backdrop-blur-sm md:p-9">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
-              Accompagnement
-            </p>
-
-            <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine">
-              Approfondir dans un cadre humain et nuancé
-            </h2>
-
-            <p className="mt-4 leading-8 text-umber/88">
-              Lorsque la situation le demande, le travail peut se poursuivre
-              autour d’enjeux relationnels, de répétitions, d’hésitations ou de
-              périodes de transition, dans un cadre professionnel, calme et
-              confidentiel.
-            </p>
-
-            <Link
-              href="/accompagnements"
-              className="mt-7 inline-flex rounded-full border border-pine/20 bg-white/55 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
-            >
-              Voir les accompagnements
-            </Link>
-          </article>
-        </section>
-
-        <section className="relative overflow-hidden rounded-[2.2rem] border border-white/40 bg-[linear-gradient(180deg,rgba(243,238,228,0.78),rgba(255,255,255,0.72))] px-6 py-8 shadow-[0_18px_70px_rgba(55,72,60,0.05)] backdrop-blur-sm md:px-10 md:py-10">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-8 top-8 h-24 w-24 rounded-full border border-white/30 bg-white/15 blur-2xl" />
-            <div className="absolute right-10 bottom-10 h-32 w-32 rounded-full bg-sage/10 blur-3xl" />
-          </div>
-
-          <div className="relative max-w-3xl">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/58">
+          <article className="rounded-[1.6rem] border border-white/45 bg-[linear-gradient(180deg,rgba(244,239,229,0.84),rgba(255,255,255,0.74))] p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Entrer en relation
             </p>
-
-            <h2 className="mt-3 text-2xl font-semibold leading-snug text-pine md:text-3xl">
-              Prendre un temps pour mieux comprendre ce que vous traversez
+            <h2 className="mt-3 max-w-xl text-2xl font-semibold leading-snug text-pine md:text-3xl">
+              Un premier échange pour mieux comprendre votre situation
             </h2>
-
-            <p className="mt-4 leading-8 text-umber/88">
-              Vous pouvez commencer par un diagnostic ou entrer directement en
-              contact avec le Cabinet, selon ce qui vous semble le plus juste à
-              ce stade.
-            </p>
-
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-6">
               <Link
                 href="/contact"
-                className="inline-flex rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+                className="inline-flex items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition duration-300 hover:-translate-y-0.5 hover:bg-pine/92"
               >
                 Prendre contact
               </Link>
-
-              <Link
-                href="/analyse"
-                className="inline-flex rounded-full border border-pine/20 bg-white/60 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
-              >
-                Commencer un diagnostic
-              </Link>
             </div>
-          </div>
+          </article>
         </section>
       </div>
     </PageFrame>
