@@ -11,10 +11,12 @@ export function PageFrame({
   children,
   title,
   intro,
+  showIntro = true,
 }: {
   children: React.ReactNode;
   title: string;
   intro: string;
+  showIntro?: boolean;
 }) {
   return (
     <div className="min-h-screen bg-ivory text-pine">
@@ -57,21 +59,23 @@ export function PageFrame({
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-sand/35 to-transparent" />
 
         <div className="mx-auto w-full max-w-[1180px] px-5 pb-14 pt-10 md:px-8 md:pb-20 md:pt-16">
-          <section className="mb-10 md:mb-14">
-            <div className="max-w-4xl">
-              <p className="text-[11px] uppercase tracking-[0.26em] text-pine/60">
-                Cabinet Astraé
-              </p>
+          {showIntro && (
+            <section className="mb-10 md:mb-14">
+              <div className="max-w-4xl">
+                <p className="text-[11px] uppercase tracking-[0.26em] text-pine/60">
+                  Cabinet Astraé
+                </p>
 
-              <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-pine md:text-5xl">
-                {title}
-              </h1>
+                <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-pine md:text-5xl">
+                  {title}
+                </h1>
 
-              <p className="mt-5 max-w-3xl text-base leading-8 text-umber/88 md:text-lg">
-                {intro}
-              </p>
-            </div>
-          </section>
+                <p className="mt-5 max-w-3xl text-base leading-8 text-umber/88 md:text-lg">
+                  {intro}
+                </p>
+              </div>
+            </section>
+          )}
 
           {children}
         </div>
