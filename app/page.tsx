@@ -92,10 +92,8 @@ export default function HomePage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-umber/80 md:text-base md:leading-8">
-              Cabinet Astraé accompagne les personnes en période de flou, de
-              blocage ou de transition, à partir d’une lecture approfondie de
-              leur situation. Cette analyse peut s’appuyer sur le thème astral
-              lorsqu’il permet d’éclairer plus finement ce qui se joue.
+              Cabinet Astraé accompagne les personnes en période de flou, de blocage ou de transition.
+              Une lecture approfondie de votre situation permet de mettre en lumière ce qui se joue, avec une analyse pouvant s’appuyer sur le thème astral lorsque cela est pertinent.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -236,7 +234,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
-              Virginie s’appuie sur 25 années d’expérience dans l’accompagnement
+              Virginie s’appuie sur 20 années d’expérience dans l’accompagnement
               humain et la compréhension des parcours de vie. Son approche
               repose sur l’écoute, la finesse d’analyse et la capacité à mettre
               en lumière ce qui reste confus ou difficile à nommer.
