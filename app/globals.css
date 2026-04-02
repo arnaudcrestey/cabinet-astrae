@@ -15,89 +15,42 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 14% 18%, rgba(255, 248, 244, 0.34) 0, transparent 20%),
-    radial-gradient(circle at 84% 10%, rgba(255, 250, 247, 0.2) 0, transparent 18%),
-    radial-gradient(circle at 72% 78%, rgba(193, 134, 95, 0.14) 0, transparent 22%),
-    radial-gradient(circle at 18% 82%, rgba(173, 165, 143, 0.1) 0, transparent 22%),
-    linear-gradient(
-      180deg,
-      #d6b8a8 0%,
-      #d8bcad 12%,
-      #dcc2b4 28%,
-      #dbc3b7 46%,
-      #d5bdaf 64%,
-      #cfb4a5 82%,
-      #c8ac9d 100%
-    );
+  background-color: #dcc2b4;
+  background-image: url("/images/astrae-bg-desktop.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
-/* Voile lumineux + poussière céleste */
+/* voile général pour intégrer l'image au site */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 1;
   background:
-    radial-gradient(circle at 8% 12%, rgba(255, 255, 255, 0.24) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 13% 26%, rgba(255, 255, 255, 0.2) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 22% 8%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 31% 21%, rgba(255, 255, 255, 0.14) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 42% 12%, rgba(255, 255, 255, 0.14) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 56% 17%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 70% 9%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 84% 14%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 93% 30%, rgba(255, 255, 255, 0.14) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 88% 58%, rgba(255, 255, 255, 0.14) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 76% 78%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 58% 88%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 32% 82%, rgba(255, 255, 255, 0.1) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 16% 72%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 9% 54%, rgba(255, 255, 255, 0.1) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 24% 48%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 78% 40%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 48% 44%, rgba(255, 244, 239, 0.16), transparent 48%),
-    radial-gradient(circle at 80% 26%, rgba(255, 246, 242, 0.11), transparent 28%),
-    radial-gradient(circle at 18% 80%, rgba(255, 246, 242, 0.1), transparent 24%);
+    linear-gradient(
+      180deg,
+      rgba(222, 198, 184, 0.18) 0%,
+      rgba(217, 190, 175, 0.10) 24%,
+      rgba(211, 182, 166, 0.08) 54%,
+      rgba(203, 174, 158, 0.14) 100%
+    );
 }
 
-/* Architecture astrale principale */
+/* brume lumineuse légère */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.95;
   background:
-    /* Grande carte orbitale principale */
-    radial-gradient(circle at 87% 28%, transparent 0 25.85rem, rgba(255, 245, 240, 0.26) 26rem 26.08rem, transparent 26.18rem),
-    radial-gradient(circle at 87% 28%, transparent 0 20.85rem, rgba(255, 245, 240, 0.22) 21rem 21.08rem, transparent 21.18rem),
-    radial-gradient(circle at 87% 28%, transparent 0 15.85rem, rgba(255, 245, 240, 0.18) 16rem 16.08rem, transparent 16.18rem),
-    radial-gradient(circle at 87% 28%, transparent 0 10.85rem, rgba(255, 245, 240, 0.15) 11rem 11.08rem, transparent 11.18rem),
-
-    /* Noyau central discret */
-    radial-gradient(circle at 87% 28%, rgba(255, 248, 244, 0.08) 0 4rem, transparent 4.1rem),
-
-    /* Carte secondaire basse */
-    radial-gradient(circle at 72% 102%, transparent 0 21.85rem, rgba(255, 243, 236, 0.18) 22rem 22.08rem, transparent 22.18rem),
-    radial-gradient(circle at 72% 102%, transparent 0 14.85rem, rgba(255, 243, 236, 0.13) 15rem 15.08rem, transparent 15.18rem),
-    radial-gradient(circle at 72% 102%, transparent 0 8.85rem, rgba(255, 243, 236, 0.1) 9rem 9.08rem, transparent 9.18rem),
-
-    /* Grande carte latérale gauche */
-    radial-gradient(circle at 3% 54%, transparent 0 21.85rem, rgba(255, 243, 236, 0.11) 22rem 22.08rem, transparent 22.18rem),
-
-    /* Axes célestes */
-    linear-gradient(103deg, transparent 0 71.7%, rgba(255, 243, 236, 0.12) 72%, transparent 72.28%),
-    linear-gradient(18deg, transparent 0 79.72%, rgba(255, 243, 236, 0.08) 80%, transparent 80.28%),
-    linear-gradient(132deg, transparent 0 77.72%, rgba(255, 243, 236, 0.07) 78%, transparent 78.28%),
-
-    /* halo terracotta très subtil */
-    radial-gradient(circle at 68% 32%, rgba(190, 126, 90, 0.08), transparent 22%),
-    radial-gradient(circle at 78% 76%, rgba(185, 118, 82, 0.07), transparent 24%);
+    radial-gradient(circle at 50% 16%, rgba(255, 250, 245, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(255, 248, 242, 0.10), transparent 22%),
+    radial-gradient(circle at 18% 72%, rgba(255, 246, 238, 0.08), transparent 24%);
 }
 
 main,
@@ -139,29 +92,35 @@ a:hover {
 .astrae-panel {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 252, 249, 0.8), rgba(245, 239, 233, 0.72));
-  border: 1px solid rgba(255, 250, 246, 0.62);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 252, 249, 0.78),
+    rgba(245, 239, 233, 0.68)
+  );
+  border: 1px solid rgba(255, 250, 246, 0.56);
   box-shadow:
-    0 24px 70px rgba(74, 47, 33, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.42);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    0 18px 50px rgba(74, 47, 33, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-/* ===== Hero premium astral ===== */
+/* ===== Hero ===== */
 
 .astrae-hero-shell {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 253, 251, 0.84), rgba(246, 241, 236, 0.72));
-  border: 1px solid rgba(255, 250, 246, 0.72);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 251, 0.80),
+    rgba(246, 241, 236, 0.68)
+  );
+  border: 1px solid rgba(255, 250, 246, 0.64);
   box-shadow:
     0 28px 90px rgba(74, 47, 33, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.44);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .astrae-hero-shell::before {
@@ -170,68 +129,63 @@ a:hover {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 84% 22%, rgba(255, 248, 244, 0.24), transparent 26%),
-    radial-gradient(circle at 22% 82%, rgba(192, 132, 94, 0.08), transparent 22%);
+    radial-gradient(circle at center, rgba(255, 248, 244, 0.16), transparent 40%),
+    radial-gradient(circle at 84% 22%, rgba(255, 248, 244, 0.12), transparent 22%);
 }
 
 .astrae-hero-shell::after {
   content: "";
   position: absolute;
   pointer-events: none;
-  top: -12rem;
-  right: -10rem;
-  width: 38rem;
-  height: 38rem;
+  top: -10rem;
+  right: -8rem;
+  width: 30rem;
+  height: 30rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 245, 240, 0.24);
+  border: 1px solid rgba(255, 245, 240, 0.18);
   box-shadow:
-    0 0 0 5rem rgba(255, 245, 240, 0.03),
-    0 0 0 10rem rgba(255, 245, 240, 0.018),
-    0 0 0 15rem rgba(255, 245, 240, 0.012);
-  opacity: 0.95;
+    0 0 0 4rem rgba(255, 245, 240, 0.02),
+    0 0 0 8rem rgba(255, 245, 240, 0.01);
+  opacity: 0.8;
 }
 
-/* Orbites visibles dans le hero */
+/* orbites discrètes */
 .astrae-orbit {
   position: absolute;
   border-radius: 9999px;
   pointer-events: none;
-  border: 1px solid rgba(255, 244, 238, 0.2);
+  border: 1px solid rgba(255, 244, 238, 0.14);
 }
 
 .astrae-orbit-1 {
-  width: 38rem;
-  height: 38rem;
-  top: -17rem;
-  right: -11rem;
-  opacity: 0.42;
+  width: 32rem;
+  height: 32rem;
+  top: -12rem;
+  right: -8rem;
+  opacity: 0.26;
 }
 
 .astrae-orbit-2 {
-  width: 24rem;
-  height: 24rem;
-  top: 1.5rem;
-  right: 1rem;
-  opacity: 0.28;
+  width: 20rem;
+  height: 20rem;
+  bottom: -7rem;
+  left: -5rem;
+  opacity: 0.10;
 }
 
 .astrae-orbit-3 {
-  width: 16rem;
-  height: 16rem;
-  left: -6rem;
-  bottom: -7rem;
-  opacity: 0.16;
+  width: 12rem;
+  height: 12rem;
+  right: 12%;
+  bottom: -4rem;
+  opacity: 0.08;
 }
 
 .astrae-orbit-4 {
-  width: 10rem;
-  height: 10rem;
-  right: 10rem;
-  bottom: -3rem;
-  opacity: 0.12;
+  display: none;
 }
 
-/* Lueurs */
+/* lueurs */
 .astrae-glow {
   position: absolute;
   border-radius: 9999px;
@@ -240,101 +194,96 @@ a:hover {
 }
 
 .astrae-glow-1 {
-  width: 14rem;
-  height: 14rem;
+  width: 12rem;
+  height: 12rem;
   top: 2rem;
-  right: 8rem;
-  background: rgba(255, 248, 244, 0.16);
+  right: 12%;
+  background: rgba(255, 248, 244, 0.10);
 }
 
 .astrae-glow-2 {
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   bottom: 2rem;
-  left: 16%;
-  background: rgba(194, 132, 94, 0.09);
+  left: 18%;
+  background: rgba(194, 132, 94, 0.06);
 }
 
 .astrae-glow-3 {
-  width: 8rem;
-  height: 8rem;
-  top: 48%;
-  right: 28%;
-  background: rgba(255, 248, 244, 0.08);
+  display: none;
 }
 
-/* petit anneau */
 .astrae-ring-mark {
   position: absolute;
   width: 4rem;
   height: 4rem;
   border-radius: 9999px;
-  border: 1px solid rgba(231, 220, 211, 0.75);
-  opacity: 0.65;
+  border: 1px solid rgba(231, 220, 211, 0.62);
+  opacity: 0.55;
   pointer-events: none;
 }
 
-/* Mobile */
+/* ===== Responsive ===== */
+
 @media (max-width: 768px) {
   body {
+    background-image: url("/images/astrae-bg-mobile.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: scroll;
   }
 
   body::before {
-    opacity: 0.8;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(222, 198, 184, 0.24) 0%,
+        rgba(216, 189, 174, 0.14) 36%,
+        rgba(204, 175, 158, 0.18) 100%
+      );
   }
 
   body::after {
-    opacity: 0.72;
     background:
-      radial-gradient(circle at 88% 20%, transparent 0 11.85rem, rgba(255, 245, 240, 0.2) 12rem 12.08rem, transparent 12.18rem),
-      radial-gradient(circle at 88% 20%, transparent 0 7.85rem, rgba(255, 245, 240, 0.14) 8rem 8.08rem, transparent 8.18rem),
-      radial-gradient(circle at 72% 102%, transparent 0 12.85rem, rgba(255, 245, 240, 0.14) 13rem 13.08rem, transparent 13.18rem),
-      linear-gradient(112deg, transparent 0 77.7%, rgba(255, 245, 240, 0.07) 78%, transparent 78.28%);
+      radial-gradient(circle at 50% 14%, rgba(255, 250, 245, 0.12), transparent 24%),
+      radial-gradient(circle at 82% 78%, rgba(255, 246, 238, 0.08), transparent 20%);
   }
 
   .astrae-hero-shell::after {
-    width: 20rem;
-    height: 20rem;
+    width: 18rem;
+    height: 18rem;
+    top: -5rem;
+    right: -5rem;
+  }
+
+  .astrae-orbit-1 {
+    width: 18rem;
+    height: 18rem;
     top: -6rem;
     right: -6rem;
   }
 
-  .astrae-orbit-1 {
-    width: 21rem;
-    height: 21rem;
-    top: -8rem;
-    right: -8rem;
-  }
-
   .astrae-orbit-2 {
-    width: 13rem;
-    height: 13rem;
-    top: 1rem;
-    right: 0.5rem;
+    width: 10rem;
+    height: 10rem;
+    left: -3rem;
+    bottom: -3rem;
   }
 
   .astrae-orbit-3 {
-    width: 10rem;
-    height: 10rem;
-    left: -4rem;
-    bottom: -4rem;
-  }
-
-  .astrae-orbit-4,
-  .astrae-glow-3 {
     display: none;
   }
 
   .astrae-glow-1 {
-    width: 9rem;
-    height: 9rem;
-    right: 2rem;
+    width: 8rem;
+    height: 8rem;
+    right: 8%;
   }
 
   .astrae-glow-2 {
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
     left: 10%;
   }
 }
