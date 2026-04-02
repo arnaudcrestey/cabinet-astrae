@@ -37,6 +37,7 @@ export default function HomePage() {
     <PageFrame
       title="Cabinet Astraé — Clarifier ce que vous vivez pour avancer avec plus de justesse"
       intro="Cabinet Astraé propose un cadre d’analyse sérieux, humain et structuré pour les périodes de flou, de tension ou de transition. L’objectif est d’apporter une lecture claire de votre situation, afin de mieux comprendre ce qui se joue et d’avancer de manière plus ajustée."
+      showIntro={false}
     >
       <div className="space-y-10 md:space-y-14">
         <section className="relative overflow-hidden rounded-[2rem] border border-sage/25 bg-white px-6 py-8 shadow-soft md:px-10 md:py-12">
@@ -135,7 +136,7 @@ export default function HomePage() {
                   key={item}
                   className="flex gap-3 text-sm leading-7 text-umber/90"
                 >
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-pine/70" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pine/70" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -170,9 +171,11 @@ export default function HomePage() {
                 <p className="text-sm font-medium tracking-[0.18em] text-pine/55">
                   {step.number}
                 </p>
+
                 <h3 className="mt-3 text-lg font-semibold text-pine">
                   {step.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-7 text-umber/90">
                   {step.text}
                 </p>
