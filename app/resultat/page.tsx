@@ -35,8 +35,12 @@ export default function ResultPage() {
   return (
     <PageFrame
       title="Votre première lecture Astraé"
-      intro="Ce diagnostic constitue un point d'entrée : il met en lumière la dynamique principale en jeu et ouvre une piste d'approfondissement."
+      intro="Cette lecture est un point d'entrée proposé par le Cabinet. Elle met en lumière les éléments dominants et peut ouvrir vers un accompagnement personnalisé."
     >
+      <div className="mb-6 rounded-2xl border border-sage/25 bg-sand/40 p-5 text-sm leading-relaxed text-umber/90">
+        Pour approfondir, vous pouvez transmettre votre demande ci-dessous. Un retour humain et contextualisé vous sera
+        proposé, sans automatisme commercial.
+      </div>
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <ResultCard result={result} />
         <LeadForm result={result} />

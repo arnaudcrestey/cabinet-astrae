@@ -4,8 +4,8 @@ import { Questionnaire } from "@/components/projection/Questionnaire";
 export default function QuestionsPage() {
   return (
     <PageFrame
-      title="Questionnaire de clarification"
-      intro="Répondez avec simplicité. Vos réponses servent à produire une lecture initiale fiable et nuancée."
+      title="Questionnaire de diagnostic"
+      intro="Ce questionnaire permet au Cabinet Astraé de produire une première lecture structurée de votre situation."
     >
       <Questionnaire />
     </PageFrame>

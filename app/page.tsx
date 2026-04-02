@@ -4,50 +4,63 @@ import { PageFrame } from "@/components/projection/PageFrame";
 export default function HomePage() {
   return (
     <PageFrame
-      title="Mettez de la clarté sur ce que vous vivez."
-      intro="Cabinet Astraé accompagne les périodes de transition, de tension et de remise en question par une lecture structurée, humaine et approfondie."
+      title="Cabinet Astraé — Clarifier ce que vous vivez pour avancer avec plus de justesse"
+      intro="Cabinet Astraé propose un accompagnement d'analyse pour les périodes de flou, de tension ou de transition. L'objectif est d'apporter une lecture claire, humaine et structurée de votre situation."
     >
       <div className="space-y-8">
-        <section className="grid gap-6 rounded-2xl border border-sage/30 bg-white p-8 shadow-soft md:grid-cols-2">
-          <div>
-            <h2 className="text-xl font-semibold">Ce que fait Astraé</h2>
-            <p className="mt-3 leading-relaxed text-umber/90">
-              Nous clarifions les dynamiques qui se jouent dans votre situation pour transformer le flou en compréhension utile.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold">Pourquoi cette approche</h2>
-            <p className="mt-3 leading-relaxed text-umber/90">
-              L'écoute, la structure d'analyse et la lecture du thème astral permettent d'aller au-delà d'une impression et d'ouvrir une lecture plus juste.
-            </p>
-          </div>
-        </section>
-
-        <section className="rounded-2xl border border-sage/30 bg-sand/60 p-8">
-          <h2 className="text-xl font-semibold">Comment cela se passe</h2>
-          <ol className="mt-4 space-y-3 text-umber/90">
-            <li>1. Vous démarrez une analyse guidée en quelques minutes.</li>
-            <li>2. Vous recevez une première lecture claire et contextualisée.</li>
-            <li>3. Vous pouvez demander un approfondissement confidentiel avec le Cabinet.</li>
-          </ol>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/analyse" className="rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
-              Commencer l'analyse
-            </Link>
-            <Link href="/questions" className="rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
-              Entrer directement dans les questions
-            </Link>
-          </div>
-        </section>
-
-        <section className="rounded-2xl border border-sage/20 bg-white p-8">
-          <h2 className="text-xl font-semibold">Un point d'entrée, puis un approfondissement</h2>
-          <p className="mt-3 leading-relaxed text-umber/90">
-            Le résultat proposé en ligne constitue une première mise en lumière. Si vous souhaitez aller plus loin, une lecture approfondie intégrant le thème astral et le contexte de vie peut être engagée.
+        <section className="rounded-2xl border border-sage/30 bg-white p-8 shadow-soft">
+          <p className="text-xs uppercase tracking-[0.2em] text-pine/80">Cabinet d'accompagnement</p>
+          <h2 className="mt-3 text-2xl font-semibold">Un cadre sérieux, calme et confidentiel</h2>
+          <p className="mt-3 max-w-3xl leading-relaxed text-umber/90">
+            Ici, vous n'êtes pas face à un simple test en ligne. Vous entrez dans un espace de compréhension où l'écoute,
+            l'analyse et la mise en perspective servent à éclairer les dynamiques qui influencent vos décisions, vos
+            relations et votre équilibre.
           </p>
-          <Link href="/analyse" className="mt-6 inline-flex rounded-full bg-terracotta px-5 py-3 text-sm font-medium text-umber hover:bg-terracotta/85">
-            Aller plus loin dans la compréhension
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact" className="rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
+              Échanger avec le Cabinet
+            </Link>
+            <Link href="/analyse" className="rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
+              Commencer un diagnostic
+            </Link>
+          </div>
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-3">
+          {[
+            ["Ce que fait Astraé", "Mettre en lumière la dynamique profonde d'une situation pour sortir du flou et retrouver un axe clair."],
+            ["Comment", "Un travail d'analyse structuré, appuyé si pertinent par la lecture du thème astral comme outil d'approfondissement."],
+            ["Pour qui", "Adultes traversant une transition, un blocage, une tension relationnelle ou une hésitation importante."]
+          ].map(([title, text]) => (
+            <article key={title} className="rounded-2xl border border-sage/25 bg-sand/40 p-6">
+              <h3 className="text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-umber/90">{text}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="grid gap-6 rounded-2xl border border-sage/25 bg-white p-8 md:grid-cols-2">
+          <div>
+            <h2 className="text-xl font-semibold">Un premier diagnostic pour démarrer</h2>
+            <p className="mt-3 leading-relaxed text-umber/90">
+              Le diagnostic en ligne constitue un point d'entrée. Il vous apporte une première lecture utile, puis peut
+              déboucher sur un accompagnement plus approfondi avec le Cabinet.
+            </p>
+            <Link href="/analyse" className="mt-5 inline-flex rounded-full bg-terracotta px-5 py-3 text-sm font-medium text-umber hover:bg-terracotta/85">
+              Démarrer le diagnostic
+            </Link>
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold">Approfondir avec un accompagnement humain</h2>
+            <p className="mt-3 leading-relaxed text-umber/90">
+              Selon votre situation, un travail plus fin peut être proposé : clarification d'enjeux relationnels,
+              compréhension des répétitions, appui à la décision et lecture approfondie du thème astral dans un cadre
+              professionnel et nuancé.
+            </p>
+            <Link href="/accompagnements" className="mt-5 inline-flex rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
+              Voir les accompagnements
+            </Link>
+          </div>
         </section>
       </div>
     </PageFrame>

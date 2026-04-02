@@ -4,14 +4,14 @@ import { PageFrame } from "@/components/projection/PageFrame";
 export default function AnalysePage() {
   return (
     <PageFrame
-      title="Une première lecture pour clarifier votre situation"
-      intro="Un parcours simple, confidentiel et structuré pour identifier la dynamique principale que vous traversez."
+      title="Diagnostic de clarification"
+      intro="Ce diagnostic est un point d'entrée proposé par le Cabinet. Il vous aide à mettre de la clarté sur votre situation avant un éventuel accompagnement approfondi."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {[
           ["Durée", "Environ 6 à 8 minutes, à votre rythme."],
           ["Confidentialité", "Vos réponses sont traitées de façon professionnelle et sécurisée."],
-          ["Utilité", "Vous recevez une synthèse claire, actionnable et nuancée."]
+          ["Finalité", "Obtenir une première lecture utile et poser les bases d'un échange humain."]
         ].map(([title, text]) => (
           <article key={title} className="rounded-2xl border border-sage/25 bg-white p-6">
             <h2 className="text-lg font-semibold">{title}</h2>
@@ -22,13 +22,18 @@ export default function AnalysePage() {
       <section className="mt-8 rounded-2xl border border-sage/30 bg-sand/50 p-8">
         <h2 className="text-xl font-semibold">Avant de commencer</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-umber/90">
-          <li>Répondez de manière simple, avec vos mots.</li>
-          <li>Il n'y a pas de bonne réponse : l'enjeu est la justesse de votre vécu.</li>
-          <li>Le résultat est une première lecture, pas un verdict.</li>
+          <li>Répondez simplement, à partir de ce que vous vivez réellement.</li>
+          <li>Le diagnostic n'est pas un verdict : c'est une première mise en lumière.</li>
+          <li>Vous pourrez ensuite demander un échange de cadrage avec le Cabinet.</li>
         </ul>
-        <Link href="/questions" className="mt-6 inline-flex rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
-          Démarrer le questionnaire
-        </Link>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/questions" className="inline-flex rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
+            Démarrer le questionnaire
+          </Link>
+          <Link href="/contact" className="inline-flex rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
+            Préférer un contact direct
+          </Link>
+        </div>
       </section>
     </PageFrame>
   );
