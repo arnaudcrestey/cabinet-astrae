@@ -17,29 +17,31 @@ export default function HomePage() {
       intro="Cabinet Astraé propose un espace d’analyse et d’accompagnement pour les périodes de transition, de questionnement ou de difficulté relationnelle."
       showIntro={false}
     >
-      <div className="space-y-8 md:space-y-12">
-        <section className="astrae-hero-shell relative overflow-hidden rounded-[2rem] border border-white/50 px-6 py-10 shadow-[0_24px_80px_rgba(46,62,53,0.08)] md:rounded-[2.5rem] md:px-10 md:py-14">
+      <div className="space-y-6 md:space-y-8">
+        <section className="astrae-hero-shell astrae-starfield relative overflow-hidden rounded-[2rem] border border-white/55 px-6 py-10 shadow-[0_30px_90px_rgba(46,62,53,0.08)] md:rounded-[2.5rem] md:px-10 md:py-14">
+          <div className="astrae-zodiac-wheel" />
           <div className="astrae-orbit astrae-orbit-1" />
           <div className="astrae-orbit astrae-orbit-2" />
           <div className="astrae-orbit astrae-orbit-3" />
           <div className="astrae-glow astrae-glow-1" />
           <div className="astrae-glow astrae-glow-2" />
+          <div className="astrae-glow astrae-glow-3" />
 
           <div className="relative max-w-3xl">
             <p className="text-[11px] uppercase tracking-[0.28em] text-pine/55">
               Cabinet Astraé · Espace d’accompagnement personnel
             </p>
 
-            <h1 className="mt-5 max-w-2xl text-[2.35rem] font-semibold leading-[0.98] text-pine sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-2xl text-[2.35rem] font-semibold leading-[0.98] text-pine sm:text-5xl md:text-[4.2rem]">
               Clarifier ce que vous vivez
               <span className="block">pour avancer avec plus de clarté</span>
             </h1>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-umber/82 md:text-base md:leading-8">
-              Un espace sobre et structuré pour mieux comprendre une période de
-              transition, un blocage ou une situation relationnelle délicate,
-              avec une approche humaine et, lorsque cela est juste, le thème
-              astral comme support de lecture.
+              Un espace d’analyse sobre et sensible pour mieux comprendre une
+              période de transition, un blocage ou une situation relationnelle
+              délicate, avec une approche humaine et le thème astral comme
+              support de lecture lorsqu’il est pertinent.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -52,7 +54,7 @@ export default function HomePage() {
 
               <Link
                 href="/analyse"
-                className="inline-flex items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-pine/15 bg-white/72 px-6 py-3 text-sm font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:bg-white"
               >
                 Commencer un diagnostic
               </Link>
@@ -66,8 +68,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
-          <article className="rounded-[1.6rem] border border-white/45 bg-white/62 p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+        <section className="grid gap-4 md:grid-cols-[1fr_0.95fr]">
+          <article className="rounded-[1.6rem] border border-white/50 bg-white/68 p-6 shadow-[0_16px_44px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Quand quelque chose résiste
             </p>
@@ -80,21 +82,21 @@ export default function HomePage() {
             </p>
           </article>
 
-          <article className="rounded-[1.6rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(245,241,233,0.78))] p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+          <article className="rounded-[1.6rem] border border-white/50 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(244,241,234,0.82))] p-6 shadow-[0_16px_44px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               La promesse
             </p>
             <p className="mt-3 max-w-2xl text-xl font-medium leading-relaxed text-pine md:text-2xl">
-              Mettre en lumière ce qui se joue pour avancer avec plus de
-              clarté.
+              Mettre en lumière ce qui se joue pour avancer avec plus de clarté.
             </p>
           </article>
         </section>
 
-        <section className="relative overflow-hidden rounded-[1.9rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(246,242,235,0.75))] px-6 py-7 shadow-[0_18px_54px_rgba(46,62,53,0.05)] backdrop-blur-sm md:px-8 md:py-8">
+        <section className="relative overflow-hidden rounded-[1.9rem] border border-white/50 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,233,0.78))] px-6 py-7 shadow-[0_18px_54px_rgba(46,62,53,0.05)] backdrop-blur-sm md:px-8 md:py-8">
+          <div className="astrae-section-stars" />
           <div className="pointer-events-none absolute inset-y-0 left-[3.15rem] hidden w-px bg-gradient-to-b from-transparent via-pine/14 to-transparent md:block" />
 
-          <div className="max-w-2xl">
+          <div className="relative max-w-2xl">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               L’approche Astraé
             </p>
@@ -103,14 +105,14 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div className="relative mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {astraeSteps.map((step, index) => (
               <article
                 key={`${step.letter}-${step.title}-${index}`}
-                className="group relative rounded-[1.35rem] border border-white/50 bg-white/58 px-4 py-4 transition duration-500 hover:-translate-y-0.5 hover:bg-white/78"
+                className="group relative rounded-[1.35rem] border border-white/55 bg-white/62 px-4 py-4 transition duration-500 hover:-translate-y-0.5 hover:bg-white/82"
               >
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pine/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.8))] text-sm font-semibold text-pine shadow-[0_8px_24px_rgba(46,62,53,0.06)] transition duration-500 group-hover:scale-[1.03]">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pine/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.82))] text-sm font-semibold text-pine shadow-[0_8px_24px_rgba(46,62,53,0.06)] transition duration-500 group-hover:scale-[1.03]">
                     {step.letter}
                   </span>
                   <h3 className="text-base font-medium text-pine md:text-lg">
@@ -122,8 +124,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
-          <article className="rounded-[1.6rem] border border-white/45 bg-white/62 p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+        <section className="grid gap-4 md:grid-cols-[0.92fr_1.08fr]">
+          <article className="rounded-[1.6rem] border border-white/50 bg-white/68 p-6 shadow-[0_16px_44px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Crédibilité
             </p>
@@ -136,7 +138,10 @@ export default function HomePage() {
             </p>
           </article>
 
-          <article className="rounded-[1.6rem] border border-white/45 bg-[linear-gradient(180deg,rgba(244,239,229,0.84),rgba(255,255,255,0.74))] p-6 shadow-[0_14px_42px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+          <article className="relative overflow-hidden rounded-[1.6rem] border border-white/50 bg-[linear-gradient(180deg,rgba(244,239,229,0.88),rgba(255,255,255,0.76))] p-6 shadow-[0_16px_44px_rgba(46,62,53,0.05)] backdrop-blur-sm md:p-7">
+            <div className="pointer-events-none absolute right-[-5rem] top-[-5rem] h-40 w-40 rounded-full border border-pine/8" />
+            <div className="pointer-events-none absolute right-8 top-8 h-20 w-20 rounded-full border border-pine/8" />
+
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Entrer en relation
             </p>
