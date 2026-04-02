@@ -26,8 +26,6 @@ export function PageFrame({
         <div className="mx-auto w-full max-w-[1240px] px-4 pt-3 md:px-8 md:pt-5">
           <div className="relative overflow-hidden rounded-full border border-white/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.54),rgba(247,243,236,0.42))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
             <div className="relative flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-
-              {/* LOGO */}
               <div className="min-w-[220px] md:min-w-[250px]">
                 <Link
                   href="/"
@@ -42,7 +40,6 @@ export function PageFrame({
                 </Link>
               </div>
 
-              {/* NAV */}
               <nav className="hidden items-center gap-7 text-sm md:flex">
                 {links.map((link) => (
                   <Link
@@ -55,16 +52,14 @@ export function PageFrame({
                 ))}
               </nav>
 
-              {/* CTA */}
               <div className="flex min-w-[220px] justify-end md:min-w-[250px]">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-pine/10 bg-[rgba(244,236,228,0.7)] px-5 py-2.5 text-sm font-medium text-pine transition-all duration-300 hover:-translate-y-0.5 hover:bg-[rgba(239,229,220,0.9)] hover:shadow-[0_8px_24px_rgba(46,62,53,0.08)]"
+                  className="inline-flex items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.82)] px-5 py-2.5 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)] hover:shadow-[0_10px_24px_rgba(46,62,53,0.08)]"
                 >
                   Prendre un premier échange
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
