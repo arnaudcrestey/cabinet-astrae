@@ -5,8 +5,7 @@ const links = [
   { href: "/accompagnements", label: "Accompagnements" },
   { href: "/analyse", label: "Diagnostic" },
   { href: "/contact", label: "Contact" }
-];
-
+] as const;
 export function PageFrame({
   children,
   title,
