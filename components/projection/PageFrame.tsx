@@ -29,17 +29,19 @@ export function PageFrame({
             </div>
 
             <div className="relative flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-              <div className="min-w-0">
+              <div className="min-w-[220px] md:min-w-[250px]">
                 <Link
                   href="/"
-                  className="inline-flex items-center text-[1rem] font-semibold tracking-[-0.03em] text-pine transition duration-300 hover:opacity-85 md:text-[1.08rem]"
+                  className="flex flex-col items-center justify-center text-center leading-none"
                 >
-                  Cabinet Astraé
-                </Link>
+                  <span className="text-[1rem] font-semibold tracking-[-0.03em] text-pine transition duration-300 hover:opacity-85 md:text-[1.08rem]">
+                    Cabinet Astraé
+                  </span>
 
-                <p className="mt-0.5 hidden text-[11px] leading-relaxed tracking-[0.08em] text-umber/55 sm:block">
-                  Analyse · clarification · accompagnement personnel
-                </p>
+                  <span className="mt-2 hidden text-[11px] leading-relaxed tracking-[0.08em] text-umber/55 sm:block">
+                    Analyse · clarification · accompagnement personnel
+                  </span>
+                </Link>
               </div>
 
               <nav className="hidden items-center gap-7 text-sm md:flex">
@@ -54,12 +56,14 @@ export function PageFrame({
                 ))}
               </nav>
 
-              <Link
-                href="/contact"
-                className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/46 px-4 py-2.5 text-xs font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/58 md:px-5 md:text-sm"
-              >
-                Prendre contact
-              </Link>
+              <div className="flex min-w-[220px] justify-end md:min-w-[250px]">
+                <Link
+                  href="/contact"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/46 px-4 py-2.5 text-xs font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/58 md:px-5 md:text-sm"
+                >
+                  Prendre contact
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -116,7 +120,10 @@ export function PageFrame({
               </section>
 
               <section className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-umber/82">
-                <Link className="transition duration-300 hover:text-pine" href="/approche">
+                <Link
+                  className="transition duration-300 hover:text-pine"
+                  href="/approche"
+                >
                   Approche
                 </Link>
                 <Link
@@ -125,10 +132,16 @@ export function PageFrame({
                 >
                   Accompagnements
                 </Link>
-                <Link className="transition duration-300 hover:text-pine" href="/analyse">
+                <Link
+                  className="transition duration-300 hover:text-pine"
+                  href="/analyse"
+                >
                   Diagnostic
                 </Link>
-                <Link className="transition duration-300 hover:text-pine" href="/contact">
+                <Link
+                  className="transition duration-300 hover:text-pine"
+                  href="/contact"
+                >
                   Contact
                 </Link>
               </section>
