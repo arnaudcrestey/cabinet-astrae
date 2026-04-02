@@ -58,11 +58,12 @@ export function PageFrame({
 
               <div className="flex min-w-[220px] justify-end md:min-w-[250px]">
                 <Link
-                  href="/contact"
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/46 px-4 py-2.5 text-xs font-medium text-pine transition duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/58 md:px-5 md:text-sm"
-                >
-                  Prendre contact
-                </Link>
+                  <Link
+  href="/contact"
+  className="inline-flex shrink-0 items-center justify-center rounded-full border border-pine/10 bg-[rgba(244,236,228,0.7)] px-5 py-2.5 text-sm font-medium text-pine transition-all duration-300 hover:-translate-y-0.5 hover:bg-[rgba(239,229,220,0.9)] hover:shadow-[0_8px_24px_rgba(46,62,53,0.08)]"
+>
+  Prendre un premier échange
+</Link>
               </div>
             </div>
           </div>
