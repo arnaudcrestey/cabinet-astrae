@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-ivory text-umber antialiased;
+}
+
+h1,
+h2,
+h3 {
+  @apply text-pine tracking-tight;
+}
+
+a {
+  @apply text-pine transition-colors;
+}
+
+a:hover {
+  @apply text-umber;
+}
