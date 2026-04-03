@@ -25,25 +25,21 @@ export function PageFrame({
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
-    <div className="min-h-screen text-pine">
-      <header className="sticky top-0 z-50">
-        <div className="mx-auto w-full max-w-[1240px] px-4 pt-3 md:px-8 md:pt-5">
-          <div className="overflow-hidden rounded-[1.65rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.58),rgba(247,243,236,0.44))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
-            <div className="relative flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
-              <div className="min-w-0">
-                <Link
-                  href="/"
-                  className="group flex flex-col justify-center leading-none"
-                >
-                  <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
-                    Cabinet Astraé
-                  </span>
-                  <span className="mt-1.5 hidden text-[11px] tracking-[0.08em] text-umber/55 lg:block">
-                    Analyse du thème astral · clarification · accompagnement personnel
-                  </span>
-                </Link>
-              </div>
+ return (
+  <div className="min-w-0 md:min-w-[280px]">
+    <Link
+      href="/"
+      className="group flex flex-col items-center justify-center text-center leading-none"
+    >
+      <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
+        Cabinet Astraé
+      </span>
+      <span className="mt-1.5 hidden text-[11px] tracking-[0.08em] text-umber/55 lg:block">
+        Analyse du thème astral · clarification · accompagnement personnel
+      </span>
+    </Link>
+  </div>
+);
 
               <nav className="hidden items-center gap-7 text-sm md:flex">
                 {links.map((link) => (
