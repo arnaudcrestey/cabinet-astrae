@@ -5,14 +5,14 @@ export default function ContactPage() {
   return (
     <PageFrame
       title="Prendre contact avec Cabinet Astraé"
-      intro="Décrivez simplement votre situation en quelques lignes. Pour permettre une première lecture de votre thème astral en lien avec ce que vous vivez, merci d’indiquer votre date de naissance, votre heure de naissance, votre lieu de naissance (avec code postal), ainsi que votre prénom et votre email."
+      intro="Décrivez simplement votre situation en quelques lignes. Pour permettre une première lecture de votre thème astral, merci d’indiquer votre date, heure et lieu de naissance."
     >
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <section className="rounded-[1.75rem] border border-sage/18 bg-sand/55 p-6 shadow-[0_12px_36px_rgba(91,115,91,0.06)] backdrop-blur-sm sm:p-7">
           <div className="max-w-md">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-sage/60">
-              Premier échange
-            </p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-sage/85">
+  Premier échange
+</p>
 
             <h2 className="mt-3 text-xl font-medium leading-tight text-forest sm:text-2xl">
               Pourquoi nous écrire
