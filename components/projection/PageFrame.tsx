@@ -65,7 +65,7 @@ export function PageFrame({
 
               <div className="hidden shrink-0 md:flex">
                 <Link href="/contact" className={primaryButtonClass}>
-                  Prendre un premier échange
+                  Prendre un temps d'échange
                 </Link>
               </div>
 
@@ -122,7 +122,7 @@ export function PageFrame({
                       onClick={() => setMenuOpen(false)}
                       className={`${primaryButtonClass} w-full`}
                     >
-                      Prendre un premier échange
+                      Prendre un temps d'échange
                     </Link>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export function PageFrame({
   </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link href="/contact" className={primaryButtonClass}>
-                    Prendre un premier échange
+                    Prendre un temps d'échange
                   </Link>
 
                   <Link href="/analyse" className={secondaryButtonClass}>
