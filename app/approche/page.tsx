@@ -28,9 +28,9 @@ export default function ApprochePage() {
           <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
             CABINET ASTRAÉ · APPROCHE
           </p>
-<h1 className="mx-auto mt-4 max-w-[12ch] text-balance text-center text-[2.2rem] font-semibold leading-[1.04] tracking-[-0.04em] text-pine sm:text-[2.8rem] md:max-w-[13ch] md:text-[4.15rem] md:leading-[1.02]">
+<h1 className="mx-auto mt-4 max-w-4xl text-center text-[3.2rem] font-semibold leading-[1.08] tracking-[-0.045em] text-pine md:text-[4.4rem]">
   Mieux comprendre ce que vous vivez
-  <span className="block mt-2 md:mt-3">pour avancer plus sereinement</span>
+  <span className="block mt-2">pour avancer plus sereinement</span>
 </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-pine/75">
@@ -109,22 +109,22 @@ export default function ApprochePage() {
               d’envisager, si besoin, une suite plus approfondie avec le Cabinet.
             </p>
 
-            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/analyse"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
-              >
-                Faire le point
-              </Link>
+            <div className="mt-7 flex flex-col items-center justify-center">
+  <Link
+    href="/analyse"
+    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
+  >
+    Faire le point
+  </Link>
 
-            <div className="mt-4 inline-flex max-w-[260px] flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-center text-xs font-medium leading-5 tracking-[0.02em] text-[#4E6F56] sm:max-w-none sm:rounded-full sm:px-4 sm:py-2">
-  <span>Gratuit</span>
-  <span className="hidden sm:inline">•</span>
-  <span>Sans engagement</span>
-  <span className="hidden sm:inline">•</span>
-  <span>En quelques minutes</span>
+  <div className="mt-4 inline-flex max-w-[260px] flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-center text-xs font-medium leading-5 tracking-[0.02em] text-[#4E6F56] sm:max-w-none sm:rounded-full sm:px-4 sm:py-2">
+    <span>Gratuit</span>
+    <span className="hidden sm:inline">•</span>
+    <span>Sans engagement</span>
+    <span className="hidden sm:inline">•</span>
+    <span>En quelques minutes</span>
+  </div>
 </div>
-            </div>
           </div>
         </section>
       </div>
