@@ -19,21 +19,21 @@ const journey: Array<{
   {
     title: "Diagnostic",
     description:
-      "Une première entrée simple pour faire émerger une problématique, identifier une tension ou obtenir une première mise en lumière.",
+      "Une première entrée pour faire émerger ce qui se joue, identifier une tension de fond et obtenir un premier éclairage sur votre situation.",
     cta: "Découvrir le diagnostic",
     href: "/analyse",
   },
   {
     title: "Analyse approfondie",
     description:
-      "Une lecture plus fine de votre situation, pouvant s’appuyer sur votre thème astral lorsqu’il permet d’éclairer avec plus de précision les dynamiques en jeu.",
+      "Une lecture plus fine de votre situation, pouvant s’appuyer sur l’analyse du thème astral lorsqu’elle permet d’éclairer avec plus de précision les dynamiques en jeu.",
     cta: "Découvrir l’approche",
     href: "/approche",
   },
   {
     title: "Accompagnement Astraé",
     description:
-      "Un accompagnement plus personnel pour clarifier une situation complexe, traverser une période de transition ou soutenir une prise de décision.",
+      "Un accompagnement plus personnel pour traverser une période sensible, clarifier une situation complexe ou soutenir une prise de décision.",
     cta: "Voir les accompagnements",
     href: "/accompagnements",
   },
@@ -92,12 +92,13 @@ export default function HomePage() {
               </span>
             </h1>
 
-           <p className="mx-auto mt-6 max-w-[760px] text-center text-[15px] leading-[2.05] text-umber/78 md:text-[1.03rem] md:leading-[2.15]">
-  Cabinet Astraé accompagne les personnes en période de questionnement, de
-  blocage ou de transition. L’analyse du thème astral permet d’éclairer ce
-  qui se vit à partir de l’identité profonde de la personne, afin de mieux
-  comprendre une situation et d’avancer avec plus de clarté.
-</p>
+            <p className="mx-auto mt-6 max-w-[760px] text-center text-[15px] leading-[2.05] text-umber/78 md:text-[1.03rem] md:leading-[2.15]">
+              Cabinet Astraé accompagne les personnes en période de
+              questionnement, de blocage ou de transition. L’analyse du thème
+              astral permet d’éclairer ce qui se vit à partir de l’identité
+              profonde de la personne, afin de mieux comprendre une situation et
+              d’avancer avec plus de clarté.
+            </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -139,17 +140,17 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
-  {situations.map((item) => (
-    <article
-      key={item}
-      className="rounded-[1.45rem] border border-white/60 bg-white/65 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/80 hover:shadow-[0_12px_28px_rgba(74,47,33,0.06)]"
-    >
-      <p className="text-[15px] leading-[1.9] text-umber/80 md:text-[1.02rem]">
-  {item}
-</p>
-    </article>
-  ))}
-</div>
+            {situations.map((item) => (
+              <article
+                key={item}
+                className="rounded-[1.45rem] border border-white/60 bg-white/65 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/80 hover:shadow-[0_12px_28px_rgba(74,47,33,0.06)]"
+              >
+                <p className="text-[15px] leading-[1.9] text-umber/80 md:text-[1.02rem]">
+                  {item}
+                </p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="astrae-panel rounded-[1.9rem] px-6 py-8 md:px-8 md:py-10">
@@ -160,31 +161,31 @@ export default function HomePage() {
             <h2 className="mt-3 text-xl font-semibold text-pine md:text-2xl">
               Un parcours progressif de compréhension
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-umber/80 md:text-base">
+            <p className="mx-auto mt-4 max-w-[760px] text-[15px] leading-[2] text-umber/78 md:text-[1.02rem] md:leading-[2.05]">
               Astraé ne propose pas une lecture abstraite, mais une approche
-              incarnée de la situation vécue, avec différents niveaux
-              d’approfondissement.
+              incarnée de la situation vécue, avec plusieurs niveaux
+              d’approfondissement selon ce que votre situation demande.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          <div className="mt-9 grid gap-5 lg:grid-cols-3">
             {journey.map((item) => (
               <article
                 key={item.title}
-                className="flex h-full flex-col rounded-[1.35rem] border border-white/55 bg-white/62 p-6 backdrop-blur-sm"
+                className="group flex h-full flex-col rounded-[1.55rem] border border-white/60 bg-white/64 p-6 shadow-[0_10px_28px_rgba(74,47,33,0.035)] backdrop-blur-md transition-all duration-300 hover:-translate-y-[2px] hover:bg-white/80 hover:shadow-[0_16px_34px_rgba(74,47,33,0.06)] md:p-7"
               >
-                <h3 className="text-lg font-semibold text-pine md:text-xl">
+                <h3 className="text-[1.35rem] font-semibold leading-tight text-pine md:text-[1.55rem]">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 flex-1 text-sm leading-7 text-umber/80 md:text-base">
+                <p className="mt-4 flex-1 text-[15px] leading-[1.95] text-umber/80 md:text-[1.02rem]">
                   {item.description}
                 </p>
 
-                <div className="mt-6">
+                <div className="mt-7">
                   <Link
                     href={item.href}
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-5 py-2.5 text-sm font-medium text-pine transition hover:bg-white"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-pine/15 bg-white/78 px-5 py-2.5 text-sm font-medium text-pine transition-all duration-300 hover:bg-white group-hover:border-pine/20"
                   >
                     {item.cta}
                   </Link>
@@ -194,7 +195,7 @@ export default function HomePage() {
           </div>
         </section>
 
-               <section className="mx-auto grid max-w-[1180px] gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+        <section className="mx-auto grid max-w-[1180px] gap-4 lg:grid-cols-[1.18fr_0.82fr]">
           <article className="astrae-panel overflow-hidden rounded-[1.75rem]">
             <div className="grid h-full gap-0 md:grid-cols-[280px_minmax(0,1fr)]">
               <div className="relative min-h-[320px] md:min-h-full">
@@ -221,7 +222,9 @@ export default function HomePage() {
                 <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
                   Virginie accompagne depuis de nombreuses années des personnes
                   traversant des périodes de fragilité, de questionnement ou de
-                  transition. Son approche repose sur l’écoute et une sensibilité particulière à ce qui se joue en profondeur dans une situation.
+                  transition. Son approche repose sur l’écoute et une
+                  sensibilité particulière à ce qui se joue en profondeur dans
+                  une situation.
                 </p>
 
                 <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
@@ -251,7 +254,9 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 mx-auto max-w-md text-sm leading-7 text-umber/80 md:text-base lg:mx-0">
-              Quand une situation devient difficile à comprendre seul, un premier échange permet déjà d’y voir plus clair, de poser les choses et d’envisager la suite plus sereinement.
+              Quand une situation devient difficile à comprendre seul, un
+              premier échange permet déjà d’y voir plus clair, de poser les
+              choses et d’envisager la suite plus sereinement.
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3 lg:items-stretch">
