@@ -63,8 +63,9 @@ export function Questionnaire() {
       }
 
       const data = (await response.json()) as { result: ProjectionResult };
-      sessionStorage.setItem(RESULT_KEY, JSON.stringify(data.result));
-      router.push("/resultat");
+sessionStorage.setItem(RESULT_KEY, JSON.stringify(data.result));
+localStorage.removeItem(STORAGE_KEY);
+router.push("/resultat");
     } catch (submitError) {
       const message = submitError instanceof Error ? submitError.message : "Une erreur inconnue est survenue.";
       setError(message);
