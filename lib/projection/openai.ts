@@ -47,7 +47,7 @@ export async function generateProjectionWithAI(
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: process.env.OPENAI_MODEL ?? "gpt-4.1",
+      model: "gpt-4.1",
       temperature: 0.25,
       input: [
         {
