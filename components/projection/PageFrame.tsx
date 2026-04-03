@@ -136,19 +136,19 @@ export function PageFrame({
         <div className="mx-auto w-full max-w-[1240px] px-4 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12">
           {showIntro && (
             <section className="mb-10 md:mb-14">
-              <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10">
-                <p className="text-[11px] uppercase tracking-[0.28em] text-pine/55">
-                  Cabinet Astraé
-                </p>
+              <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 text-center backdrop-blur-md md:px-8 md:py-10">
+  <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
+    Cabinet Astraé
+  </p>
 
-                <h1 className="mt-4 text-3xl font-semibold leading-tight text-pine md:text-5xl">
-                  {title}
-                </h1>
+  <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] text-pine md:text-5xl">
+    {title}
+  </h1>
 
-                <p className="mt-5 max-w-3xl text-sm leading-7 text-umber/84 md:text-lg">
-                  {intro}
-                </p>
-              </div>
+  <p className="mx-auto mt-5 max-w-3xl text-sm leading-8 text-umber/82 md:text-lg">
+    {intro}
+  </p>
+</div>
             </section>
           )}
 
