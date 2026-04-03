@@ -52,7 +52,7 @@ export default function AccompagnementsPage() {
           
         <div className="mx-auto max-w-2xl text-center">
   <p className="rounded-full border border-white/30 bg-white/30 px-5 py-3 text-[14px] leading-relaxed text-umber/75 backdrop-blur-sm">
-    Vous pouvez commencer simplement par un diagnostic, puis approfondir si nécessaire.
+    Vous pouvez commencer simplement par faire un point (gratuit - sans engagement), puis approfondir si nécessaire.
   </p>
 </div>
 
