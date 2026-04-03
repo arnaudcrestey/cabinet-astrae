@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { generateProjectionWithAI } from "@/lib/projection/openai";
+import { buildFallbackResult } from "@/lib/projection/fallback";
 
 const payloadSchema = z.object({
   answers: z
@@ -9,17 +11,11 @@ const payloadSchema = z.object({
 
 export async function POST(request: Request) {
   try {
-    await request.json();
+    const json = await request.json();
+    const payload = payloadSchema.parse(json);
 
-    const result = {
-      summary: "TEST VISIBLE ASTRAE 123",
-      dominantDynamic: "TEST DYNAMIQUE 123",
-      keyTension: "TEST TENSION 123",
-      clarityPath: "TEST CLARIFICATION 123",
-      deeperWork: "TEST APPROFONDISSEMENT 123",
-      confidence: "high" as const,
-      generatedAt: new Date().toISOString(),
-    };
+    const aiResult = await generateProjectionWithAI(payload.answers);
+    const result = aiResult ?? buildFallbackResult(payload.answers);
 
     return NextResponse.json({ result });
   } catch (error) {
