@@ -112,7 +112,7 @@ export default function ApprochePage() {
             <div className="mt-7 flex flex-col items-center justify-center">
   <Link
     href="/analyse"
-    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
+    className="inline-flex min-h-[54px] min-w-[196px] items-center justify-center rounded-full bg-[#5D815D] px-9 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
   >
     Faire le point
   </Link>
