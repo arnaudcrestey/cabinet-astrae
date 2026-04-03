@@ -66,7 +66,7 @@ export default function AccompagnementsPage() {
             href="/contact"
             className="mt-7 inline-flex items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
           >
-            Prendre contact avec le cabinet
+            Prendre un temps d'échange
           </Link>
 
         </section>
