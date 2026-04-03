@@ -233,14 +233,14 @@ export function PageFrame({
                   et voir si la démarche vous correspond.
                 </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
-                  <Link href="/contact" className={primaryButtonClass}>
-                    Prendre un temps d'échange
-                  </Link>
+  <Link href="/contact" className={`${primaryButtonClass} min-h-[46px] px-6 py-2`}>
+    Prendre un temps d'échange
+  </Link>
 
-                  <Link href="/analyse" className={secondaryButtonClass}>
-                    Faire un point
-                  </Link>
-                </div>
+  <Link href="/analyse" className={`${pointEntryClass} min-h-[46px] px-6 py-2`}>
+    Faire un point
+  </Link>
+</div>
               </div>
             </div>
 
