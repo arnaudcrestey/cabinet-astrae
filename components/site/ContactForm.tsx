@@ -99,10 +99,6 @@ export function ContactForm() {
   </label>
 </div>
 
-      <p className="pt-1 text-xs leading-5 text-umber/72">
-  Exemple : 24 / 11 / 1987 — 14:30
-</p>
-
       <input
         type="text"
         name="birthPlace"
