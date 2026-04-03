@@ -93,21 +93,24 @@ export default function HomePage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-umber/80 md:text-base md:leading-8">
-              Cabinet Astraé accompagne les personnes en période de flou, de blocage ou de transition.
-              Une lecture approfondie de votre situation permet de mettre en lumière ce qui se joue, avec une analyse pouvant s’appuyer sur le thème astral lorsque cela est pertinent.
+              Cabinet Astraé accompagne les personnes en période de flou, de
+              blocage ou de transition. Une lecture approfondie de votre
+              situation permet de mettre en lumière ce qui se joue, avec une
+              analyse pouvant s’appuyer sur le thème astral lorsque cela est
+              pertinent.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
-                className="rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
               >
                 Prendre un premier échange
               </Link>
 
               <Link
                 href="/approche"
-                className="rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
               >
                 Découvrir l’approche
               </Link>
@@ -182,7 +185,7 @@ export default function HomePage() {
                 <div className="mt-6">
                   <Link
                     href={item.href}
-                    className="inline-flex rounded-full border border-pine/15 bg-white/70 px-5 py-2.5 text-sm font-medium text-pine transition hover:bg-white"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-5 py-2.5 text-sm font-medium text-pine transition hover:bg-white"
                   >
                     {item.cta}
                   </Link>
@@ -224,17 +227,17 @@ export default function HomePage() {
           </div>
         </section>
 
-                <section className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+        <section className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
           <article className="astrae-panel overflow-hidden rounded-[1.75rem]">
-            <div className="grid h-full gap-0 md:grid-cols-[220px_minmax(0,1fr)]">
-              <div className="relative min-h-[280px] md:min-h-full">
+            <div className="grid h-full gap-0 md:grid-cols-[280px_minmax(0,1fr)]">
+              <div className="relative min-h-[320px] md:min-h-full">
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]" />
                 <Image
                   src="/images/virginie-astrae.png"
                   alt="Virginie, fondatrice du Cabinet Astraé"
                   fill
-                  className="object-contain object-bottom md:object-cover"
-                  sizes="(max-width: 768px) 100vw, 220px"
+                  className="object-cover object-center scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, 280px"
                   priority
                 />
               </div>
@@ -245,7 +248,8 @@ export default function HomePage() {
                 </p>
 
                 <h2 className="mt-3 max-w-xl text-xl font-semibold leading-tight text-pine md:text-[1.9rem]">
-                  Une présence humaine, une écoute fine, une lecture en profondeur
+                  Une présence humaine, une écoute fine, une lecture en
+                  profondeur
                 </h2>
 
                 <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
