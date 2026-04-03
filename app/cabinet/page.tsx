@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Route } from "next";
 import { PageFrame } from "@/components/projection/PageFrame";
@@ -223,56 +224,81 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-4 md:grid-cols-2">
-          <article className="astrae-panel rounded-[1.6rem] p-6 md:p-7">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
-              Qui est derrière Astraé
-            </p>
+                <section className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+          <article className="astrae-panel overflow-hidden rounded-[1.75rem]">
+            <div className="grid h-full gap-0 md:grid-cols-[220px_minmax(0,1fr)]">
+              <div className="relative min-h-[280px] md:min-h-full">
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]" />
+                <Image
+                  src="/images/virginie-astrae.png"
+                  alt="Virginie, fondatrice du Cabinet Astraé"
+                  fill
+                  className="object-contain object-bottom md:object-cover"
+                  sizes="(max-width: 768px) 100vw, 220px"
+                  priority
+                />
+              </div>
 
-            <h2 className="mt-3 text-xl font-semibold text-pine md:text-2xl">
-              Une expérience humaine de l’accompagnement
-            </h2>
+              <div className="p-6 md:p-7">
+                <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
+                  Qui est derrière Astraé
+                </p>
 
-            <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
-              Virginie s’appuie sur 20 années d’expérience dans l’accompagnement
-              humain et la compréhension des parcours de vie. Son approche
-              repose sur l’écoute, la finesse d’analyse et la capacité à mettre
-              en lumière ce qui reste confus ou difficile à nommer.
-            </p>
+                <h2 className="mt-3 max-w-xl text-xl font-semibold leading-tight text-pine md:text-[1.9rem]">
+                  Une présence humaine, une écoute fine, une lecture en profondeur
+                </h2>
 
-            <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
-              Lorsque cela est pertinent, cette lecture peut être approfondie
-              par le thème astral personnel, utilisé comme outil de
-              compréhension et non comme promesse de prédiction.
-            </p>
+                <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
+                  Virginie accompagne depuis de nombreuses années des personnes
+                  traversant des périodes de fragilité, de questionnement ou de
+                  transition. Son approche repose sur l’écoute, la qualité de
+                  présence et une attention particulière à ce qui reste flou,
+                  difficile à nommer ou à relier.
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
+                  Lorsque cela peut éclairer plus finement une situation,
+                  l’analyse du thème astral vient approfondir la lecture. Elle
+                  est utilisée comme un support de compréhension, au service de
+                  la personne et de ce qu’elle traverse, jamais comme une
+                  promesse de prédiction.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/65">
+                  <span>Écoute structurée</span>
+                  <span>Analyse du thème astral</span>
+                  <span>Cadre confidentiel</span>
+                </div>
+              </div>
+            </div>
           </article>
 
-          <article className="astrae-panel flex flex-col items-center justify-center rounded-[1.6rem] p-6 text-center md:p-7">
+          <article className="astrae-panel flex flex-col justify-center rounded-[1.75rem] p-6 md:p-7">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Faire un premier pas
             </p>
 
-            <h2 className="mt-3 max-w-md text-xl font-semibold text-pine md:text-2xl">
+            <h2 className="mt-3 max-w-md text-xl font-semibold leading-tight text-pine md:text-[1.9rem]">
               Un premier échange pour mieux comprendre votre situation
             </h2>
 
             <p className="mt-4 max-w-md text-sm leading-7 text-umber/80 md:text-base">
-              Si vous traversez une situation que vous avez du mal à comprendre
-              seul(e), Astraé peut vous aider à en proposer une lecture plus
-              claire, plus profonde et plus juste.
+              Si quelque chose reste flou, lourd ou difficile à traverser seul,
+              Astraé peut vous aider à poser une première lecture claire de
+              votre situation et à envisager la suite avec plus de justesse.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
               >
                 Prendre un premier échange
               </Link>
 
               <Link
                 href="/analyse"
-                className="rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
               >
                 Commencer par le diagnostic
               </Link>
