@@ -159,11 +159,11 @@ export function PageFrame({
             <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr_1fr] md:items-start">
               <div>
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-3 max-w-md text-sm leading-7 text-umber/82">
-                  Un espace d’analyse du thème astral et d’accompagnement personnel
-                  pour mettre en lumière ce que vous vivez et avancer avec plus de
-                  clarté.
-                </p>
+                <p className="mt-3 max-w-md text-justify text-sm leading-7 text-umber/82">
+  Un espace d’analyse du thème astral et d’accompagnement personnel
+  pour mettre en lumière ce que vous vivez et avancer avec plus de
+  clarté.
+</p>
               </div>
 
               <div>
