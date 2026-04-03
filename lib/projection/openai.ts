@@ -32,6 +32,26 @@ function normalizeProjectionResult(
   return isValid ? result : null;
 }
 
+function extractTextFromResponse(data: any): string | null {
+  if (typeof data?.output_text === "string" && data.output_text.trim()) {
+    return data.output_text.trim();
+  }
+
+  const output = Array.isArray(data?.output) ? data.output : [];
+
+  for (const item of output) {
+    const content = Array.isArray(item?.content) ? item.content : [];
+
+    for (const block of content) {
+      if (typeof block?.text === "string" && block.text.trim()) {
+        return block.text.trim();
+      }
+    }
+  }
+
+  return null;
+}
+
 export async function generateProjectionWithAI(
   answers: ProjectionAnswers
 ): Promise<ProjectionResult | null> {
@@ -40,8 +60,6 @@ export async function generateProjectionWithAI(
 
   const prompt = buildPrompt(answers);
   const model = "gpt-4.1";
-
-  console.log("OPENAI_MODEL_USED:", model);
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -87,26 +105,20 @@ Tu retournes uniquement un JSON valide.
     }),
   });
 
-  const rawText = await response.text();
-
-  console.log("OPENAI_STATUS:", response.status);
-  console.log("OPENAI_RAW_RESPONSE:", rawText);
-
   if (!response.ok) {
     return null;
   }
 
   try {
-    const data = JSON.parse(rawText) as {
-      output_text?: string;
-    };
+    const data = await response.json();
+    const text = extractTextFromResponse(data);
 
-    if (!data.output_text) {
+    if (!text) {
       return null;
     }
 
     const parsed = JSON.parse(
-      data.output_text
+      text
     ) as Partial<Omit<ProjectionResult, "confidence" | "generatedAt">>;
 
     const normalized = normalizeProjectionResult(parsed);
