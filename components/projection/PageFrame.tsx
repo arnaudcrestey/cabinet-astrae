@@ -17,6 +17,12 @@ type Props = {
   showIntro?: boolean;
 };
 
+const primaryButtonClass =
+  "inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#537553] hover:shadow-[0_14px_30px_rgba(46,62,53,0.18)]";
+
+const secondaryButtonClass =
+  "inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8D5CE] bg-[rgba(255,255,255,0.54)] px-6 py-3 text-sm font-medium text-pine transition-all duration-300 hover:border-[#CFCBC3] hover:bg-[rgba(255,255,255,0.72)] hover:text-pine";
+
 export function PageFrame({
   children,
   title,
@@ -29,17 +35,17 @@ export function PageFrame({
     <div className="min-h-screen text-pine">
       <header className="sticky top-0 z-50">
         <div className="mx-auto w-full max-w-[1240px] px-4 pt-3 md:px-8 md:pt-5">
-          <div className="overflow-hidden rounded-[1.65rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.58),rgba(247,243,236,0.44))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
+          <div className="overflow-hidden rounded-[1.75rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.60),rgba(247,243,236,0.46))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
             <div className="relative flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
-              <div className="min-w-0 md:min-w-[280px]">
+              <div className="min-w-0 md:min-w-[320px]">
                 <Link
                   href="/"
-                  className="group flex flex-col items-center justify-center text-center leading-none"
+                  className="group flex flex-col items-center justify-center text-center leading-none md:items-start md:text-left"
                 >
                   <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
                     Cabinet Astraé
                   </span>
-                  <span className="mt-1.5 hidden text-[11px] tracking-[0.08em] text-umber/55 lg:block">
+                  <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
                     Analyse du thème astral · clarification · accompagnement personnel
                   </span>
                 </Link>
@@ -58,10 +64,7 @@ export function PageFrame({
               </nav>
 
               <div className="hidden shrink-0 md:flex">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.84)] px-5 py-2.5 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)] hover:shadow-[0_10px_24px_rgba(46,62,53,0.08)]"
-                >
+                <Link href="/contact" className={primaryButtonClass}>
                   Prendre un premier échange
                 </Link>
               </div>
@@ -71,7 +74,7 @@ export function PageFrame({
                 aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
                 aria-expanded={menuOpen}
                 onClick={() => setMenuOpen((prev) => !prev)}
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/50 bg-[rgba(255,250,246,0.72)] text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:border-white/70 hover:bg-[rgba(248,241,234,0.9)] md:hidden"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.78)] text-pine shadow-[0_8px_20px_rgba(46,62,53,0.06)] transition-all duration-300 hover:border-white/75 hover:bg-[rgba(248,241,234,0.94)] md:hidden"
               >
                 <span className="relative block h-4 w-5">
                   <span
@@ -94,30 +97,30 @@ export function PageFrame({
             </div>
 
             <div
-              className={`grid transition-all duration-300 md:hidden ${
-                menuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              className={`overflow-hidden transition-all duration-400 md:hidden ${
+                menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="overflow-hidden">
-                <div className="border-t border-white/35 px-4 pb-4 pt-3">
-                  <nav className="flex flex-col gap-1">
+              <div className="border-t border-white/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(245,239,232,0.70))] px-4 pb-5 pt-4 backdrop-blur-xl">
+                <div className="rounded-[1.4rem] border border-white/45 bg-[rgba(255,255,255,0.28)] p-3 shadow-[0_10px_28px_rgba(46,62,53,0.05)]">
+                  <nav className="flex flex-col gap-1.5">
                     {links.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className="rounded-2xl px-4 py-3 text-sm text-umber/85 transition-colors duration-300 hover:bg-white/40 hover:text-pine"
+                        className="rounded-[1rem] px-4 py-3 text-center text-[15px] text-umber/88 transition-all duration-300 hover:bg-white/45 hover:text-pine"
                       >
                         {link.label}
                       </Link>
                     ))}
                   </nav>
 
-                  <div className="mt-3">
+                  <div className="mt-3 px-1 pb-1 pt-2">
                     <Link
                       href="/contact"
                       onClick={() => setMenuOpen(false)}
-                      className="inline-flex w-full items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.84)] px-5 py-3 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)]"
+                      className={`${primaryButtonClass} w-full`}
                     >
                       Prendre un premier échange
                     </Link>
@@ -156,12 +159,14 @@ export function PageFrame({
       <footer className="mt-8">
         <div className="mx-auto w-full max-w-[1240px] px-4 pb-6 md:px-8 md:pb-8">
           <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10 lg:px-10 lg:py-12">
-            <div className="grid gap-10 text-center md:grid-cols-[1.1fr_0.7fr_1fr] md:gap-12 md:text-left">
-              <div className="mx-auto max-w-[430px] md:mx-0 md:max-w-[390px]">
+            <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
+              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-4 text-base leading-8 text-umber/82 md:text-[15px]">
+                <p className="mt-4 text-base leading-8 text-umber/82 md:max-w-[390px] md:text-[15px]">
                   Un espace d’analyse du thème astral et d’accompagnement
+                  <br className="hidden md:block" />
                   personnel pour mettre en lumière ce que vous vivez
+                  <br className="hidden md:block" />
                   et avancer avec plus de clarté.
                 </p>
               </div>
@@ -183,28 +188,24 @@ export function PageFrame({
                 </div>
               </div>
 
-              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[380px]">
+              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[390px]">
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
-                <p className="mt-5 text-base leading-8 text-umber/82 md:text-[15px]">
+                <p className="mt-5 text-base leading-8 text-umber/82 md:max-w-[360px] md:text-[15px]">
                   Un premier échange permet de faire le point
+                  <br className="hidden md:block" />
                   simplement et de voir si la démarche vous
+                  <br className="hidden md:block" />
                   correspond.
                 </p>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
-                  <Link
-                    href="/contact"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.84)] px-6 py-3 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)]"
-                  >
+                  <Link href="/contact" className={primaryButtonClass}>
                     Prendre un premier échange
                   </Link>
 
-                  <Link
-                    href="/analyse"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/45 bg-white/35 px-6 py-3 text-sm font-medium text-pine/88 transition-all duration-300 hover:border-white/65 hover:bg-white/55 hover:text-pine"
-                  >
+                  <Link href="/analyse" className={secondaryButtonClass}>
                     Découvrir le diagnostic
                   </Link>
                 </div>
@@ -212,21 +213,29 @@ export function PageFrame({
             </div>
 
             <div className="mt-10 border-t border-white/35 pt-5">
-              <div className="flex flex-col items-center gap-3 text-center text-xs text-umber/62 sm:flex-row sm:justify-between sm:text-left">
-                <p>Cabinet Astraé · Espace d’accompagnement personnel</p>
+              <div className="flex flex-col items-center gap-3 text-center text-xs text-umber/62 sm:gap-4 md:flex-row md:justify-between md:text-left">
+                <p className="whitespace-nowrap">
+                  Cabinet Astraé · Espace d’accompagnement personnel
+                </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
                   <Link
-                    href="/contact"
+                    href="/mentions-legales"
                     className="transition-colors duration-300 hover:text-pine"
                   >
-                    Contact
+                    Mentions légales
                   </Link>
                   <Link
                     href="/confidentialite"
                     className="transition-colors duration-300 hover:text-pine"
                   >
                     Politique de confidentialité
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Contact
                   </Link>
                 </div>
               </div>
