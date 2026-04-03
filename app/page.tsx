@@ -12,7 +12,12 @@ export default function HomePage() {
           <div className="astrae-gate-divider" />
 
           <p className="astrae-gate-text">
-            Une lecture du thème astral pour y voir plus clair.
+            <span className="astrae-gate-text-line">
+              Une lecture du thème astral
+            </span>
+            <span className="astrae-gate-text-line">
+              pour y voir plus clair.
+            </span>
           </p>
 
           <Link href="/cabinet" className="astrae-gate-button">
