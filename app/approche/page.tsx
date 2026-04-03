@@ -30,9 +30,9 @@ export default function ApprochePage() {
           </p>
 
           <h1 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold tracking-[-0.03em] text-pine md:text-5xl md:leading-[1.08]">
-            Mieux comprendre ce que vous vivez
+            Comprendre plus clairement ce que vous vivez
             <br className="hidden md:block" />
-            pour avancer avec plus de clarté
+            pour avancer plus sereinement
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-pine/75">
@@ -75,9 +75,7 @@ export default function ApprochePage() {
 
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-pine/74">
               Le Cabinet Astraé ne propose ni réponses toutes faites, ni lecture
-              spectaculaire de ce que vous traversez. Le travail consiste à éclairer
-              une situation, à mieux repérer les lignes de fond, et à faire émerger
-              une compréhension plus juste de ce qui se vit.
+              spectaculaire de ce que vous traversez. Le travail consiste à éclairer une situation, à mieux comprendre ce que vous traversez, et à faire émerger une lecture plus juste de votre situation.
             </p>
           </div>
 
@@ -96,29 +94,6 @@ export default function ApprochePage() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/45 bg-[rgba(250,245,241,0.76)] p-8 shadow-[0_16px_40px_rgba(88,72,60,0.05)] backdrop-blur-[2px] md:p-10">
-          <div className="mx-auto max-w-3xl">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-pine/46">
-              CADRE
-            </p>
-
-            <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-pine">
-              Une compréhension qui peut ensuite devenir un appui
-            </h2>
-
-            <p className="mt-4 text-[15px] leading-7 text-pine/74">
-              Cette clarification peut servir à poser des mots, retrouver un axe,
-              mieux comprendre un décalage récurrent ou envisager un échange plus
-              approfondi dans un cadre professionnel, calme et structuré.
-            </p>
-
-            <p className="mt-4 text-[15px] leading-7 text-pine/74">
-              L’objectif n’est pas de plaquer une réponse extérieure sur votre
-              situation, mais de faire émerger une lecture plus juste et plus utile
-              pour la suite.
-            </p>
-          </div>
-        </section>
 
         <section className="rounded-[2rem] border border-white/50 bg-[rgba(248,241,236,0.9)] p-8 shadow-[0_18px_50px_rgba(88,72,60,0.06)] backdrop-blur-[2px] md:p-10">
           <div className="mx-auto max-w-3xl text-center">
@@ -131,8 +106,8 @@ export default function ApprochePage() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-pine/74">
-              Vous pouvez entrer par un diagnostic de clarification en ligne.
-              Cette première étape permet de mettre à plat votre situation avant
+              Vous pouvez commencer par faire le point sur votre situation.
+              Cette première étape permet de poser les éléments importants avant
               d’envisager, si besoin, une suite plus approfondie avec le Cabinet.
             </p>
 
@@ -141,15 +116,12 @@ export default function ApprochePage() {
                 href="/analyse"
                 className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
               >
-                Commencer le diagnostic
+                Faire le point
               </Link>
 
-              <Link
-                href="/contact"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#5D815D]/24 bg-white/78 px-6 py-3 text-sm font-medium text-[#4E6F56] transition hover:border-[#5D815D]/36 hover:bg-white"
-              >
-                Prendre contact
-              </Link>
+              <div className="mt-4 inline-flex items-center justify-center rounded-full border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-xs font-medium tracking-[0.04em] text-[#4E6F56]">
+  Gratuit • Sans engagement • En quelques minutes
+</div>
             </div>
           </div>
         </section>
