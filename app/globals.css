@@ -358,6 +358,10 @@ a:hover {
 .astrae-gate-card-inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 92px 32px 88px;
   text-align: center;
 }
@@ -368,6 +372,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.42em;
   color: rgba(79, 111, 82, 0.76);
+  text-align: center;
 }
 
 .astrae-gate-title {
@@ -379,12 +384,12 @@ a:hover {
   color: #4f6f52;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   text-rendering: geometricPrecision;
+  text-align: center;
 }
-
 .astrae-gate-divider {
   width: 128px;
   height: 1px;
-  margin: 1.55rem auto 1.45rem;
+  margin: 1.7rem auto 1.7rem;
   background: linear-gradient(
     90deg,
     transparent,
@@ -394,11 +399,13 @@ a:hover {
 }
 
 .astrae-gate-text {
-  margin: 0 auto;
-  max-width: 540px;
+  margin: 0;
+  width: 100%;
+  max-width: 360px;
   font-size: 1.08rem;
   line-height: 1.85;
   color: rgba(122, 92, 77, 0.84);
+  text-align: center;
 }
 
 .astrae-gate-text-line {
@@ -409,9 +416,10 @@ a:hover {
 .astrae-gate-button {
   display: inline-flex;
   min-height: 54px;
-  min-width: 156px;
+  min-width: 188px;
   align-items: center;
   justify-content: center;
+  margin-top: 1.85rem;
   padding: 0 1.75rem;
   border-radius: 9999px;
   background: linear-gradient(180deg, #5d815d 0%, #4f7250 100%);
@@ -432,7 +440,6 @@ a:hover {
     filter 180ms ease;
   will-change: transform;
 }
-
 .astrae-gate-button:hover {
   transform: translateY(-1px);
   background: linear-gradient(180deg, #648b64 0%, #547955 100%);
@@ -462,6 +469,7 @@ a:hover {
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   color: rgba(122, 92, 77, 0.72);
+  text-align: center;
 }
 
 /* ===== Responsive ===== */
@@ -593,10 +601,9 @@ a:hover {
     padding: 62px 20px 58px;
   }
 
-  .astrae-gate-kicker {
-    font-size: 0.78rem;
-    letter-spacing: 0.30em;
-  }
+  .astrae-gate-card-inner {
+  padding: 62px 20px 58px;
+}
 
   .astrae-gate-title {
     font-size: clamp(3.6rem, 16vw, 5.2rem);
@@ -604,13 +611,16 @@ a:hover {
   }
 
   .astrae-gate-text {
-    font-size: 0.98rem;
-    line-height: 1.75;
-  }
+  max-width: 300px;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
 
   .astrae-gate-button {
-    margin-top: 2rem;
-  }
+  width: 100%;
+  max-width: 220px;
+  min-width: 0;
+  margin-top: 2rem;
 }
 
 @media (max-width: 480px) {
