@@ -162,11 +162,9 @@ export function PageFrame({
             <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
               <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-4 mx-auto max-w-[470px] text-center text-base leading-8 text-umber/82 md:mx-0 md:max-w-[430px] md:text-left">
-                  Un espace d’analyse du thème astral et d’accompagnement personnel
-                  <br />
-                  pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
-                </p>
+               <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
+  Un espace d’analyse du thème astral et d’accompagnement personnel pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
+</p>
               </div>
 
               <div className="mx-auto md:mx-0">
@@ -190,11 +188,9 @@ export function PageFrame({
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
-                <p className="mt-5 mx-auto max-w-[430px] text-center text-base leading-8 text-umber/82 md:mx-0 md:max-w-[390px] md:text-left">
-                  Un premier échange permet de faire le point simplement
-                  <br />
-                  et de voir si la démarche vous correspond.
-                </p>
+                <p className="mt-5 mx-auto max-w-[300px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[390px] md:mx-0 md:max-w-[340px] md:text-left">
+  Un premier échange permet de faire le point simplement et de voir si la démarche vous correspond.
+</p>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link href="/contact" className={primaryButtonClass}>
