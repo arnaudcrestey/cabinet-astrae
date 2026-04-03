@@ -252,9 +252,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 mx-auto max-w-md text-sm leading-7 text-umber/80 md:text-base lg:mx-0">
-              Lorsqu’une situation devient difficile à lire seul, un premier échange
-  permet déjà de mettre des mots, de faire apparaître les lignes de fond
-  et d’envisager la suite avec davantage de justesse.
+              Quand une situation devient difficile à comprendre seul, un premier échange permet déjà d’y voir plus clair, de poser les choses et d’envisager la suite plus sereinement.
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3 lg:items-stretch">
