@@ -51,8 +51,11 @@ export default function AccompagnementsPage() {
         </section>
           
         <div className="mx-auto max-w-2xl text-center">
-  <p className="rounded-full border border-white/30 bg-white/30 px-5 py-3 text-[14px] leading-relaxed text-umber/75 backdrop-blur-sm">
-    Commencez simplement par faire un point (gratuit - sans engagement), puis approfondissez si nécessaire.
+  <p className="text-sm leading-relaxed text-umber/78 md:text-[15px]">
+    Commencez simplement par faire un point, puis approfondissez si besoin.
+  </p>
+  <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-pine/55">
+    Gratuit · Sans engagement
   </p>
 </div>
 
