@@ -401,6 +401,11 @@ a:hover {
   color: rgba(122, 92, 77, 0.84);
 }
 
+.astrae-gate-text-line {
+  display: block;
+  text-align: center;
+}
+
 .astrae-gate-button {
   display: inline-flex;
   align-items: center;
@@ -410,7 +415,7 @@ a:hover {
   min-height: 58px;
   padding: 0 30px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #fdfaf6 0%, #f3eee5 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f3eee5 100%);
   border: 1px solid rgba(79, 111, 82, 0.18);
   color: #3f5e43;
   font-size: 1.05rem;
