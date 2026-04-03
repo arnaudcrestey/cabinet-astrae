@@ -195,38 +195,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="astrae-panel rounded-[1.9rem] px-6 py-8 md:px-8 md:py-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
-              Le parcours Astraé
-            </p>
-            <h2 className="mt-3 text-xl font-semibold text-pine md:text-2xl">
-              Une démarche progressive, sans surinterprétation
-            </h2>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {processSteps.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-[1.35rem] border border-white/55 bg-white/60 p-5 backdrop-blur-sm md:p-6"
-              >
-                <p className="text-[11px] uppercase tracking-[0.24em] text-pine/55">
-                  Étape {step.number}
-                </p>
-
-                <h3 className="mt-3 text-lg font-semibold text-pine">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-umber/80 md:text-base">
-                  {step.text}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
           <article className="astrae-panel overflow-hidden rounded-[1.75rem]">
             <div className="grid h-full gap-0 md:grid-cols-[280px_minmax(0,1fr)]">
