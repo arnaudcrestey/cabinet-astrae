@@ -18,7 +18,7 @@ export async function generateProjectionWithAI(answers: ProjectionAnswers): Prom
     body: JSON.stringify({
       model: process.env.OPENAI_MODEL ?? "gpt-4.1-mini",
       input: prompt,
-      temperature: 0.4
+      temperature: 0.25
     })
   });
 
