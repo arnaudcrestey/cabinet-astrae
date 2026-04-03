@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     const aiResult = await generateProjectionWithAI(payload.answers);
     const rawResult = aiResult ?? buildFallbackResult(payload.answers);
-    const result = enhanceResult(refineResult(rawResult));
+    const result = rawResult;
 
     return NextResponse.json({ result });
   } catch (error) {
