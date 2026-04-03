@@ -6,9 +6,10 @@ import Link from "next/link";
 const links = [
   { href: "/approche", label: "Approche" },
   { href: "/accompagnements", label: "Accompagnements" },
-  { href: "/analyse", label: "Diagnostic" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+const pointLink = { href: "/analyse", label: "Faire un point" } as const;
 
 type Props = {
   children: React.ReactNode;
@@ -17,11 +18,25 @@ type Props = {
   showIntro?: boolean;
 };
 
+/* CTA principal (inchangé) */
 const primaryButtonClass =
-  "inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#537553] hover:shadow-[0_14px_30px_rgba(46,62,53,0.18)]";
+  "inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#5D815D] px-5 py-2.5 text-sm font-medium text-white shadow-[0_8px_18px_rgba(46,62,53,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#537553]";
 
-const secondaryButtonClass =
-  "inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8D5CE] bg-[rgba(255,255,255,0.54)] px-6 py-3 text-sm font-medium text-pine transition-all duration-300 hover:border-[#CFCBC3] hover:bg-[rgba(255,255,255,0.72)] hover:text-pine";
+/* CTA secondaire premium (Faire un point) */
+const pointEntryClass =
+  "inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#DDD7CB] bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(244,238,229,0.72))] px-5 py-2 text-sm font-medium text-pine shadow-[0_6px_16px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D2CCBF] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(245,239,232,0.84))]";
+
+/* Footer version plus fine */
+const footerButtonClass =
+  "inline-flex min-h-[42px] items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition-all duration-300";
+
+/* Footer primaire allégé */
+const footerPrimary =
+  `${footerButtonClass} bg-[#5D815D] text-white shadow-[0_6px_14px_rgba(46,62,53,0.10)] hover:bg-[#537553]`;
+
+/* Footer secondaire très léger */
+const footerSecondary =
+  `${footerButtonClass} border border-[#D8D5CE] bg-white/60 text-pine hover:bg-white/80`;
 
 export function PageFrame({
   children,
@@ -33,199 +48,157 @@ export function PageFrame({
 
   return (
     <div className="min-h-screen text-pine">
+      {/* HEADER */}
       <header className="sticky top-0 z-50">
         <div className="mx-auto w-full max-w-[1240px] px-4 pt-3 md:px-8 md:pt-5">
           <div className="overflow-hidden rounded-[1.75rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.60),rgba(247,243,236,0.46))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
-            <div className="relative flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
-              <div className="min-w-0 md:min-w-[320px]">
-                <Link
-                  href="/"
-                  className="group flex flex-col items-center justify-center text-center leading-none"
-                >
-                  <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
-                    Cabinet Astraé
-                  </span>
-                  <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
-                    Analyse du thème astral · clarification · accompagnement personnel
-                  </span>
+
+            <div className="flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
+
+              {/* LOGO */}
+              <Link href="/" className="flex flex-col items-center text-center">
+                <span className="text-[1rem] font-semibold tracking-[-0.03em]">
+                  Cabinet Astraé
+                </span>
+                <span className="hidden text-[11px] text-umber/55 lg:block mt-1">
+                  Analyse du thème astral · accompagnement
+                </span>
+              </Link>
+
+              {/* NAV + CTA */}
+              <div className="hidden items-center gap-5 md:flex">
+                <nav className="flex items-center gap-6 text-sm">
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-umber/80 hover:text-pine transition"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* POINT D’ENTRÉE */}
+                <Link href={pointLink.href} className={pointEntryClass}>
+                  {pointLink.label}
                 </Link>
-              </div>
 
-              <nav className="hidden items-center gap-7 text-sm md:flex">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-umber/82 transition duration-300 hover:text-pine"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-
-              <div className="hidden shrink-0 md:flex">
+                {/* CTA PRINCIPAL */}
                 <Link href="/contact" className={primaryButtonClass}>
                   Prendre un temps d'échange
                 </Link>
               </div>
 
+              {/* MOBILE MENU BTN */}
               <button
-                type="button"
-                aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-                aria-expanded={menuOpen}
-                onClick={() => setMenuOpen((prev) => !prev)}
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.78)] text-pine shadow-[0_8px_20px_rgba(46,62,53,0.06)] transition-all duration-300 hover:border-white/75 hover:bg-[rgba(248,241,234,0.94)] md:hidden"
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden h-10 w-10 rounded-full border bg-white/70"
               >
-                <span className="relative block h-4 w-5">
-                  <span
-                    className={`absolute left-0 top-0 h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ${
-                      menuOpen ? "top-[7px] rotate-45" : ""
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-[7px] h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ${
-                      menuOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-[14px] h-[1.5px] w-5 rounded-full bg-current transition-all duration-300 ${
-                      menuOpen ? "top-[7px] -rotate-45" : ""
-                    }`}
-                  />
-                </span>
+                ☰
               </button>
             </div>
 
-            <div
-              className={`overflow-hidden transition-all duration-300 md:hidden ${
-                menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="border-t border-white/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(245,239,232,0.70))] px-4 pb-5 pt-4 backdrop-blur-xl">
-                <div className="rounded-[1.4rem] border border-white/45 bg-[rgba(255,255,255,0.28)] p-3 shadow-[0_10px_28px_rgba(46,62,53,0.05)]">
-                  <nav className="flex flex-col gap-1.5">
-                    {links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMenuOpen(false)}
-                        className="rounded-[1rem] px-4 py-3 text-center text-[15px] text-umber/88 transition-all duration-300 hover:bg-white/45 hover:text-pine"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </nav>
-
-                  <div className="mt-3 px-1 pb-1 pt-2">
-                    <Link
-                      href="/contact"
-                      onClick={() => setMenuOpen(false)}
-                      className={`${primaryButtonClass} w-full`}
-                    >
-                      Prendre un temps d'échange
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main className="relative">
-        <div className="mx-auto w-full max-w-[1240px] px-4 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12">
-          {showIntro && (
-            <section className="mb-10 md:mb-14">
-              <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 text-center backdrop-blur-md md:px-8 md:py-10">
-  <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
-    Cabinet Astraé
-  </p>
-
-  <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] text-pine md:text-5xl">
-    {title}
-  </h1>
-
-  <p className="mx-auto mt-5 max-w-3xl text-sm leading-8 text-umber/82 md:text-lg">
-    {intro}
-  </p>
-</div>
-            </section>
-          )}
-
-          {children}
-        </div>
-      </main>
-
-      <footer className="mt-8">
-        <div className="mx-auto w-full max-w-[1240px] px-4 pb-6 md:px-8 md:pb-8">
-          <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10 lg:px-10 lg:py-12">
-            <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
-              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
-                <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-               <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-  Un espace d’analyse du thème astral et d’accompagnement personnel pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
-</p>
-              </div>
-
-              <div className="mx-auto md:mx-0">
-                <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
-                  Navigation
-                </p>
-                <div className="mt-5 flex flex-col items-center gap-3 text-sm text-umber/82 md:items-start">
+            {/* MOBILE MENU */}
+            {menuOpen && (
+              <div className="md:hidden px-4 pb-4">
+                <nav className="flex flex-col gap-2">
                   {links.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="transition-colors duration-300 hover:text-pine"
+                      className="py-3 text-center"
                     >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+
+                <div className="mt-3">
+                  <Link href={pointLink.href} className={`${pointEntryClass} w-full`}>
+                    {pointLink.label}
+                  </Link>
+                </div>
+
+                <div className="mt-3">
+                  <Link href="/contact" className={`${primaryButtonClass} w-full`}>
+                    Prendre un temps d'échange
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
+
+      {/* CONTENT */}
+      <main className="mx-auto max-w-[1240px] px-4 md:px-8 py-10">
+        {showIntro && (
+          <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-5xl font-medium">{title}</h1>
+            <p className="mt-4 text-umber/80">{intro}</p>
+          </div>
+        )}
+        {children}
+      </main>
+
+      {/* FOOTER */}
+      <footer className="mt-10">
+        <div className="mx-auto max-w-[1240px] px-4 md:px-8 pb-8">
+          <div className="rounded-[2rem] border border-white/35 bg-white/60 p-6 md:p-10 backdrop-blur-md">
+
+            <div className="grid gap-10 md:grid-cols-3">
+
+              {/* LEFT */}
+              <div>
+                <p className="font-semibold">Cabinet Astraé</p>
+                <p className="mt-4 text-sm text-umber/80 leading-7">
+                  Un espace d’analyse du thème astral pour éclairer ce que vous vivez et avancer avec plus de clarté.
+                </p>
+              </div>
+
+              {/* NAV */}
+              <div>
+                <p className="text-xs uppercase text-pine/50 tracking-widest">
+                  Navigation
+                </p>
+                <div className="mt-4 flex flex-col gap-2 text-sm">
+                  {links.map((link) => (
+                    <Link key={link.href} href={link.href}>
                       {link.label}
                     </Link>
                   ))}
                 </div>
               </div>
 
-             <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[390px]">
-  <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
-    Premier pas
-  </p>
+              {/* CTA */}
+              <div>
+                <p className="text-xs uppercase text-pine/50 tracking-widest">
+                  Premier pas
+                </p>
 
-  <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-    Un premier échange pour faire le point 
-    et voir si la démarche vous correspond.
-  </p>
-                <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
-                  <Link href="/contact" className={primaryButtonClass}>
+                <p className="mt-4 text-sm text-umber/80 leading-7">
+                  Un premier échange pour faire le point et voir si la démarche vous correspond.
+                </p>
+
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                  <Link href="/contact" className={footerPrimary}>
                     Prendre un temps d'échange
                   </Link>
 
-                  <Link href="/analyse" className={secondaryButtonClass}>
-                    Découvrir le diagnostic
+                  <Link href="/analyse" className={footerSecondary}>
+                    Faire un point
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 border-t border-white/35 pt-5">
-              <div className="flex flex-col items-center gap-3 text-center text-xs text-umber/62 sm:gap-4 md:flex-row md:justify-between md:text-left">
-                <p className="whitespace-nowrap">
-                  Cabinet Astraé · Espace d’accompagnement personnel
-                </p>
-
-                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-                  <Link
-                    href="/mentions-legales"
-                    className="transition-colors duration-300 hover:text-pine"
-                  >
-                    Mentions légales
-                  </Link>
-                  <Link
-                    href="/confidentialite"
-                    className="transition-colors duration-300 hover:text-pine"
-                  >
-                    Politique de confidentialité
-                  </Link>
-                  <span className="text-umber/58">© 2026 Cabinet Astraé</span>
-                </div>
+            {/* BOTTOM */}
+            <div className="mt-8 border-t pt-4 text-xs text-umber/60 flex flex-col md:flex-row justify-between gap-3">
+              <span>© 2026 Cabinet Astraé</span>
+              <div className="flex gap-4">
+                <Link href="/mentions-legales">Mentions légales</Link>
+                <Link href="/confidentialite">Confidentialité</Link>
               </div>
             </div>
           </div>
