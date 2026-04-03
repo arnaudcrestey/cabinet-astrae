@@ -50,9 +50,9 @@ export default function AccompagnementsPage() {
 
         </section>
           
-        <div className="text-center">
-  <p className="mx-auto max-w-xl text-sm leading-relaxed text-umber/70 md:text-[15px]">
-    Vous pouvez commencer simplement par faire un point, puis approfondir si nécessaire.
+        <div className="mx-auto max-w-2xl text-center">
+  <p className="rounded-full border border-white/30 bg-white/30 px-5 py-3 text-[14px] leading-relaxed text-umber/75 backdrop-blur-sm">
+    Vous pouvez commencer simplement par un diagnostic, puis approfondir si nécessaire.
   </p>
 </div>
 
