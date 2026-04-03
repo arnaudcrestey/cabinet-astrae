@@ -39,32 +39,7 @@ const journey: Array<{
   },
 ];
 
-const processSteps: Array<{
-  number: string;
-  title: string;
-  text: string;
-}> = [
-  {
-    number: "01",
-    title: "Entrer dans l’expérience",
-    text: "Par un diagnostic ou un premier échange, selon votre situation.",
-  },
-  {
-    number: "02",
-    title: "Mettre en lumière ce qui se joue",
-    text: "À partir d’une lecture structurée, sobre et sensible de ce que vous vivez.",
-  },
-  {
-    number: "03",
-    title: "Approfondir lorsque nécessaire",
-    text: "Avec une analyse pouvant s’appuyer sur le thème astral pour éclairer les dynamiques de fond.",
-  },
-  {
-    number: "04",
-    title: "Avancer avec plus de clarté",
-    text: "Dans une démarche ajustée à la réalité de votre situation.",
-  },
-];
+
 
 export default function HomePage() {
   return (
@@ -105,7 +80,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
               >
-                Prendre un premier échange
+                Prendre un temps d'échange
               </Link>
 
               <Link
@@ -264,7 +239,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex min-h-[52px] w-full max-w-[420px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
               >
-                Prendre un premier échange
+                Prendre un temps d'échange
               </Link>
 
               <Link
