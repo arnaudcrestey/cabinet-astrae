@@ -18,6 +18,10 @@ export default function HomePage() {
           <Link href="/cabinet" className="astrae-gate-button">
             Entrer
           </Link>
+
+          <p className="astrae-gate-note">
+            Accès confidentiel · Sans engagement
+          </p>
         </div>
       </section>
     </main>
