@@ -3,32 +3,38 @@ import type { Question } from "./types";
 export const QUESTION_SET: Question[] = [
   {
     id: "situation",
-    label: "Quelle situation appelle aujourd'hui le plus votre attention ?",
+    label: "Si vous deviez décrire la situation que vous traversez aujourd’hui, qu’est-ce qui vous vient en premier ?",
     placeholder:
-      "Décrivez simplement ce que vous vivez en ce moment, avec vos mots."
+      "Décrivez simplement ce que vous vivez en ce moment : contexte, personnes impliquées, et ce qui vous marque le plus."
+  },
+  {
+    id: "ressenti",
+    label: "Qu’est-ce que cette situation génère en vous, intérieurement ?",
+    placeholder:
+      "Parlez de ce que vous ressentez : émotions, doutes, tensions, fatigue, confusion ou tiraillement."
   },
   {
     id: "tension",
-    label: "Qu'est-ce qui, dans cette situation, vous pèse, vous freine ou vous laisse dans l'incertitude ?",
+    label: "Qu’est-ce qui, dans cette situation, vous semble le plus difficile à gérer ou à comprendre ?",
     placeholder:
-      "Vous pouvez évoquer ce qui crée une tension, un flou, un blocage ou une hésitation."
+      "Ce qui bloque, résiste, vous échappe ou vous empêche d’avancer comme vous le souhaiteriez."
   },
   {
     id: "repetition",
-    label: "Avez-vous le sentiment qu'un schéma ou une dynamique se répète ?",
+    label: "Avez-vous le sentiment que quelque chose se rejoue ou se répète dans ce que vous vivez ?",
     placeholder:
-      "Ce que vous voyez revenir, se rejouer, ou prendre une forme déjà connue."
+      "Une situation, un type de relation, une réaction ou un schéma que vous avez déjà connu auparavant."
   },
   {
-    id: "intention",
-    label: "Qu'aimeriez-vous mieux comprendre ou clarifier en priorité ?",
+    id: "clarification",
+    label: "Si cette situation pouvait s’éclairer, qu’aimeriez-vous comprendre en priorité ?",
     placeholder:
-      "La question, le point sensible ou le besoin d'éclairage qui vous semble central."
+      "La question centrale pour vous aujourd’hui : ce qui vous aiderait vraiment à y voir plus clair."
   },
   {
-    id: "rythme",
-    label: "Dans les prochaines semaines, qu'est-ce qui vous aiderait déjà à avancer de manière plus juste ?",
+    id: "mouvement",
+    label: "Qu’est-ce qui changerait concrètement pour vous si vous y voyiez plus clair ?",
     placeholder:
-      "Un déplacement concret, réaliste ou apaisant qui ferait une vraie différence pour vous."
+      "Ce que cela débloquerait, modifierait ou apaiserait dans votre manière d’agir, de décider ou de vous positionner."
   }
 ];
