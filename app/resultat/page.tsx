@@ -32,19 +32,23 @@ export default function ResultPage() {
     );
   }
 
-  return (
-    <PageFrame
-      title="Votre première lecture Astraé"
-      intro="Cette lecture est un point d'entrée proposé par le Cabinet. Elle met en lumière les éléments dominants et peut ouvrir vers un accompagnement personnalisé."
-    >
-      <div className="mb-6 rounded-2xl border border-sage/25 bg-sand/40 p-5 text-sm leading-relaxed text-umber/90">
-        Pour approfondir, vous pouvez transmettre votre demande ci-dessous. Un retour humain et contextualisé vous sera
-        proposé, sans automatisme commercial.
-      </div>
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <ResultCard result={result} />
-        <LeadForm result={result} />
-      </div>
-    </PageFrame>
-  );
+ return (
+  <PageFrame
+    title="Votre première lecture Astraé"
+    intro="Cette première lecture met en lumière les dynamiques qui traversent votre situation. Elle offre un premier éclairage, et peut ouvrir vers un accompagnement plus personnalisé."
+  >
+    <div className="mb-6 rounded-2xl border border-sage/20 bg-white/35 px-6 py-5 text-center text-sm leading-relaxed text-umber/85 backdrop-blur-[2px] md:px-8 md:py-6 md:text-[0.95rem]">
+      <p className="mx-auto max-w-3xl">
+        Si vous souhaitez aller plus loin, vous pouvez nous transmettre votre demande ci-dessous.
+        <br className="hidden md:block" />
+        Nous vous répondrons avec attention, dans le respect de votre situation.
+      </p>
+    </div>
+
+    <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <ResultCard result={result} />
+      <LeadForm result={result} />
+    </div>
+  </PageFrame>
+);
 }
