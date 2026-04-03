@@ -70,19 +70,29 @@ export function ContactForm() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          type="date"
-          name="birthDate"
-          required
-          className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-        />
+        <label className="block">
+          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+            Date de naissance
+          </span>
+          <input
+            type="date"
+            name="birthDate"
+            required
+            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+          />
+        </label>
 
-        <input
-          type="time"
-          name="birthTime"
-          required
-          className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-        />
+        <label className="block">
+          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+            Heure de naissance
+          </span>
+          <input
+            type="time"
+            name="birthTime"
+            required
+            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+          />
+        </label>
       </div>
 
       <input
