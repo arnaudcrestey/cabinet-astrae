@@ -38,18 +38,18 @@ export function PageFrame({
           <div className="overflow-hidden rounded-[1.75rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.60),rgba(247,243,236,0.46))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
             <div className="relative flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
               <div className="min-w-0 md:min-w-[320px]">
-                <Link
-                  href="/"
-                  className="group flex flex-col items-center justify-center text-center leading-none md:items-start md:text-left"
-                >
-                  <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
-                    Cabinet Astraé
-                  </span>
-                  <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
-                    Analyse du thème astral · clarification · accompagnement personnel
-                  </span>
-                </Link>
-              </div>
+  <Link
+    href="/"
+    className="group flex flex-col items-center justify-center text-center leading-none"
+  >
+    <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
+      Cabinet Astraé
+    </span>
+    <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
+      Analyse du thème astral · clarification · accompagnement personnel
+    </span>
+  </Link>
+</div>
 
               <nav className="hidden items-center gap-7 text-sm md:flex">
                 {links.map((link) => (
