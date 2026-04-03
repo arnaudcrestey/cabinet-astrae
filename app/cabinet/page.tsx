@@ -4,10 +4,10 @@ import type { Route } from "next";
 import { PageFrame } from "@/components/projection/PageFrame";
 
 const situations: string[] = [
-  "Vous traversez une période de transition personnelle, relationnelle ou professionnelle.",
-  "Vous avez le sentiment de répéter certains schémas sans parvenir à en comprendre l’origine.",
-  "Vous ressentez un blocage ou un décalage entre ce que vous vivez et ce que vous arrivez à formuler.",
-  "Vous avez besoin d’y voir plus clair avant de prendre une décision ou de retrouver un axe.",
+  "Une période de transition personnelle, relationnelle ou professionnelle.",
+  "Le sentiment de répéter certains schémas sans en comprendre l’origine.",
+  "Un blocage ou un décalage entre ce que vous vivez et ce que vous arrivez à formuler.",
+  "Le besoin d’y voir plus clair avant de prendre une décision ou de retrouver un axe.",
 ];
 
 const journey: Array<{
@@ -129,7 +129,7 @@ export default function HomePage() {
               Quand quelque chose reste flou
             </p>
             <h2 className="mt-3 text-xl font-semibold text-pine md:text-2xl">
-              Vous êtes peut-être dans l’une de ces situations
+              Certaines de ces situations peuvent vous être familières
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-umber/80 md:text-base">
               Certaines situations ne manquent pas seulement de réponse. Elles
@@ -138,18 +138,18 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {situations.map((item) => (
-              <article
-                key={item}
-                className="rounded-[1.35rem] border border-white/55 bg-white/60 p-5 backdrop-blur-sm md:p-6"
-              >
-                <p className="text-sm leading-7 text-umber/85 md:text-base">
-                  {item}
-                </p>
-              </article>
-            ))}
-          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+  {situations.map((item) => (
+    <article
+      key={item}
+      className="rounded-[1.45rem] border border-white/60 bg-white/65 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/80 hover:shadow-[0_12px_28px_rgba(74,47,33,0.06)]"
+    >
+      <p className="text-[15px] leading-[1.9] text-umber/80 md:text-[1.02rem]">
+  {item}
+</p>
+    </article>
+  ))}
+</div>
         </section>
 
         <section className="astrae-panel rounded-[1.9rem] px-6 py-8 md:px-8 md:py-10">
