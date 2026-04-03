@@ -38,18 +38,18 @@ export function PageFrame({
           <div className="overflow-hidden rounded-[1.75rem] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.60),rgba(247,243,236,0.46))] shadow-[0_12px_34px_rgba(46,62,53,0.06)] backdrop-blur-xl">
             <div className="relative flex items-center justify-between gap-3 px-4 py-3.5 md:px-6 md:py-4">
               <div className="min-w-0 md:min-w-[320px]">
-  <Link
-    href="/"
-    className="group flex flex-col items-center justify-center text-center leading-none"
-  >
-    <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
-      Cabinet Astraé
-    </span>
-    <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
-      Analyse du thème astral · clarification · accompagnement personnel
-    </span>
-  </Link>
-</div>
+                <Link
+                  href="/"
+                  className="group flex flex-col items-center justify-center text-center leading-none"
+                >
+                  <span className="text-[0.98rem] font-semibold tracking-[-0.03em] text-pine transition-colors duration-300 group-hover:text-pine/90 md:text-[1.02rem]">
+                    Cabinet Astraé
+                  </span>
+                  <span className="mt-1.5 hidden text-[11px] tracking-[0.06em] text-umber/55 lg:block">
+                    Analyse du thème astral · clarification · accompagnement personnel
+                  </span>
+                </Link>
+              </div>
 
               <nav className="hidden items-center gap-7 text-sm md:flex">
                 {links.map((link) => (
@@ -97,7 +97,7 @@ export function PageFrame({
             </div>
 
             <div
-              className={`overflow-hidden transition-all duration-400 md:hidden ${
+              className={`overflow-hidden transition-all duration-300 md:hidden ${
                 menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
@@ -162,13 +162,11 @@ export function PageFrame({
             <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
               <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-4 max-w-[420px] text-center text-base leading-8 text-umber/82 mx-auto md:mx-0 md:text-left md:max-w-[390px]">
-  Un espace d’analyse du thème astral et
-  <br />
-  d’accompagnement personnel pour mettre en lumière
-  <br />
-  ce que vous vivez et avancer avec plus de clarté.
-</p>
+                <p className="mt-4 mx-auto max-w-[470px] text-center text-base leading-8 text-umber/82 md:mx-0 md:max-w-[430px] md:text-left">
+                  Un espace d’analyse du thème astral et d’accompagnement personnel
+                  <br />
+                  pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
+                </p>
               </div>
 
               <div className="mx-auto md:mx-0">
@@ -192,11 +190,11 @@ export function PageFrame({
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
-                <p className="mt-5 max-w-[430px] text-center text-base leading-8 text-umber/82 mx-auto md:mx-0 md:max-w-[390px] md:text-left">
-  Un premier échange permet de faire le point simplement
-  <br />
-  et de voir si la démarche vous correspond.
-</p>
+                <p className="mt-5 mx-auto max-w-[430px] text-center text-base leading-8 text-umber/82 md:mx-0 md:max-w-[390px] md:text-left">
+                  Un premier échange permet de faire le point simplement
+                  <br />
+                  et de voir si la démarche vous correspond.
+                </p>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link href="/contact" className={primaryButtonClass}>
@@ -216,22 +214,20 @@ export function PageFrame({
                   Cabinet Astraé · Espace d’accompagnement personnel
                 </p>
 
-               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-  <Link
-    href="/mentions-legales"
-    className="transition-colors duration-300 hover:text-pine"
-  >
-    Mentions légales
-  </Link>
-  <Link
-    href="/confidentialite"
-    className="transition-colors duration-300 hover:text-pine"
-  >
-    Politique de confidentialité
-  </Link>
-  <span className="text-umber/58">© 2026 Cabinet Astraé</span>
-</div>
+                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+                  <Link
+                    href="/mentions-legales"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Mentions légales
                   </Link>
+                  <Link
+                    href="/confidentialite"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Politique de confidentialité
+                  </Link>
+                  <span className="text-umber/58">© 2026 Cabinet Astraé</span>
                 </div>
               </div>
             </div>
