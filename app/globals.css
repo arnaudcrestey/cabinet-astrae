@@ -23,7 +23,7 @@ body {
   background-attachment: fixed;
 }
 
-/* voile général pour intégrer l'image au site */
+/* Voile général pour intégrer le fond au site */
 body::before {
   content: "";
   position: fixed;
@@ -40,7 +40,7 @@ body::before {
     );
 }
 
-/* brume lumineuse légère */
+/* Brume lumineuse légère */
 body::after {
   content: "";
   position: fixed;
@@ -131,7 +131,7 @@ a:hover {
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* ===== Hero ===== */
+/* ===== Hero home interne ===== */
 
 .astrae-hero-shell {
   position: relative;
@@ -175,7 +175,7 @@ a:hover {
   opacity: 0.8;
 }
 
-/* orbites discrètes */
+/* Orbites décoratives */
 
 .astrae-orbit {
   position: absolute;
@@ -212,7 +212,7 @@ a:hover {
   display: none;
 }
 
-/* lueurs */
+/* Lueurs */
 
 .astrae-glow {
   position: absolute;
@@ -251,7 +251,7 @@ a:hover {
   pointer-events: none;
 }
 
-/* ===== Boutons / interactions ===== */
+/* ===== Boutons ===== */
 
 .astrae-button-primary {
   @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium;
@@ -311,6 +311,105 @@ a:hover {
   color: rgba(96, 74, 63, 0.68);
 }
 
+/* ===== Porte d'entrée Astraé ===== */
+
+.astrae-gate {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.astrae-gate-card {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 250, 246, 0.42);
+  background: linear-gradient(
+    180deg,
+    rgba(250, 249, 246, 0.72),
+    rgba(244, 241, 234, 0.58)
+  );
+  box-shadow:
+    0 24px 70px rgba(74, 47, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.astrae-gate-inner {
+  padding: 84px 32px;
+  text-align: center;
+}
+
+.astrae-gate-kicker {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  color: rgba(79, 111, 82, 0.76);
+}
+
+.astrae-gate-title {
+  margin: 1rem 0 0;
+  font-size: clamp(4.2rem, 10vw, 7.2rem);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: #4f6f52;
+}
+
+.astrae-gate-line {
+  width: 120px;
+  height: 1px;
+  margin: 1.5rem auto 1.4rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 167, 122, 0.82),
+    transparent
+  );
+}
+
+.astrae-gate-text {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(122, 92, 77, 0.84);
+}
+
+.astrae-gate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  min-width: 220px;
+  min-height: 58px;
+  padding: 0 28px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #f9f6f0 0%, #f1ece2 100%);
+  border: 1px solid rgba(79, 111, 82, 0.14);
+  color: #4f6f52;
+  font-size: 1.02rem;
+  box-shadow:
+    0 10px 28px rgba(74, 47, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.44);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.astrae-gate-button:hover {
+  transform: translateY(-1px);
+  color: #3f5e43;
+  background: linear-gradient(180deg, #fbf8f3 0%, #f3eee5 100%);
+  box-shadow:
+    0 14px 34px rgba(74, 47, 33, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.46);
+}
+
 /* ===== Responsive ===== */
 
 @media (max-width: 1024px) {
@@ -362,7 +461,7 @@ a:hover {
     border-radius: 1.45rem;
     box-shadow:
       0 14px 34px rgba(74, 47, 33, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      inset 0 1px 0 rgba(255, 255, 255, 0.30);
   }
 
   .astrae-soft-card {
@@ -413,8 +512,32 @@ a:hover {
   }
 
   .astrae-button-primary,
-  .astrae-button-secondary {
+  .astrae-button-secondary,
+  .astrae-gate-button {
     width: 100%;
+    min-width: 0;
+  }
+
+  .astrae-gate {
+    padding: 16px;
+  }
+
+  .astrae-gate-card {
+    border-radius: 24px;
+  }
+
+  .astrae-gate-inner {
+    padding: 56px 20px;
+  }
+
+  .astrae-gate-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.30em;
+  }
+
+  .astrae-gate-text {
+    font-size: 0.96rem;
+    line-height: 1.7;
   }
 }
 
@@ -440,438 +563,4 @@ a:hover {
   .astrae-glow-2 {
     opacity: 0.7;
   }
-}
-/* ===== Porte d'entrée Astraé ===== */
-
-.astrae-entry-page {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  position: relative;
-}
-
-.astrae-entry-shell {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 980px;
-}
-
-.astrae-entry-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 32px;
-  border: 1px solid rgba(255, 250, 246, 0.5);
-  background: linear-gradient(
-    180deg,
-    rgba(250, 249, 246, 0.74),
-    rgba(244, 241, 234, 0.62)
-  );
-  box-shadow:
-    0 24px 70px rgba(74, 47, 33, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.34);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.astrae-entry-card::before {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 250, 246, 0.22);
-  pointer-events: none;
-}
-
-.astrae-entry-inner {
-  padding: 64px 32px 56px;
-  text-align: center;
-}
-
-.astrae-entry-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(255, 250, 245, 0.16), transparent 24%),
-    radial-gradient(circle at 50% 82%, rgba(244, 241, 234, 0.12), transparent 28%);
-}
-
-.astrae-entry-glow {
-  position: fixed;
-  border-radius: 9999px;
-  pointer-events: none;
-  filter: blur(60px);
-  z-index: 0;
-}
-
-.astrae-entry-glow-1 {
-  width: 20rem;
-  height: 20rem;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 248, 244, 0.12);
-}
-
-.astrae-entry-glow-2 {
-  width: 16rem;
-  height: 16rem;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(194, 132, 94, 0.06);
-}
-
-.astrae-entry-orbit {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 244, 238, 0.12);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.astrae-entry-orbit-1 {
-  width: 64rem;
-  height: 64rem;
-  opacity: 0.22;
-}
-
-.astrae-entry-orbit-2 {
-  width: 42rem;
-  height: 42rem;
-  opacity: 0.12;
-}
-
-.astrae-entry-mark-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.75rem;
-}
-
-.astrae-entry-mark {
-  position: relative;
-  width: 148px;
-  height: 148px;
-}
-
-.astrae-entry-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  border: 1.2px solid rgba(214, 167, 122, 0.78);
-}
-
-.astrae-entry-ring-inner {
-  inset: 10px;
-  opacity: 0.72;
-}
-
-.astrae-entry-line {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background: rgba(214, 167, 122, 0.62);
-  transform: translate(-50%, -50%);
-}
-
-.astrae-entry-line-v {
-  width: 1px;
-  height: 148px;
-}
-
-.astrae-entry-line-h {
-  width: 148px;
-  height: 1px;
-}
-
-.astrae-entry-star {
-  position: absolute;
-  left: 50%;
-  top: 18px;
-  width: 16px;
-  height: 16px;
-  transform: translateX(-50%) rotate(45deg);
-  background: rgba(214, 167, 122, 0.9);
-  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
-}
-
-.astrae-entry-crescent {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 58px;
-  height: 58px;
-  transform: translate(-50%, -34%);
-  border-radius: 9999px;
-  background: rgba(214, 167, 122, 0.92);
-}
-
-.astrae-entry-crescent::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 16px;
-  width: 58px;
-  height: 58px;
-  border-radius: 9999px;
-  background: #f7f2ea;
-}
-
-.astrae-entry-header {
-  text-align: center;
-}
-
-.astrae-entry-kicker {
-  margin: 0;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.46em;
-  color: rgba(79, 111, 82, 0.78);
-}
-
-.astrae-entry-title {
-  margin: 0.9rem 0 0;
-  font-size: clamp(3.6rem, 9vw, 6.2rem);
-  line-height: 0.95;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  color: #4f6f52;
-}
-
-.astrae-entry-divider {
-  width: 120px;
-  height: 1px;
-  margin: 1.35rem auto 1.1rem;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(214, 167, 122, 0.82),
-    transparent
-  );
-}
-
-.astrae-entry-subtitle {
-  margin: 0 auto;
-  max-width: 520px;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(122, 92, 77, 0.86);
-}
-
-.astrae-entry-actions {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.astrae-entry-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 280px;
-  min-height: 58px;
-  padding: 0 28px;
-  border-radius: 9999px;
-  background: linear-gradient(180deg, #f9f6f0 0%, #f1ece2 100%);
-  border: 1px solid rgba(79, 111, 82, 0.14);
-  color: #4f6f52;
-  font-size: 1.02rem;
-  box-shadow:
-    0 10px 28px rgba(74, 47, 33, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.44);
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    background-color 220ms ease;
-}
-
-.astrae-entry-button:hover {
-  transform: translateY(-1px);
-  color: #3f5e43;
-  background: linear-gradient(180deg, #fbf8f3 0%, #f3eee5 100%);
-  box-shadow:
-    0 14px 34px rgba(74, 47, 33, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.46);
-}
-
-.astrae-entry-meaning {
-  margin: 2.75rem auto 0;
-  max-width: 760px;
-}
-
-.astrae-entry-meaning-divider {
-  width: 100%;
-  height: 1px;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(122, 92, 77, 0.24),
-    transparent
-  );
-}
-
-.astrae-entry-meaning-list {
-  display: grid;
-  gap: 0.9rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: left;
-}
-
-.astrae-entry-meaning-item {
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.astrae-entry-meaning-letter {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #7a5c4d;
-  font-weight: 600;
-}
-
-.astrae-entry-meaning-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.astrae-entry-meaning-text strong {
-  font-size: 1rem;
-  color: #7a5c4d;
-  font-weight: 600;
-}
-
-.astrae-entry-meaning-text span {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: rgba(122, 92, 77, 0.84);
-}
-
-@media (max-width: 768px) {
-  .astrae-entry-page {
-    padding: 16px;
-  }
-
-  .astrae-entry-inner {
-    padding: 42px 20px 34px;
-  }
-
-  .astrae-entry-card {
-    border-radius: 24px;
-  }
-
-  .astrae-entry-card::before {
-    inset: 12px;
-    border-radius: 18px;
-  }
-
-  .astrae-entry-mark {
-    width: 120px;
-    height: 120px;
-  }
-
-  .astrae-entry-line-v {
-    height: 120px;
-  }
-
-  .astrae-entry-line-h {
-    width: 120px;
-  }
-
-  .astrae-entry-crescent {
-    width: 48px;
-    height: 48px;
-  }
-
-  .astrae-entry-crescent::after {
-    width: 48px;
-    height: 48px;
-    left: 14px;
-  }
-
-  .astrae-entry-kicker {
-    letter-spacing: 0.34em;
-    font-size: 0.78rem;
-  }
-
-  .astrae-entry-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .astrae-entry-button {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .astrae-entry-meaning-item {
-    grid-template-columns: 26px 1fr;
-    gap: 0.55rem;
-  }
-
-  .astrae-entry-orbit-1 {
-    width: 34rem;
-    height: 34rem;
-  }
-
-  .astrae-entry-orbit-2 {
-    width: 24rem;
-    height: 24rem;
-  }
-}
-.astrae-entry-symbol {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 1.5rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(214, 167, 122, 0.6);
-  position: relative;
-}
-
-.astrae-entry-symbol::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 9999px;
-  border: 1px solid rgba(214, 167, 122, 0.4);
-}
-
-.astrae-entry-symbol::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 38px;
-  height: 38px;
-  transform: translate(-50%, -30%);
-  border-radius: 9999px;
-  background: rgba(214, 167, 122, 0.9);
-  box-shadow: -12px 0 0 0 #f4f1ea;
-}
-
-.astrae-entry-title {
-  font-size: clamp(4.2rem, 10vw, 7rem);
-  letter-spacing: -0.04em;
-  font-weight: 500;
-}
-
-.astrae-entry-meaning {
-  margin: 3.5rem auto 0;
-  max-width: 620px;
-  opacity: 0.82;
-}
-
-.astrae-entry-meaning-item {
-  margin-bottom: 0.4rem;
 }
