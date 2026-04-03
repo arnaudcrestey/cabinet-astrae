@@ -28,9 +28,9 @@ export default function ApprochePage() {
           <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
             CABINET ASTRAÉ · APPROCHE
           </p>
-<h1 className="mx-auto mt-4 max-w-4xl text-center text-[3.2rem] font-semibold leading-[1.08] tracking-[-0.045em] text-pine md:text-[4.4rem]">
+<h1 className="mx-auto mt-4 max-w-[18ch] text-center text-[2.35rem] font-semibold leading-[1.06] tracking-[-0.045em] text-pine sm:max-w-[16ch] sm:text-[3rem] md:max-w-[15ch] md:text-[4rem] md:leading-[1.04] lg:text-[4.5rem]">
   Mieux comprendre ce que vous vivez
-  <span className="block mt-2">pour avancer plus sereinement</span>
+  <span className="mt-2 block md:mt-3">pour avancer plus sereinement</span>
 </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-pine/75">
