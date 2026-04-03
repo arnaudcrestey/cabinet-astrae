@@ -5,46 +5,72 @@ export default function AccompagnementsPage() {
   return (
     <PageFrame
       title="Accompagnements proposés"
-      intro="Chaque accompagnement vise à clarifier une situation concrète et à soutenir une progression réaliste, à votre rythme."
+      intro="Chaque accompagnement vise à éclairer une situation précise, à en comprendre les dynamiques, et à permettre d’avancer avec plus de clarté et de justesse."
     >
-      <div className="space-y-6">
-        <section className="grid gap-6 md:grid-cols-3">
+      <div className="mx-auto max-w-5xl space-y-10">
+
+        {/* CARDS */}
+        <section className="grid gap-5 md:grid-cols-3 md:gap-6 text-center">
+
           {[
             {
               title: "Lecture de situation",
-              text: "Pour comprendre une phase de tension, de transition ou de confusion, et identifier la dynamique dominante.",
+              text: "Pour comprendre une phase de tension, de transition ou de flou, et identifier ce qui est réellement en jeu.",
               cta: "Commencer par un diagnostic"
             },
             {
               title: "Approfondissement thématique",
-              text: "Pour travailler un enjeu précis : relation, décision importante, répétition de schéma ou repositionnement personnel.",
+              text: "Pour travailler un enjeu précis : relation, décision, répétition de schéma ou repositionnement personnel.",
               cta: "Prendre rendez-vous de cadrage"
             },
             {
-              title: "Lecture approfondie intégrant le thème astral",
-              text: "Une analyse plus fine pour relier rythme personnel, histoire vécue et dynamiques de fond dans un cadre sérieux et nuancé.",
+              title: "Lecture approfondie du thème astral",
+              text: "Une analyse plus complète intégrant le thème astral, pour relier dynamique personnelle, histoire vécue et axes d’évolution.",
               cta: "Demander un échange"
             }
           ].map((item) => (
-            <article key={item.title} className="rounded-2xl border border-sage/30 bg-white p-6 shadow-soft">
-              <h2 className="text-lg font-semibold">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-umber/90">{item.text}</p>
-              <p className="mt-4 text-xs uppercase tracking-[0.16em] text-pine/80">{item.cta}</p>
+            <article
+              key={item.title}
+              className="group rounded-2xl border border-white/40 bg-white/60 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+            >
+              <h2 className="text-[15px] font-medium text-pine">
+                {item.title}
+              </h2>
+
+              <p className="mt-3 text-sm leading-relaxed text-umber/85">
+                {item.text}
+              </p>
+
+              <p className="mt-5 text-[11px] uppercase tracking-[0.18em] text-pine/60 group-hover:text-pine">
+                {item.cta}
+              </p>
             </article>
           ))}
+
         </section>
 
-        <section className="rounded-2xl border border-sage/25 bg-sand/50 p-8">
-          <h2 className="text-xl font-semibold">Cadre de travail</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-umber/90">
-            <li>Approche confidentielle et respectueuse de votre rythme.</li>
-            <li>Analyse argumentée, jamais sensationnaliste.</li>
-            <li>Recommandations de clarification concrètes et réalistes.</li>
+        {/* CADRE */}
+        <section className="mx-auto max-w-3xl rounded-2xl border border-white/40 bg-white/50 p-7 text-center backdrop-blur md:p-8">
+
+          <h2 className="text-base font-medium text-pine">
+            Cadre de travail
+          </h2>
+
+          <ul className="mt-5 space-y-2 text-sm leading-relaxed text-umber/85">
+            <li>• Une approche confidentielle, respectueuse de votre rythme.</li>
+            <li>• Une lecture structurée, fondée et nuancée.</li>
+            <li>• Des éclairages concrets pour avancer avec plus de discernement.</li>
           </ul>
-          <Link href="/contact" className="mt-6 inline-flex rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
-            Prendre contact avec le Cabinet
+
+          <Link
+            href="/contact"
+            className="mt-7 inline-flex items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+          >
+            Prendre contact avec le cabinet
           </Link>
+
         </section>
+
       </div>
     </PageFrame>
   );
