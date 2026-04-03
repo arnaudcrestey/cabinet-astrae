@@ -19,14 +19,13 @@ type Props = {
 };
 
 const primaryButtonClass =
-  "inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#5D815D] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#537553] hover:shadow-[0_14px_30px_rgba(46,62,53,0.18)]";
+  "inline-flex min-h-[50px] items-center justify-center rounded-full bg-[linear-gradient(180deg,#6C9068_0%,#5D815D_100%)] px-6 py-2.5 text-[14px] font-medium tracking-[-0.01em] text-white shadow-[0_14px_28px_rgba(76,101,79,0.16),inset_0_1px_0_rgba(255,255,255,0.12)] ring-1 ring-[rgba(93,129,93,0.16)] transition-all duration-300 hover:-translate-y-[1px] hover:shadow-[0_18px_34px_rgba(76,101,79,0.20),inset_0_1px_0_rgba(255,255,255,0.16)] hover:brightness-[1.015]";
 
 const secondaryButtonClass =
-  "inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8D5CE] bg-[rgba(255,255,255,0.54)] px-6 py-3 text-sm font-medium text-pine transition-all duration-300 hover:border-[#CFCBC3] hover:bg-[rgba(255,255,255,0.72)] hover:text-pine";
+  "inline-flex min-h-[50px] items-center justify-center rounded-full border border-[rgba(191,184,173,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(255,255,255,0.22))] px-6 py-2.5 text-[14px] font-medium tracking-[-0.01em] text-[#4E6C54] shadow-[0_10px_24px_rgba(94,84,72,0.06),inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-[6px] transition-all duration-300 hover:-translate-y-[1px] hover:border-[rgba(177,169,158,0.95)] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.68),rgba(255,255,255,0.28))] hover:text-[#45614A] hover:shadow-[0_14px_30px_rgba(94,84,72,0.09),inset_0_1px_0_rgba(255,255,255,0.82)]";
 
-/* Nouveau style dédié au point d’entrée */
 const pointEntryClass =
-  "inline-flex min-h-[40px] items-center justify-center rounded-full border border-[#D6D0C4] bg-[linear-gradient(180deg,rgba(255,255,255,0.40),rgba(255,255,255,0.18))] px-5 py-2 text-sm font-medium text-[#4D6D53] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] transition-all duration-300 hover:border-[#CBC4B7] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.54),rgba(255,255,255,0.26))] hover:text-pine";
+  "inline-flex min-h-[42px] items-center justify-center rounded-full border border-[#D6D0C4] bg-[linear-gradient(180deg,rgba(255,255,255,0.42),rgba(255,255,255,0.18))] px-5 py-2 text-sm font-medium text-[#4D6D53] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] transition-all duration-300 hover:border-[#CBC4B7] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.54),rgba(255,255,255,0.26))] hover:text-pine";
 
 export function PageFrame({
   children,
@@ -56,7 +55,6 @@ export function PageFrame({
                 </Link>
               </div>
 
-              {/* DESKTOP */}
               <div className="hidden items-center gap-5 md:flex">
                 <nav className="flex items-center gap-7 text-sm">
                   {links.map((link) => (
@@ -81,7 +79,6 @@ export function PageFrame({
                 </div>
               </div>
 
-              {/* MOBILE BUTTON */}
               <button
                 type="button"
                 aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -109,7 +106,6 @@ export function PageFrame({
               </button>
             </div>
 
-            {/* MOBILE MENU */}
             <div
               className={`overflow-hidden transition-all duration-300 md:hidden ${
                 menuOpen ? "max-h-[460px] opacity-100" : "max-h-0 opacity-0"
@@ -183,19 +179,23 @@ export function PageFrame({
       <footer className="mt-8">
         <div className="mx-auto w-full max-w-[1240px] px-4 pb-6 md:px-8 md:pb-8">
           <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10 lg:px-10 lg:py-12">
-            <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
-              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
-                <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
+            <div className="grid gap-12 text-center md:grid-cols-[1.2fr_0.72fr_1fr] md:gap-14 md:text-left">
+              <div className="mx-auto max-w-[440px] text-center md:mx-0 md:max-w-[420px] md:text-left">
+                <p className="text-[1.05rem] font-semibold tracking-[-0.02em] text-pine">
+                  Cabinet Astraé
+                </p>
+
+                <p className="mt-5 text-[15px] leading-[2.15] text-umber/82">
                   Un espace d’analyse du thème astral et d’accompagnement personnel pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
                 </p>
               </div>
 
-              <div className="mx-auto md:mx-0">
+              <div className="mx-auto text-center md:mx-0 md:text-left">
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Navigation
                 </p>
-                <div className="mt-5 flex flex-col items-center gap-3 text-sm text-umber/82 md:items-start">
+
+                <div className="mt-5 flex flex-col items-center gap-3 text-[15px] text-umber/82 md:items-start">
                   <Link
                     href="/approche"
                     className="transition-colors duration-300 hover:text-pine"
@@ -223,24 +223,24 @@ export function PageFrame({
                 </div>
               </div>
 
-              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[390px]">
+              <div className="mx-auto max-w-[460px] text-center md:mx-0 md:max-w-[410px] md:text-left">
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
 
-                <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-                  Un premier échange pour faire le point 
-                  et voir si la démarche vous correspond.
+                <p className="mt-5 text-[15px] leading-[2.15] text-umber/82">
+                  Un premier échange pour faire le point et voir si la démarche vous correspond.
                 </p>
-                <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
-  <Link href="/contact" className={`${primaryButtonClass} min-h-[46px] px-6 py-2`}>
-    Prendre un temps d'échange
-  </Link>
 
-  <Link href="/analyse" className={`${pointEntryClass} min-h-[46px] px-6 py-2`}>
-    Faire un point
-  </Link>
-</div>
+                <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
+                  <Link href="/contact" className={primaryButtonClass}>
+                    Prendre un temps d'échange
+                  </Link>
+
+                  <Link href="/analyse" className={secondaryButtonClass}>
+                    Faire un point
+                  </Link>
+                </div>
               </div>
             </div>
 
