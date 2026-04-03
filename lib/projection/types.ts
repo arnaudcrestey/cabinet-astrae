@@ -23,6 +23,9 @@ export type ProjectionPayload = {
 export type LeadPayload = {
   firstName: string;
   email: string;
+  birthDate: string;
+  birthTime: string;
+  birthPlace: string;
   message?: string;
   consent: boolean;
   result: ProjectionResult;
