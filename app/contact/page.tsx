@@ -5,20 +5,54 @@ export default function ContactPage() {
   return (
     <PageFrame
       title="Prendre contact avec Cabinet Astraé"
-      intro="Décrivez votre situation en quelques lignes. Nous revenons vers vous avec un premier retour de cadrage, dans un délai de 48h ouvrées."
+      intro="Décrivez simplement votre situation en quelques lignes. Pour permettre une première lecture de votre thème astral en lien avec ce que vous vivez, merci d’indiquer votre date de naissance, votre heure de naissance, votre lieu de naissance (avec code postal), ainsi que votre prénom et votre email."
     >
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
-        <section className="rounded-2xl border border-sage/25 bg-sand/50 p-6">
-          <h2 className="text-xl font-semibold">Pourquoi nous écrire</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-umber/90">
-            <li>Vous traversez une période de flou ou de tension.</li>
-            <li>Vous souhaitez clarifier une décision ou une dynamique relationnelle.</li>
-            <li>Vous envisagez un accompagnement plus approfondi.</li>
-          </ul>
-          <p className="mt-4 text-sm text-umber/85">
-            Votre demande reste confidentielle. Notre réponse est humaine, structurée et adaptée à votre contexte.
-          </p>
+      <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <section className="rounded-[1.75rem] border border-sage/18 bg-sand/55 p-6 shadow-[0_12px_36px_rgba(91,115,91,0.06)] backdrop-blur-sm sm:p-7">
+          <div className="max-w-md">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-sage/60">
+              Premier échange
+            </p>
+
+            <h2 className="mt-3 text-xl font-medium leading-tight text-forest sm:text-2xl">
+              Pourquoi nous écrire
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-umber/88 sm:text-[15px]">
+              Vous pouvez nous contacter si vous ressentez le besoin de faire
+              un point sur une situation que vous traversez actuellement.
+            </p>
+
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-umber/88 sm:text-[15px]">
+              <li className="flex gap-3">
+                <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-sage/70" />
+                <span>Période de transition, de tension ou de questionnement.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-sage/70" />
+                <span>
+                  Besoin de recul pour mieux comprendre ce que vous vivez.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-sage/70" />
+                <span>
+                  Envie d’un premier repère avant d’aller plus loin dans une
+                  démarche d’accompagnement.
+                </span>
+              </li>
+            </ul>
+
+            <div className="mt-6 h-px w-full bg-sage/12" />
+
+            <p className="mt-6 text-sm leading-7 text-umber/82 sm:text-[15px]">
+              Votre demande reste confidentielle. Chaque message est lu avec
+              attention et reçoit un retour humain, structuré et adapté à votre
+              situation.
+            </p>
+          </div>
         </section>
+
         <ContactForm />
       </div>
     </PageFrame>
