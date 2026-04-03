@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { generateProjectionWithAI } from "@/lib/projection/openai";
 import { buildFallbackResult } from "@/lib/projection/fallback";
-import { refineResult } from "@/lib/projection/refine";
-import { enhanceResult } from "@/lib/projection/enhance";
 
 const payloadSchema = z.object({
-  answers: z.record(z.string().min(1).max(2000)).refine((value) => Object.keys(value).length >= 5)
+  answers: z
+    .record(z.string().min(1).max(2000))
+    .refine((value) => Object.keys(value).length >= 5),
 });
 
 export async function POST(request: Request) {
@@ -15,14 +15,24 @@ export async function POST(request: Request) {
     const payload = payloadSchema.parse(json);
 
     const aiResult = await generateProjectionWithAI(payload.answers);
-    const rawResult = aiResult ?? buildFallbackResult(payload.answers);
-    const result = rawResult;
+    const fallbackResult = buildFallbackResult(payload.answers);
+    const result = aiResult ?? fallbackResult;
 
-    return NextResponse.json({ result });
+    return NextResponse.json({
+      debug: {
+        usedAI: Boolean(aiResult),
+        aiResult,
+        fallbackResult,
+      },
+      result,
+    });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { message: "Les réponses envoyées sont incomplètes ou invalides.", details: error.flatten() },
+        {
+          message: "Les réponses envoyées sont incomplètes ou invalides.",
+          details: error.flatten(),
+        },
         { status: 400 }
       );
     }
