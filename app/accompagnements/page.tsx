@@ -5,7 +5,7 @@ export default function AccompagnementsPage() {
   return (
     <PageFrame
       title="Accompagnements proposés"
-      intro="Chaque accompagnement vise à éclairer une situation précise, à en comprendre les dynamiques, et à permettre d’avancer avec plus de clarté et de justesse."
+      intro="Chaque accompagnement vise à éclairer une situation précise, à en comprendre les dynamiques, et à vous permettre d’avancer avec plus de clarté et de justesse."
     >
       <div className="mx-auto max-w-5xl space-y-10">
 
@@ -15,18 +15,18 @@ export default function AccompagnementsPage() {
           {[
             {
               title: "Lecture de situation",
-              text: "Pour comprendre une phase de tension, de transition ou de flou, et identifier ce qui est réellement en jeu.",
-              cta: "Commencer par un diagnostic"
+              text: "Pour faire le point sur une situation actuelle : tension, transition ou sentiment de flou, et identifier ce qui se joue réellement.",
+              cta: "Commencer par faire un point"
             },
             {
               title: "Approfondissement thématique",
-              text: "Pour travailler un enjeu précis : relation, décision, répétition de schéma ou repositionnement personnel.",
-              cta: "Prendre rendez-vous de cadrage"
+              text: "Pour explorer un enjeu précis : relation, décision, répétition de schéma ou repositionnement personnel.",
+              cta: "Échanger autour de votre situation"
             },
             {
               title: "Lecture approfondie du thème astral",
-              text: "Une analyse plus complète intégrant le thème astral, pour relier dynamique personnelle, histoire vécue et axes d’évolution.",
-              cta: "Demander un échange"
+              text: "Une analyse approfondie intégrant le thème astral, pour relier votre dynamique personnelle, votre histoire et vos axes d’évolution.",
+              cta: "Prendre un temps d'échange"
             }
           ].map((item) => (
             <article
@@ -46,8 +46,15 @@ export default function AccompagnementsPage() {
               </p>
             </article>
           ))}
+          
 
         </section>
+          
+        <div className="text-center">
+  <p className="mx-auto max-w-xl text-sm leading-relaxed text-umber/70 md:text-[15px]">
+    Vous pouvez commencer simplement par faire un point, puis approfondir si nécessaire.
+  </p>
+</div>
 
         {/* CADRE */}
         <section className="mx-auto max-w-3xl rounded-2xl border border-white/40 bg-white/50 p-7 text-center backdrop-blur md:p-8">
