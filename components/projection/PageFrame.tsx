@@ -6,9 +6,10 @@ import Link from "next/link";
 const links = [
   { href: "/approche", label: "Approche" },
   { href: "/accompagnements", label: "Accompagnements" },
-  { href: "/analyse", label: "Diagnostic" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+const pointLink = { href: "/analyse", label: "Faire un point" } as const;
 
 type Props = {
   children: React.ReactNode;
@@ -22,6 +23,10 @@ const primaryButtonClass =
 
 const secondaryButtonClass =
   "inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8D5CE] bg-[rgba(255,255,255,0.54)] px-6 py-3 text-sm font-medium text-pine transition-all duration-300 hover:border-[#CFCBC3] hover:bg-[rgba(255,255,255,0.72)] hover:text-pine";
+
+/* Nouveau style dédié au point d’entrée */
+const pointEntryClass =
+  "inline-flex min-h-[40px] items-center justify-center rounded-full border border-[#D6D0C4] bg-[linear-gradient(180deg,rgba(255,255,255,0.40),rgba(255,255,255,0.18))] px-5 py-2 text-sm font-medium text-[#4D6D53] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] transition-all duration-300 hover:border-[#CBC4B7] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.54),rgba(255,255,255,0.26))] hover:text-pine";
 
 export function PageFrame({
   children,
@@ -51,24 +56,32 @@ export function PageFrame({
                 </Link>
               </div>
 
-              <nav className="hidden items-center gap-7 text-sm md:flex">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-umber/82 transition duration-300 hover:text-pine"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
+              {/* DESKTOP */}
+              <div className="hidden items-center gap-5 md:flex">
+                <nav className="flex items-center gap-7 text-sm">
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-umber/82 transition duration-300 hover:text-pine"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
 
-              <div className="hidden shrink-0 md:flex">
-                <Link href="/contact" className={primaryButtonClass}>
-                  Prendre un temps d'échange
+                <Link href={pointLink.href} className={pointEntryClass}>
+                  {pointLink.label}
                 </Link>
+
+                <div className="hidden shrink-0 lg:flex">
+                  <Link href="/contact" className={primaryButtonClass}>
+                    Prendre un temps d'échange
+                  </Link>
+                </div>
               </div>
 
+              {/* MOBILE BUTTON */}
               <button
                 type="button"
                 aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -96,9 +109,10 @@ export function PageFrame({
               </button>
             </div>
 
+            {/* MOBILE MENU */}
             <div
               className={`overflow-hidden transition-all duration-300 md:hidden ${
-                menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+                menuOpen ? "max-h-[460px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
               <div className="border-t border-white/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(245,239,232,0.70))] px-4 pb-5 pt-4 backdrop-blur-xl">
@@ -115,6 +129,16 @@ export function PageFrame({
                       </Link>
                     ))}
                   </nav>
+
+                  <div className="mt-3 rounded-[1.1rem] border border-white/45 bg-[rgba(255,255,255,0.20)] p-2.5">
+                    <Link
+                      href={pointLink.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`${pointEntryClass} w-full`}
+                    >
+                      {pointLink.label}
+                    </Link>
+                  </div>
 
                   <div className="mt-3 px-1 pb-1 pt-2">
                     <Link
@@ -137,18 +161,18 @@ export function PageFrame({
           {showIntro && (
             <section className="mb-10 md:mb-14">
               <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 text-center backdrop-blur-md md:px-8 md:py-10">
-  <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
-    Cabinet Astraé
-  </p>
+                <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
+                  Cabinet Astraé
+                </p>
 
-  <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] text-pine md:text-5xl">
-    {title}
-  </h1>
+                <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] text-pine md:text-5xl">
+                  {title}
+                </h1>
 
-  <p className="mx-auto mt-5 max-w-3xl text-sm leading-8 text-umber/82 md:text-lg">
-    {intro}
-  </p>
-</div>
+                <p className="mx-auto mt-5 max-w-3xl text-sm leading-8 text-umber/82 md:text-lg">
+                  {intro}
+                </p>
+              </div>
             </section>
           )}
 
@@ -162,9 +186,9 @@ export function PageFrame({
             <div className="grid gap-10 text-center md:grid-cols-[1.15fr_0.72fr_1fr] md:gap-12 md:text-left">
               <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[420px]">
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-               <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-  Un espace d’analyse du thème astral et d’accompagnement personnel pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
-</p>
+                <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
+                  Un espace d’analyse du thème astral et d’accompagnement personnel pour mettre en lumière ce que vous vivez et avancer avec plus de clarté.
+                </p>
               </div>
 
               <div className="mx-auto md:mx-0">
@@ -172,34 +196,49 @@ export function PageFrame({
                   Navigation
                 </p>
                 <div className="mt-5 flex flex-col items-center gap-3 text-sm text-umber/82 md:items-start">
-                  {links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="transition-colors duration-300 hover:text-pine"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  <Link
+                    href="/approche"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Approche
+                  </Link>
+                  <Link
+                    href="/accompagnements"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Accompagnements
+                  </Link>
+                  <Link
+                    href="/analyse"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Faire un point
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="transition-colors duration-300 hover:text-pine"
+                  >
+                    Contact
+                  </Link>
                 </div>
               </div>
 
-             <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[390px]">
-  <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
-    Premier pas
-  </p>
+              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[390px]">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
+                  Premier pas
+                </p>
 
-  <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-    Un premier échange pour faire le point 
-    et voir si la démarche vous correspond.
-  </p>
+                <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
+                  Un premier échange pour faire le point 
+                  et voir si la démarche vous correspond.
+                </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link href="/contact" className={primaryButtonClass}>
                     Prendre un temps d'échange
                   </Link>
 
                   <Link href="/analyse" className={secondaryButtonClass}>
-                    Découvrir le diagnostic
+                    Faire un point
                   </Link>
                 </div>
               </div>
