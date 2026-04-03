@@ -190,7 +190,7 @@ export function PageFrame({
   </p>
 
   <p className="mt-4 mx-auto max-w-[320px] text-center text-[15px] leading-9 text-umber/82 sm:max-w-[420px] md:mx-0 md:max-w-[360px] md:text-left">
-    Un premier échange pour faire le point simplement
+    Un premier échange pour faire le point 
     et voir si la démarche vous correspond.
   </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
