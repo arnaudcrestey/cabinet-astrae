@@ -39,6 +39,9 @@ export async function generateProjectionWithAI(
   if (!apiKey) return null;
 
   const prompt = buildPrompt(answers);
+  const model = "gpt-4.1";
+
+  console.log("OPENAI_MODEL_USED:", model);
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -47,7 +50,7 @@ export async function generateProjectionWithAI(
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: "gpt-4.1",
+      model,
       temperature: 0.25,
       input: [
         {
@@ -84,19 +87,24 @@ Tu retournes uniquement un JSON valide.
     }),
   });
 
+  const rawText = await response.text();
+
+  console.log("OPENAI_STATUS:", response.status);
+  console.log("OPENAI_RAW_RESPONSE:", rawText);
+
   if (!response.ok) {
     return null;
   }
 
-  const data = (await response.json()) as {
-    output_text?: string;
-  };
-
-  if (!data.output_text) {
-    return null;
-  }
-
   try {
+    const data = JSON.parse(rawText) as {
+      output_text?: string;
+    };
+
+    if (!data.output_text) {
+      return null;
+    }
+
     const parsed = JSON.parse(
       data.output_text
     ) as Partial<Omit<ProjectionResult, "confidence" | "generatedAt">>;
