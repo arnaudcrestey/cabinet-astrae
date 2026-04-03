@@ -70,30 +70,38 @@ export function ContactForm() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
-            Date de naissance
-          </span>
-          <input
-            type="date"
-            name="birthDate"
-            required
-            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-          />
-        </label>
+  <label className="block">
+    <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+      Date de naissance
+    </span>
+    <input
+      type="text"
+      name="birthDate"
+      required
+      inputMode="numeric"
+      placeholder="JJ / MM / AAAA"
+      className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+    />
+  </label>
 
-        <label className="block">
-          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
-            Heure de naissance
-          </span>
-          <input
-            type="time"
-            name="birthTime"
-            required
-            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-          />
-        </label>
-      </div>
+  <label className="block">
+    <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+      Heure de naissance
+    </span>
+    <input
+      type="text"
+      name="birthTime"
+      required
+      inputMode="numeric"
+      placeholder="HH:MM"
+      className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+    />
+  </label>
+</div>
+
+      <p className="pt-1 text-xs leading-5 text-umber/72">
+  Exemple : 24 / 11 / 1987 — 14:30
+</p>
 
       <input
         type="text"
