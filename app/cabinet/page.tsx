@@ -216,16 +216,13 @@ export default function HomePage() {
                 </p>
 
                 <h2 className="mt-3 mx-auto max-w-xl text-xl font-semibold leading-tight text-pine md:mx-0 md:text-[1.9rem]">
-                  Une présence humaine, une écoute fine, une lecture en
-                  profondeur
+                  Une approche humaine, précise et profondément attentive
                 </h2>
 
                 <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
                   Virginie accompagne depuis de nombreuses années des personnes
                   traversant des périodes de fragilité, de questionnement ou de
-                  transition. Son approche repose sur l’écoute, la qualité de
-                  présence et une attention particulière à ce qui reste flou,
-                  difficile à nommer ou à relier.
+                  transition. Son approche repose sur l’écoute et une sensibilité particulière à ce qui se joue en profondeur dans une situation.
                 </p>
 
                 <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
@@ -255,9 +252,9 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 mx-auto max-w-md text-sm leading-7 text-umber/80 md:text-base lg:mx-0">
-              Si quelque chose reste flou, lourd ou difficile à traverser seul,
-              Astraé peut vous aider à poser une première lecture claire de
-              votre situation et à envisager la suite avec plus de justesse.
+              Lorsqu’une situation devient difficile à lire seul, un premier échange
+  permet déjà de mettre des mots, de faire apparaître les lignes de fond
+  et d’envisager la suite avec davantage de justesse.
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3 lg:items-stretch">
