@@ -86,18 +86,14 @@ export default function HomePage() {
             </p>
 
             <h1 className="mt-6 text-[2.3rem] font-semibold leading-[1.04] text-pine sm:text-[3.1rem] md:text-[4rem]">
-              Clarifier ce que vous vivez
+              Mieux comprendre ce que vous vivez
               <span className="mt-2 block">
-                pour avancer avec plus de justesse
+                pour avancer à la lumière de qui vous êtes
               </span>
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-umber/80 md:text-base md:leading-8">
-              Cabinet Astraé accompagne les personnes en période de flou, de
-              blocage ou de transition. Une lecture approfondie de votre
-              situation permet de mettre en lumière ce qui se joue, avec une
-              analyse pouvant s’appuyer sur le thème astral lorsque cela est
-              pertinent.
+              Cabinet Astraé accompagne les personnes en période de questionnement, de blocage ou de transition. L’analyse du thème astral permet d’éclairer ce qui se vit à partir de l’identité profonde de la personne, afin de mieux comprendre une situation et d’avancer avec plus de clarté.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
