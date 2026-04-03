@@ -155,22 +155,22 @@ export function PageFrame({
 
       <footer className="mt-8">
         <div className="mx-auto w-full max-w-[1240px] px-4 pb-6 md:px-8 md:pb-8">
-          <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10">
-            <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr_1fr] md:items-start">
-              <div>
+          <div className="rounded-[2rem] border border-white/35 bg-white/60 px-6 py-8 backdrop-blur-md md:px-8 md:py-10 lg:px-10 lg:py-12">
+            <div className="grid gap-10 text-center md:grid-cols-[1.1fr_0.7fr_1fr] md:gap-12 md:text-left">
+              <div className="mx-auto max-w-[430px] md:mx-0 md:max-w-[390px]">
                 <p className="text-lg font-semibold text-pine">Cabinet Astraé</p>
-                <p className="mt-3 max-w-md text-justify text-sm leading-7 text-umber/82">
-  Un espace d’analyse du thème astral et d’accompagnement personnel
-  pour mettre en lumière ce que vous vivez et avancer avec plus de
-  clarté.
-</p>
+                <p className="mt-4 text-base leading-8 text-umber/82 md:text-[15px]">
+                  Un espace d’analyse du thème astral et d’accompagnement
+                  personnel pour mettre en lumière ce que vous vivez
+                  et avancer avec plus de clarté.
+                </p>
               </div>
 
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-pine/50">
+              <div className="mx-auto md:mx-0">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Navigation
                 </p>
-                <div className="mt-4 flex flex-col gap-3 text-sm text-umber/82">
+                <div className="mt-5 flex flex-col items-center gap-3 text-sm text-umber/82 md:items-start">
                   {links.map((link) => (
                     <Link
                       key={link.href}
@@ -183,26 +183,27 @@ export function PageFrame({
                 </div>
               </div>
 
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-pine/50">
+              <div className="mx-auto max-w-[440px] md:mx-0 md:max-w-[380px]">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
-               <p className="mt-4 text-justify text-sm leading-7 text-umber/82">
-  Un premier échange permet de faire le point simplement et de voir
-  si la démarche vous correspond.
-</p>
+                <p className="mt-5 text-base leading-8 text-umber/82 md:text-[15px]">
+                  Un premier échange permet de faire le point
+                  simplement et de voir si la démarche vous
+                  correspond.
+                </p>
 
-                <div className="mt-5 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+                <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.84)] px-5 py-3 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)]"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/55 bg-[rgba(255,250,246,0.84)] px-6 py-3 text-sm font-medium text-pine shadow-[0_6px_18px_rgba(46,62,53,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-[rgba(248,241,234,0.96)]"
                   >
                     Prendre un premier échange
                   </Link>
 
                   <Link
                     href="/analyse"
-                    className="inline-flex items-center justify-center rounded-full border border-white/45 bg-white/35 px-5 py-3 text-sm font-medium text-pine/88 transition-all duration-300 hover:border-white/65 hover:bg-white/55 hover:text-pine"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/45 bg-white/35 px-6 py-3 text-sm font-medium text-pine/88 transition-all duration-300 hover:border-white/65 hover:bg-white/55 hover:text-pine"
                   >
                     Découvrir le diagnostic
                   </Link>
@@ -210,10 +211,11 @@ export function PageFrame({
               </div>
             </div>
 
-            <div className="mt-8 border-t border-white/35 pt-5">
-              <div className="flex flex-col gap-3 text-xs text-umber/62 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-10 border-t border-white/35 pt-5">
+              <div className="flex flex-col items-center gap-3 text-center text-xs text-umber/62 sm:flex-row sm:justify-between sm:text-left">
                 <p>Cabinet Astraé · Espace d’accompagnement personnel</p>
-                <div className="flex flex-wrap gap-x-5 gap-y-2">
+
+                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
                   <Link
                     href="/contact"
                     className="transition-colors duration-300 hover:text-pine"
