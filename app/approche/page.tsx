@@ -28,12 +28,10 @@ export default function ApprochePage() {
           <p className="text-[11px] uppercase tracking-[0.28em] text-pine/50">
             CABINET ASTRAÉ · APPROCHE
           </p>
-
-          <h1 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold tracking-[-0.03em] text-pine md:text-5xl md:leading-[1.08]">
-            Comprendre plus clairement ce que vous vivez
-            <br className="hidden md:block" />
-            pour avancer plus sereinement
-          </h1>
+<h1 className="mx-auto mt-4 max-w-[12ch] text-balance text-center text-[2.2rem] font-semibold leading-[1.04] tracking-[-0.04em] text-pine sm:text-[2.8rem] md:max-w-[13ch] md:text-[4.15rem] md:leading-[1.02]">
+  Mieux comprendre ce que vous vivez
+  <span className="block mt-2 md:mt-3">pour avancer plus sereinement</span>
+</h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-pine/75">
             L’approche du Cabinet Astraé vise à rendre plus lisible ce qui,
@@ -58,7 +56,7 @@ export default function ApprochePage() {
               href="/analyse"
               className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#5D815D]/24 bg-white/78 px-6 py-3 text-sm font-medium text-[#4E6F56] transition hover:border-[#5D815D]/36 hover:bg-white"
             >
-              Faire un premier diagnostic
+              Faire un premier point
             </Link>
           </div>
         </section>
@@ -119,8 +117,12 @@ export default function ApprochePage() {
                 Faire le point
               </Link>
 
-              <div className="mt-4 inline-flex items-center justify-center rounded-full border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-xs font-medium tracking-[0.04em] text-[#4E6F56]">
-  Gratuit • Sans engagement • En quelques minutes
+            <div className="mt-4 inline-flex max-w-[260px] flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-center text-xs font-medium leading-5 tracking-[0.02em] text-[#4E6F56] sm:max-w-none sm:rounded-full sm:px-4 sm:py-2">
+  <span>Gratuit</span>
+  <span className="hidden sm:inline">•</span>
+  <span>Sans engagement</span>
+  <span className="hidden sm:inline">•</span>
+  <span>En quelques minutes</span>
 </div>
             </div>
           </div>
