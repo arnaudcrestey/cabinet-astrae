@@ -104,7 +104,7 @@ export default function ApprochePage() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-pine/74">
-              Vous pouvez commencer par faire le point sur votre situation.
+              Vous pouvez commencer par faire un point sur votre situation.
               Cette première étape permet de poser les éléments importants avant
               d’envisager, si besoin, une suite plus approfondie avec le Cabinet.
             </p>
@@ -114,7 +114,7 @@ export default function ApprochePage() {
     href="/analyse"
     className="inline-flex min-h-[54px] min-w-[196px] items-center justify-center rounded-full bg-[#5D815D] px-9 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:translate-y-[-1px] hover:bg-[#526f52]"
   >
-    Faire le point
+    Faire un point
   </Link>
 
   <div className="mt-4 inline-flex max-w-[260px] flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#5D815D]/18 bg-white/55 px-4 py-2 text-center text-xs font-medium leading-5 tracking-[0.02em] text-[#4E6F56] sm:max-w-none sm:rounded-full sm:px-4 sm:py-2">
