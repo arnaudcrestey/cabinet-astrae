@@ -187,10 +187,10 @@ export function PageFrame({
                 <p className="text-[11px] uppercase tracking-[0.22em] text-pine/50">
                   Premier pas
                 </p>
-                <p className="mt-4 text-sm leading-7 text-umber/82">
-                  Un premier échange permet de faire le point simplement et de voir
-                  si la démarche vous correspond.
-                </p>
+               <p className="mt-4 text-justify text-sm leading-7 text-umber/82">
+  Un premier échange permet de faire le point simplement et de voir
+  si la démarche vous correspond.
+</p>
 
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
                   <Link
