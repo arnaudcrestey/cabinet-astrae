@@ -62,13 +62,14 @@ export default function HomePage() {
             </div>
 
             <header className="astrae-entry-header">
-              <p className="astrae-entry-kicker">Cabinet</p>
-              <h1 className="astrae-entry-title">Astraé</h1>
-              <div className="astrae-entry-divider" />
-              <p className="astrae-entry-subtitle">
-                Une lecture du thème astral pour y voir plus clair.
-              </p>
-            </header>
+  <div className="astrae-entry-symbol" />
+  <p className="astrae-entry-kicker">Cabinet</p>
+  <h1 className="astrae-entry-title">Astraé</h1>
+  <div className="astrae-entry-divider" />
+  <p className="astrae-entry-subtitle">
+    Une lecture du thème astral pour y voir plus clair.
+  </p>
+</header>
 
             <div className="astrae-entry-actions">
               <Link href="/approche" className="astrae-entry-button">
