@@ -6,83 +6,159 @@ import type { ProjectionResult } from "@/lib/projection/types";
 
 export function LeadForm({ result }: { result: ProjectionResult }) {
   const router = useRouter();
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState("");
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
+    setError("");
 
-    if (!consent) {
+    const formData = new FormData(event.currentTarget);
+
+    const payload = {
+      firstName: String(formData.get("firstName") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      birthDate: String(formData.get("birthDate") ?? ""),
+      birthTime: String(formData.get("birthTime") ?? ""),
+      birthPlace: String(formData.get("birthPlace") ?? ""),
+      message: String(formData.get("message") ?? ""),
+      consent: Boolean(formData.get("consent")),
+      result,
+    };
+
+    if (!payload.consent) {
+      setLoading(false);
       setError("Votre consentement est nécessaire pour traiter votre demande.");
       return;
     }
-
-    setLoading(true);
-    setError(null);
 
     try {
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, email, message, consent, result })
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
         throw new Error("Impossible d'envoyer votre demande pour le moment.");
       }
 
+      event.currentTarget.reset();
       router.push("/demande-envoyee");
     } catch (submitError) {
-      const messageText = submitError instanceof Error ? submitError.message : "Erreur inconnue.";
-      setError(messageText);
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Erreur inattendue."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={submit} className="space-y-4 rounded-2xl border border-sage/30 bg-sand/40 p-6">
-      <h2 className="text-lg font-semibold">Aller plus loin avec Cabinet Astraé</h2>
-      <p className="text-sm text-umber/90">
-        Recevez une réponse personnalisée pour engager un approfondissement de votre situation.
-      </p>
+    <form
+      onSubmit={submit}
+      className="space-y-4 rounded-[1.9rem] border border-sage/30 bg-white/92 p-5 shadow-[0_14px_40px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-7"
+    >
+      <div className="space-y-2">
+        <h2 className="text-[1.55rem] font-light tracking-[-0.02em] text-pine sm:text-[1.7rem]">
+          Aller plus loin avec Cabinet Astraé
+        </h2>
+
+        <p className="text-sm leading-7 text-umber/88">
+  Si vous souhaitez aller plus loin, une lecture plus approfondie peut être proposée à partir de votre thème astral.
+  <br className="hidden md:block" />
+  Vous pouvez pour cela compléter les informations ci-dessous.
+</p>
+      </div>
+
       <input
+        name="firstName"
+        type="text"
         required
-        value={firstName}
-        onChange={(event) => setFirstName(event.target.value)}
         placeholder="Prénom"
-        className="w-full rounded-xl border border-sage/40 bg-white px-4 py-3 text-sm outline-none ring-pine/40 focus:ring"
+        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
+
       <input
-        required
         type="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
+        name="email"
+        required
         placeholder="Adresse e-mail"
-        className="w-full rounded-xl border border-sage/40 bg-white px-4 py-3 text-sm outline-none ring-pine/40 focus:ring"
+        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+            Date de naissance
+          </span>
+          <input
+            type="text"
+            name="birthDate"
+            required
+            inputMode="numeric"
+            placeholder="JJ / MM / AAAA"
+            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+          />
+        </label>
+
+        <label className="block">
+          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+            Heure de naissance
+          </span>
+          <input
+            type="text"
+            name="birthTime"
+            required
+            inputMode="numeric"
+            placeholder="HH:MM"
+            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+          />
+        </label>
+      </div>
+
+      <input
+        type="text"
+        name="birthPlace"
+        required
+        placeholder="Lieu de naissance (avec code postal)"
+        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+      />
+
       <textarea
-        rows={4}
-        value={message}
-        onChange={(event) => setMessage(event.target.value)}
+        name="message"
+        rows={5}
         placeholder="Si vous le souhaitez, précisez ce que vous souhaitez approfondir."
-        className="w-full rounded-xl border border-sage/40 bg-white px-4 py-3 text-sm outline-none ring-pine/40 focus:ring"
+        className="min-h-[140px] w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
-      <label className="flex items-start gap-2 text-sm text-umber/90">
-        <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} className="mt-1" />
-        J'accepte que mes informations soient utilisées pour être recontacté par Cabinet Astraé.
+
+      <label className="flex items-start gap-3 text-sm leading-7 text-umber/92">
+        <input
+          name="consent"
+          type="checkbox"
+          required
+          className="mt-1 h-4 w-4 rounded border border-sage/40 accent-[#5D815D]"
+        />
+        <span>
+          J&apos;accepte que mes informations soient utilisées uniquement dans le
+          cadre de ma demande auprès de Cabinet Astraé.
+        </span>
       </label>
+
       {error && <p className="text-sm text-umber">{error}</p>}
-      <button
-        disabled={loading}
-        className="rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory disabled:cursor-not-allowed disabled:opacity-70"
-      >
-        {loading ? "Envoi en cours..." : "Prendre contact avec Cabinet Astraé"}
-      </button>
+
+      <div className="flex justify-center sm:justify-start">
+        <button
+          type="submit"
+          disabled={loading}
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95 disabled:opacity-60"
+        >
+          {loading ? "Envoi en cours..." : "Envoyer ma demande"}
+        </button>
+      </div>
     </form>
   );
 }
