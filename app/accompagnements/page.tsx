@@ -54,7 +54,7 @@ export default function AccompagnementsPage() {
   <p className="text-sm leading-relaxed text-umber/78 md:text-[15px]">
     Commencez simplement par faire un point, puis approfondissez si besoin.
   </p>
-  <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-pine/55">
+  <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-pine/75">
     Gratuit · Sans engagement
   </p>
 </div>
