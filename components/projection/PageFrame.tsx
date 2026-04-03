@@ -188,10 +188,8 @@ export function PageFrame({
                 <p className="text-[11px] uppercase tracking-[0.24em] text-pine/50">
                   Premier pas
                 </p>
-               <p className="mt-5 mx-auto max-w-[380px] text-center text-[15px] leading-9 text-umber/82 md:mx-0 md:max-w-[340px] md:text-left">
-  Un premier échange permet de faire le point simplement
-  et de voir si la démarche vous correspond.
-</p>
+              Un premier échange pour faire le point
+et voir si la démarche vous correspond.>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Link href="/contact" className={primaryButtonClass}>
