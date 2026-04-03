@@ -195,7 +195,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+               <section className="mx-auto grid max-w-[1180px] gap-4 lg:grid-cols-[1.18fr_0.82fr]">
           <article className="astrae-panel overflow-hidden rounded-[1.75rem]">
             <div className="grid h-full gap-0 md:grid-cols-[280px_minmax(0,1fr)]">
               <div className="relative min-h-[320px] md:min-h-full">
@@ -210,17 +210,17 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="p-6 md:p-7">
+              <div className="p-6 text-center md:p-7 md:text-left">
                 <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
                   Qui est derrière Astraé
                 </p>
 
-                <h2 className="mt-3 max-w-xl text-xl font-semibold leading-tight text-pine md:text-[1.9rem]">
+                <h2 className="mt-3 mx-auto max-w-xl text-xl font-semibold leading-tight text-pine md:mx-0 md:text-[1.9rem]">
                   Une présence humaine, une écoute fine, une lecture en
                   profondeur
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
+                <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
                   Virginie accompagne depuis de nombreuses années des personnes
                   traversant des périodes de fragilité, de questionnement ou de
                   transition. Son approche repose sur l’écoute, la qualité de
@@ -228,7 +228,7 @@ export default function HomePage() {
                   difficile à nommer ou à relier.
                 </p>
 
-                <p className="mt-4 text-sm leading-7 text-umber/80 md:text-base">
+                <p className="mt-4 mx-auto max-w-[36rem] text-sm leading-7 text-umber/80 md:mx-0 md:max-w-none md:text-base">
                   Lorsque cela peut éclairer plus finement une situation,
                   l’analyse du thème astral vient approfondir la lecture. Elle
                   est utilisée comme un support de compréhension, au service de
@@ -236,7 +236,7 @@ export default function HomePage() {
                   promesse de prédiction.
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/65">
+                <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-pine/10 pt-5 text-sm text-umber/65 md:justify-start">
                   <span>Écoute structurée</span>
                   <span>Analyse du thème astral</span>
                   <span>Cadre confidentiel</span>
@@ -245,32 +245,32 @@ export default function HomePage() {
             </div>
           </article>
 
-          <article className="astrae-panel flex flex-col justify-center rounded-[1.75rem] p-6 md:p-7">
+          <article className="astrae-panel flex flex-col justify-center rounded-[1.75rem] p-6 text-center md:p-7 lg:text-left">
             <p className="text-[11px] uppercase tracking-[0.26em] text-pine/55">
               Faire un premier pas
             </p>
 
-            <h2 className="mt-3 max-w-md text-xl font-semibold leading-tight text-pine md:text-[1.9rem]">
+            <h2 className="mt-3 mx-auto max-w-md text-xl font-semibold leading-tight text-pine lg:mx-0 md:text-[1.9rem]">
               Un premier échange pour mieux comprendre votre situation
             </h2>
 
-            <p className="mt-4 max-w-md text-sm leading-7 text-umber/80 md:text-base">
+            <p className="mt-4 mx-auto max-w-md text-sm leading-7 text-umber/80 md:text-base lg:mx-0">
               Si quelque chose reste flou, lourd ou difficile à traverser seul,
               Astraé peut vous aider à poser une première lecture claire de
               votre situation et à envisager la suite avec plus de justesse.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3">
+            <div className="mt-7 flex flex-col items-center gap-3 lg:items-stretch">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
+                className="inline-flex min-h-[52px] w-full max-w-[420px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory transition hover:bg-pine/90"
               >
                 Prendre un premier échange
               </Link>
 
               <Link
                 href="/analyse"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+                className="inline-flex min-h-[52px] w-full max-w-[420px] items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
               >
                 Commencer par le diagnostic
               </Link>
