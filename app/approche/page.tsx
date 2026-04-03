@@ -56,7 +56,7 @@ export default function ApprochePage() {
               href="/analyse"
               className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#5D815D]/24 bg-white/78 px-6 py-3 text-sm font-medium text-[#4E6F56] transition hover:border-[#5D815D]/36 hover:bg-white"
             >
-              Faire un premier point
+              Faire un point
             </Link>
           </div>
         </section>
