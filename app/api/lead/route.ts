@@ -6,7 +6,10 @@ import { sendLeadConfirmation, sendLeadNotification } from "@/lib/projection/mai
 const leadSchema = z.object({
   firstName: z.string().min(2).max(80),
   email: z.string().email(),
-  message: z.string().max(4000).optional().default(""),
+  birthDate: z.string().min(4).max(20),
+  birthTime: z.string().min(3).max(10),
+  birthPlace: z.string().min(2).max(160),
+  message: z.string().min(0).max(4000),
   consent: z.literal(true),
   result: z.object({
     summary: z.string(),
@@ -15,8 +18,8 @@ const leadSchema = z.object({
     clarityPath: z.string(),
     deeperWork: z.string(),
     confidence: z.enum(["high", "medium"]),
-    generatedAt: z.string()
-  })
+    generatedAt: z.string(),
+  }),
 });
 
 export async function POST(request: Request) {
@@ -25,19 +28,25 @@ export async function POST(request: Request) {
     const payload = leadSchema.parse(json);
 
     await storeLead(payload);
-    await Promise.all([sendLeadNotification(payload), sendLeadConfirmation(payload)]);
+    await Promise.all([
+      sendLeadNotification(payload),
+      sendLeadConfirmation(payload),
+    ]);
 
     return NextResponse.json({ ok: true, message: "Demande envoyée avec succès." });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { message: "Les informations envoyées sont invalides.", details: error.flatten() },
+        {
+          message: "Les informations envoyées sont incomplètes ou invalides.",
+          details: error.flatten(),
+        },
         { status: 400 }
       );
     }
 
     return NextResponse.json(
-      { message: "Envoi indisponible temporairement. Merci de réessayer." },
+      { message: "Impossible d'envoyer votre demande pour le moment. Merci de réessayer." },
       { status: 500 }
     );
   }
