@@ -8,26 +8,24 @@ export default function AccompagnementsPage() {
       intro="Chaque accompagnement vise à éclairer une situation précise, à en comprendre les dynamiques, et à vous permettre d’avancer avec plus de clarté et de justesse."
     >
       <div className="mx-auto max-w-5xl space-y-10">
-
         {/* CARDS */}
-        <section className="grid gap-5 md:grid-cols-3 md:gap-6 text-center">
-
+        <section className="grid gap-5 text-center md:grid-cols-3 md:gap-6">
           {[
             {
               title: "Lecture de situation",
               text: "Pour faire le point sur une situation actuelle : tension, transition ou sentiment de flou, et identifier ce qui se joue réellement.",
-              cta: "Commencer par faire un point"
+              cta: "Commencer par faire un point",
             },
             {
               title: "Approfondissement thématique",
               text: "Pour explorer un enjeu précis : relation, décision, répétition de schéma ou repositionnement personnel.",
-              cta: "Échanger autour de votre situation"
+              cta: "Échanger autour de votre situation",
             },
             {
               title: "Lecture approfondie du thème astral",
               text: "Une analyse approfondie intégrant le thème astral, pour relier votre dynamique personnelle, votre histoire et vos axes d’évolution.",
-              cta: "Prendre un temps d'échange"
-            }
+              cta: "Prendre un temps d'échange",
+            },
           ].map((item) => (
             <article
               key={item.title}
@@ -46,22 +44,21 @@ export default function AccompagnementsPage() {
               </p>
             </article>
           ))}
-          
-
         </section>
-          
-        <div className="mx-auto max-w-2xl text-center">
-  <p className="text-sm leading-relaxed text-umber/78 md:text-[15px]">
-    Commencez simplement par faire un point, puis approfondissez si besoin.
-  </p>
-  <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-pine/75">
-    Gratuit · Sans engagement
-  </p>
-</div>
+
+        <div className="mx-auto max-w-2xl">
+          <div className="rounded-[1.6rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.50),rgba(248,242,236,0.34))] px-6 py-5 text-center shadow-[0_10px_30px_rgba(74,47,33,0.04)] backdrop-blur-sm md:px-8 md:py-6">
+            <p className="text-sm leading-relaxed text-umber/78 md:text-[15px]">
+              Commencez simplement par faire un point, puis approfondissez si besoin.
+            </p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-pine/75">
+              Gratuit · Sans engagement
+            </p>
+          </div>
+        </div>
 
         {/* CADRE */}
         <section className="mx-auto max-w-3xl rounded-2xl border border-white/40 bg-white/50 p-7 text-center backdrop-blur md:p-8">
-
           <h2 className="text-base font-medium text-pine">
             Cadre de travail
           </h2>
@@ -78,9 +75,7 @@ export default function AccompagnementsPage() {
           >
             Prendre un temps d'échange
           </Link>
-
         </section>
-
       </div>
     </PageFrame>
   );
