@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { InlineWidget } from "react-calendly";
 import { PageFrame } from "@/components/projection/PageFrame";
 
-const bookingUrl = "#"; // Remplace ici par ton vrai lien de réservation
+const calendlyUrl = "https://calendly.com/ton-compte/premier-echange-astrae";
 
 const included = [
   "Un échange en visio d’environ 1h à 1h30.",
@@ -60,12 +63,12 @@ export default function ReservationPage() {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href={bookingUrl}
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-7 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
+            <a
+              href="#calendly-booking"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-7 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95 hover:scale-[1.02]"
             >
-              Réserver un rendez-vous
-            </Link>
+              Choisir mon créneau
+            </a>
 
             <Link
               href="/analyse"
@@ -76,7 +79,7 @@ export default function ReservationPage() {
           </div>
 
           <p className="mt-4 text-center text-sm text-umber/75">
-            Paiement sécurisé • Aucun engagement au-delà de ce rendez-vous
+            Paiement sécurisé • Aucun engagement pour la suite
           </p>
         </section>
 
@@ -118,6 +121,34 @@ export default function ReservationPage() {
             Il s’agit d’un premier cadre de compréhension, pour vous aider à y
             voir plus clair et à sentir si une suite mérite d’être envisagée.
           </p>
+        </section>
+
+        <section
+          id="calendly-booking"
+          className="rounded-[2rem] border border-sage/22 bg-white/92 p-4 shadow-[0_16px_40px_rgba(69,89,72,0.08)] md:p-6"
+        >
+          <div className="mb-4 text-center">
+            <p className="text-[0.7rem] uppercase tracking-[0.26em] text-sage/90">
+              Réservation
+            </p>
+            <h3 className="mt-2 text-[1.5rem] font-light tracking-[-0.02em] text-pine">
+              Choisissez directement votre créneau
+            </h3>
+          </div>
+
+          <div className="overflow-hidden rounded-[1.5rem] border border-sage/16 bg-[#F8F6F1]">
+            <InlineWidget
+              url={calendlyUrl}
+              styles={{ height: "760px" }}
+              pageSettings={{
+                hideEventTypeDetails: false,
+                hideLandingPageDetails: false,
+                primaryColor: "5D815D",
+                textColor: "4F6F52",
+                backgroundColor: "F8F6F1",
+              }}
+            />
+          </div>
         </section>
       </div>
     </PageFrame>
