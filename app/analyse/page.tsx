@@ -31,7 +31,7 @@ export default function AnalysePage() {
             Commencer le questionnaire
           </Link>
           <Link href="/contact" className="inline-flex rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
-            Prendre contact directement
+            Je préfère échanger directement
           </Link>
         </div>
       </section>
