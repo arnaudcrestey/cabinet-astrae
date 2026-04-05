@@ -1,23 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { InlineWidget } from "react-calendly";
 import { PageFrame } from "@/components/projection/PageFrame";
 
-const calendlyUrl = "https://calendly.com/arnaud-crestey14/30min";
+const calendlyUrl =
+  "https://calendly.com/arnaud-crestey14/30min";
 
 const included = [
-  "Un échange en visio d’environ 1h à 1h30.",
-  "Un temps pour reprendre votre situation avec attention et clarté.",
-  "Un regard structuré sur ce que vous vivez actuellement.",
-  "Des repères concrets pour discerner la suite la plus juste.",
+  "Un échange en visio d’environ 1 heure.",
+  "Un temps pour reprendre votre situation avec attention, clarté et recul.",
+  "Un premier éclairage structuré sur ce que vous vivez actuellement.",
+  "Des repères concrets pour discerner la suite la plus juste pour vous.",
 ];
 
 const forWho = [
   "Si vous traversez une période de flou, de transition ou de blocage.",
-  "Si vous ressentez le besoin d’être aidé à mieux comprendre ce qui se joue.",
-  "Si vous souhaitez un échange direct, humain et approfondi.",
+  "Si vous ressentez le besoin de mieux comprendre ce qui se joue dans votre situation.",
+  "Si vous souhaitez un échange direct, humain et approfondi plutôt qu’une simple réponse rapide.",
 ];
+
+const markers = [
+  ["Format", "Visio"],
+  ["Durée", "Environ 1 heure"],
+  ["Tarif", "120€"],
+] as const;
 
 export default function ReservationPage() {
   return (
@@ -38,18 +44,14 @@ export default function ReservationPage() {
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-umber/85 md:text-[1rem]">
               Ce rendez-vous permet de reprendre votre situation de manière plus
-              approfondie, dans un cadre posé, humain et structuré. Il peut
-              constituer une première étape claire avant d’envisager, si cela a
-              du sens pour vous, une suite plus personnalisée.
+              approfondie, dans un cadre posé, humain et structuré. Il constitue
+              une première étape claire pour faire le point, sans engagement
+              pour la suite.
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {[
-              ["Format", "Visio"],
-              ["Durée", "Environ 1h à 1h30"],
-              ["Tarif", "120€"],
-            ].map(([title, text]) => (
+            {markers.map(([title, text]) => (
               <article
                 key={title}
                 className="rounded-[1.5rem] border border-sage/18 bg-[#F8F6F1] px-5 py-5 text-center"
@@ -64,22 +66,24 @@ export default function ReservationPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="#calendly-booking"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-7 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95 hover:scale-[1.02]"
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-pine px-8 py-3 text-sm font-medium text-ivory shadow-[0_12px_28px_rgba(46,62,53,0.18)] transition duration-200 hover:scale-[1.02] hover:opacity-95"
             >
               Choisir mon créneau
             </a>
 
             <Link
               href="/analyse"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-sage/20 bg-white/60 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-sage/20 bg-white/60 px-6 py-3 text-sm font-medium text-pine transition duration-200 hover:bg-white"
             >
               Faire un point gratuit
             </Link>
           </div>
 
           <p className="mt-4 text-center text-sm text-umber/75">
-            Paiement sécurisé • Aucun engagement pour la suite
+            Réservation sur une page dédiée • Ouverture dans un nouvel onglet
           </p>
         </section>
 
@@ -92,7 +96,7 @@ export default function ReservationPage() {
             <ul className="mt-5 space-y-3 text-sm leading-7 text-umber/88">
               {included.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-[10px] h-1.5 w-1.5 rounded-full bg-sage/80" />
+                  <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-sage/80" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -107,7 +111,7 @@ export default function ReservationPage() {
             <ul className="mt-5 space-y-3 text-sm leading-7 text-umber/88">
               {forWho.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-[10px] h-1.5 w-1.5 rounded-full bg-sage/80" />
+                  <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-sage/80" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -117,38 +121,10 @@ export default function ReservationPage() {
 
         <section className="rounded-[1.8rem] border border-sage/18 bg-white/70 px-6 py-6 text-center backdrop-blur-[2px] md:px-8">
           <p className="mx-auto max-w-3xl text-sm leading-7 text-umber/82">
-            Ce temps d’échange n’engage à rien au-delà du rendez-vous lui-même.
-            Il s’agit d’un premier cadre de compréhension, pour vous aider à y
-            voir plus clair et à sentir si une suite mérite d’être envisagée.
+            Vous serez redirigé vers la page de réservation pour choisir votre
+            créneau. Le lien de visio vous sera ensuite transmis avec la
+            confirmation de rendez-vous.
           </p>
-        </section>
-
-        <section
-          id="calendly-booking"
-          className="rounded-[2rem] border border-sage/22 bg-white/92 p-4 shadow-[0_16px_40px_rgba(69,89,72,0.08)] md:p-6"
-        >
-          <div className="mb-4 text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.26em] text-sage/90">
-              Réservation
-            </p>
-            <h3 className="mt-2 text-[1.5rem] font-light tracking-[-0.02em] text-pine">
-              Choisissez directement votre créneau
-            </h3>
-          </div>
-
-          <div className="overflow-hidden rounded-[1.5rem] border border-sage/16 bg-[#F8F6F1]">
-            <InlineWidget
-              url={calendlyUrl}
-              styles={{ height: "760px" }}
-              pageSettings={{
-                hideEventTypeDetails: false,
-                hideLandingPageDetails: false,
-                primaryColor: "5D815D",
-                textColor: "4F6F52",
-                backgroundColor: "F8F6F1",
-              }}
-            />
-          </div>
         </section>
       </div>
     </PageFrame>
