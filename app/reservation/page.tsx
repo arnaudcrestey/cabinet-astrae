@@ -34,7 +34,7 @@ export default function ReservationPage() {
       <div className="mx-auto max-w-5xl space-y-8">
         <section className="rounded-[2rem] border border-sage/25 bg-white/92 p-6 shadow-[0_16px_40px_rgba(69,89,72,0.08)] md:p-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] uppercase tracking-[0.28em] text-sage/90">
+           <p className="text-[0.8rem] font-semibold uppercase tracking-[0.34em] text-[#4F6F5D]">
               Cabinet Astraé
             </p>
 
