@@ -75,7 +75,7 @@ export function PageFrame({
                 </Link>
 
                 <div className="hidden shrink-0 lg:flex">
-                  <Link href="/contact" className={primaryButtonClass}>
+                  <Link href="/reservation" className={primaryButtonClass}>
                     Prendre un temps d'échange
                   </Link>
                 </div>
@@ -142,7 +142,7 @@ export function PageFrame({
 
                   <div className="mt-3 px-1 pb-1 pt-2">
                     <Link
-                      href="/contact"
+                      href="/reservation"
                       onClick={() => setMenuOpen(false)}
                       className={`${primaryButtonClass} w-full`}
                     >
