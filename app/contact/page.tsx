@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/site/ContactForm";
 import { PageFrame } from "@/components/projection/PageFrame";
 
@@ -59,6 +60,21 @@ export default function ContactPage() {
 
         <div className="lg:h-full">
           <ContactForm />
+
+          <div className="mt-6 rounded-[1.5rem] border border-sage/18 bg-white/55 px-6 py-6 text-center backdrop-blur-[2px]">
+            <p className="text-sm font-medium leading-6 text-pine">
+              Vous préférez un échange direct ?
+            </p>
+
+            <div className="mt-4 flex justify-center">
+              <Link
+                href="/reservation"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
+              >
+                Prendre un rendez-vous visio
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </PageFrame>
