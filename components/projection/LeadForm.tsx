@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ProjectionResult } from "@/lib/projection/types";
 
@@ -58,107 +59,124 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
   };
 
   return (
-    <form
-      onSubmit={submit}
-      className="space-y-4 rounded-[1.9rem] border border-sage/30 bg-white/92 p-5 shadow-[0_14px_40px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-7"
-    >
-      <div className="space-y-2">
-        <h2 className="text-[1.55rem] font-light tracking-[-0.02em] text-pine sm:text-[1.7rem]">
-          Aller plus loin avec Cabinet Astraé
-        </h2>
+    <div className="rounded-[1.9rem] border border-sage/30 bg-white/92 p-5 shadow-[0_14px_40px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-7">
+      <form onSubmit={submit} className="space-y-4">
+        <div className="space-y-3">
+          <h2 className="text-[1.45rem] font-light tracking-[-0.02em] text-pine sm:text-[1.62rem]">
+            Recevoir un premier approfondissement
+          </h2>
 
-        <p className="text-sm leading-7 text-umber/88">
-  Si vous souhaitez aller plus loin, une lecture plus approfondie peut être proposée à partir de votre thème astral.
-  <br className="hidden md:block" />
-  Vous pouvez pour cela compléter les informations ci-dessous.
-</p>
-      </div>
+          <p className="text-sm leading-7 text-umber/88">
+            Si vous souhaitez aller plus loin, vous pouvez transmettre vos
+            informations de naissance pour recevoir un premier éclairage
+            complémentaire à partir de votre thème astral.
+            <br className="hidden md:block" />
+            Cette étape peut permettre de préciser certains éléments avant un
+            éventuel échange avec le Cabinet.
+          </p>
+        </div>
 
-      <input
-        name="firstName"
-        type="text"
-        required
-        placeholder="Prénom"
-        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-      />
-
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="Adresse e-mail"
-        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-      />
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
-            Date de naissance
-          </span>
-          <input
-            type="text"
-            name="birthDate"
-            required
-            inputMode="numeric"
-            placeholder="JJ / MM / AAAA"
-            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-          />
-        </label>
-
-        <label className="block">
-          <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
-            Heure de naissance
-          </span>
-          <input
-            type="text"
-            name="birthTime"
-            required
-            inputMode="numeric"
-            placeholder="HH:MM"
-            className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-          />
-        </label>
-      </div>
-
-      <input
-        type="text"
-        name="birthPlace"
-        required
-        placeholder="Lieu de naissance (avec code postal)"
-        className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-      />
-
-      <textarea
-        name="message"
-        rows={5}
-        placeholder="Si vous le souhaitez, précisez ce que vous souhaitez approfondir."
-        className="min-h-[140px] w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
-      />
-
-      <label className="flex items-start gap-3 text-sm leading-7 text-umber/92">
         <input
-          name="consent"
-          type="checkbox"
+          name="firstName"
+          type="text"
           required
-          className="mt-1 h-4 w-4 rounded border border-sage/40 accent-[#5D815D]"
+          placeholder="Prénom"
+          className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
         />
-        <span>
-          J&apos;accepte que mes informations soient utilisées uniquement dans le
-          cadre de ma demande auprès de Cabinet Astraé.
-        </span>
-      </label>
 
-      {error && <p className="text-sm text-umber">{error}</p>}
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Adresse e-mail"
+          className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+        />
 
-      <div className="flex justify-center sm:justify-start">
-        <button
-          type="submit"
-          disabled={loading}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95 disabled:opacity-60"
-        >
-          {loading ? "Envoi en cours..." : "Envoyer ma demande"}
-        </button>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="block">
+            <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+              Date de naissance
+            </span>
+            <input
+              type="text"
+              name="birthDate"
+              required
+              inputMode="numeric"
+              placeholder="JJ / MM / AAAA"
+              className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-2 block pl-1 text-[13px] font-medium text-forest/80">
+              Heure de naissance
+            </span>
+            <input
+              type="text"
+              name="birthTime"
+              required
+              inputMode="numeric"
+              placeholder="HH:MM"
+              className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+            />
+          </label>
+        </div>
+
+        <input
+          type="text"
+          name="birthPlace"
+          required
+          placeholder="Lieu de naissance (avec code postal)"
+          className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+        />
+
+        <textarea
+          name="message"
+          rows={5}
+          placeholder="Si vous le souhaitez, précisez ce que vous souhaitez approfondir."
+          className="min-h-[140px] w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
+        />
+
+        <label className="flex items-start gap-3 text-sm leading-7 text-umber/92">
+          <input
+            name="consent"
+            type="checkbox"
+            required
+            className="mt-1 h-4 w-4 rounded border border-sage/40 accent-[#5D815D]"
+          />
+          <span>
+            J&apos;accepte que mes informations soient utilisées uniquement dans
+            le cadre de ma demande auprès de Cabinet Astraé.
+          </span>
+        </label>
+
+        {error && <p className="text-sm text-umber">{error}</p>}
+
+        <div className="flex justify-center sm:justify-start">
+          <button
+            type="submit"
+            disabled={loading}
+            className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95 disabled:opacity-60"
+          >
+            {loading ? "Envoi en cours..." : "Envoyer ma demande"}
+          </button>
+        </div>
+      </form>
+
+      <div className="mt-6 border-t border-sage/18 pt-5">
+        <p className="text-sm leading-6 text-umber/80">
+          Vous préférez un échange direct ?
+        </p>
+
+        <div className="mt-3 flex justify-center sm:justify-start">
+          <Link
+            href="/reservation"
+            className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#5D815D]/22 bg-white/80 px-5 py-3 text-sm font-medium text-pine transition hover:border-[#5D815D]/38 hover:bg-white"
+          >
+            Prendre un rendez-vous visio
+          </Link>
+        </div>
       </div>
-    </form>
+    </div>
   );
 }
