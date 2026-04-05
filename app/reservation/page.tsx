@@ -4,7 +4,7 @@ import Link from "next/link";
 import { InlineWidget } from "react-calendly";
 import { PageFrame } from "@/components/projection/PageFrame";
 
-const calendlyUrl = "https://calendly.com/ton-compte/premier-echange-astrae";
+const calendlyUrl = "https://calendly.com/arnaud-crestey14/30min";
 
 const included = [
   "Un échange en visio d’environ 1h à 1h30.",
