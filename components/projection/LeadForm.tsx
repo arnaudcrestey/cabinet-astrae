@@ -71,8 +71,8 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
             informations de naissance pour recevoir un premier éclairage
             complémentaire à partir de votre thème astral.
             <br className="hidden md:block" />
-            Cette étape peut permettre de préciser certains éléments avant un
-            éventuel échange avec le Cabinet.
+            Cette étape peut permettre de préciser certains éléments avant, si
+            vous le souhaitez, un échange avec le Cabinet.
           </p>
         </div>
 
@@ -163,15 +163,15 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
         </div>
       </form>
 
-      <div className="mt-6 border-t border-sage/18 pt-5">
-        <p className="text-sm leading-6 text-umber/80">
+      <div className="mt-6 space-y-3 border-t border-sage/18 pt-6">
+        <p className="text-sm font-medium leading-6 text-pine">
           Vous préférez un échange direct ?
         </p>
 
-        <div className="mt-3 flex justify-center sm:justify-start">
+        <div className="flex justify-center sm:justify-start">
           <Link
             href="/reservation"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#5D815D]/22 bg-white/80 px-5 py-3 text-sm font-medium text-pine transition hover:border-[#5D815D]/38 hover:bg-white"
+            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
           >
             Prendre un rendez-vous visio
           </Link>
