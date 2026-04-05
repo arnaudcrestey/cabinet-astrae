@@ -39,10 +39,9 @@ export default function ResultPage() {
   >
     <div className="mb-6 rounded-2xl border border-sage/20 bg-white/35 px-6 py-5 text-center text-sm leading-relaxed text-umber/85 backdrop-blur-[2px] md:px-8 md:py-6 md:text-[0.95rem]">
   <p className="mx-auto max-w-3xl">
-    Si vous souhaitez aller plus loin, vous pouvez transmettre vos informations de naissance
-    pour recevoir un premier éclairage complémentaire à partir de votre thème astral.
+    Cette première lecture constitue un premier éclairage.
     <br className="hidden md:block" />
-    Vous pouvez également, si vous le préférez, réserver directement un temps d’échange en visio.
+    Vous pouvez, si vous le souhaitez, aller plus loin à partir des éléments ci-dessous.
   </p>
 </div>
 
