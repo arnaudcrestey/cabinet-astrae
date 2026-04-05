@@ -163,20 +163,20 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
         </div>
       </form>
 
-      <div className="mt-6 space-y-3 border-t border-sage/18 pt-6">
-        <p className="text-sm font-medium leading-6 text-pine">
-          Vous préférez un échange direct ?
-        </p>
+      <div className="mt-6 space-y-3 border-t border-sage/18 pt-6 text-center">
+  <p className="text-sm font-medium leading-6 text-pine">
+    Vous préférez un échange direct ?
+  </p>
 
-        <div className="flex justify-center sm:justify-start">
-          <Link
-            href="/reservation"
-            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
-          >
-            Prendre un rendez-vous visio
-          </Link>
-        </div>
-      </div>
+  <div className="flex justify-center">
+    <Link
+      href="/reservation"
+      className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
+    >
+      Prendre un rendez-vous visio
+    </Link>
+  </div>
+</div>
     </div>
   );
 }
