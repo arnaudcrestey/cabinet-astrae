@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageFrame } from "@/components/projection/PageFrame";
 
 const calendlyUrl =
-  "https://calendly.com/arnaud-crestey14/30min"; // à remplacer par le bon lien si l’événement réel dure 1h
+  "https://calendly.com/arnaud-crestey14/premier-echange-astrae"; // à remplacer par le bon lien si l’événement réel dure 1h
 
 const included = [
   "Un échange en visio d’environ 1 heure.",
