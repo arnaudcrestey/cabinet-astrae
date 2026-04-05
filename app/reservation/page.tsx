@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageFrame } from "@/components/projection/PageFrame";
 
-const bookingUrl = "#"; // Remplace ici par ton lien de réservation réel
+const bookingUrl = "#"; // Remplace ici par ton vrai lien de réservation
 
 const included = [
   "Un échange en visio d’environ 1h à 1h30.",
@@ -19,7 +19,7 @@ const forWho = [
 export default function ReservationPage() {
   return (
     <PageFrame
-      title="Prendre un rendez-vous visio"
+      title="Prendre un temps d’échange en visio"
       intro="Un temps d’échange pour faire le point sur votre situation, mettre en lumière ce qui se joue et avancer avec plus de clarté."
     >
       <div className="mx-auto max-w-5xl space-y-8">
@@ -41,7 +41,7 @@ export default function ReservationPage() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
               ["Format", "Visio"],
               ["Durée", "Environ 1h à 1h30"],
@@ -69,11 +69,15 @@ export default function ReservationPage() {
 
             <Link
               href="/analyse"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#5D815D]/22 bg-white/75 px-7 py-3 text-sm font-medium text-pine transition hover:border-[#5D815D]/36 hover:bg-white"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-sage/20 bg-white/60 px-6 py-3 text-sm font-medium text-pine transition hover:bg-white"
             >
-              Faire un point gratuit d’abord
+              Faire un point gratuit
             </Link>
           </div>
+
+          <p className="mt-4 text-center text-sm text-umber/75">
+            Paiement sécurisé • Aucun engagement au-delà de ce rendez-vous
+          </p>
         </section>
 
         <section className="grid gap-6 md:grid-cols-2">
