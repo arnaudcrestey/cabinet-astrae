@@ -37,13 +37,7 @@ export default function ResultPage() {
     title="Votre première lecture Astraé"
     intro="Cette première lecture met en lumière les dynamiques qui traversent votre situation. Elle offre un premier éclairage, et peut ouvrir vers un accompagnement plus personnalisé."
   >
-    <div className="mb-6 rounded-2xl border border-sage/20 bg-white/35 px-6 py-5 text-center text-sm leading-relaxed text-umber/85 backdrop-blur-[2px] md:px-8 md:py-6 md:text-[0.95rem]">
-  <p className="mx-auto max-w-3xl">
-    Cette première lecture constitue un premier éclairage.
-    <br className="hidden md:block" />
-    Vous pouvez, si vous le souhaitez, aller plus loin à partir des éléments ci-dessous.
-  </p>
-</div>
+   
 
     <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
       <ResultCard result={result} />
