@@ -27,10 +27,10 @@ export default function AnalysePage() {
           <li>Vous pourrez, si vous le souhaitez, prolonger avec un échange avec le Cabinet.</li>
         </ul>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/reservation" className="inline-flex rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
+          <Link href="/questions" className="inline-flex rounded-full bg-pine px-5 py-3 text-sm font-medium text-ivory hover:bg-pine/90">
             Commencer le questionnaire
           </Link>
-          <Link href="/contact" className="inline-flex rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
+          <Link href="/reservation" className="inline-flex rounded-full border border-pine/40 px-5 py-3 text-sm font-medium text-pine hover:bg-pine/5">
             Je préfère échanger directement
           </Link>
         </div>
