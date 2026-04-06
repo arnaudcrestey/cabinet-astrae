@@ -17,10 +17,10 @@ const journey: Array<{
   href: Route;
 }> = [
   {
-    title: "Diagnostic",
+    title: "Faire un point sur votre situation",
     description:
-      "Une première entrée pour faire émerger ce qui se joue, identifier une tension de fond et obtenir un premier éclairage sur votre situation.",
-    cta: "Découvrir le diagnostic",
+      "Une première étape pour clarifier ce que vous vivez, identifier les dynamiques en cours et poser un premier éclairage sur votre situation.",
+    cta: "Faire un point",
     href: "/analyse",
   },
   {
