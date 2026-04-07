@@ -54,7 +54,7 @@ export async function sendLeadNotification(lead: LeadPayload) {
       html: `
       <div style="font-family: Arial, sans-serif; line-height:1.6; color:#2F3E2F; max-width:640px">
 
-        <h2 style="margin-bottom:16px;">🧠 Nouveau lead Astraé</h2>
+        <h2 style="margin-bottom:16px;">Nouveau lead Astraé</h2>
 
         <h3>👤 Informations</h3>
         <p><strong>Prénom :</strong> ${lead.firstName}</p>
@@ -116,15 +116,15 @@ export async function sendLeadConfirmation(lead: LeadPayload) {
 
         <p>
           Les éléments que vous avez partagés ont été transmis avec attention.<br/>
-          Ils vont nous permettre de poser un premier regard sur votre situation, et, si nécessaire, de préparer une première lecture en amont de l’échange.
+          Ils vont nous permettre de poser un premier regard sur votre situation.
         </p>
 
         <p>
-          Nous revenons vers vous sous 48h ouvrées avec un retour posé, structuré et adapté à ce que vous traversez actuellement.
+          Nous revenons vers vous sous 48h ouvrées avec un retour clair et structuré.
         </p>
 
         <p>
-          D’ici là, vous pouvez simplement laisser les choses se déposer.
+          À très bientôt.
         </p>
 
         <br/>
