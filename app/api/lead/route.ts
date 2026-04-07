@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { storeLead } from "@/lib/projection/storage";
 import {
   sendLeadConfirmation,
   sendLeadNotification,
@@ -29,13 +28,9 @@ export async function POST(request: Request) {
   try {
     const json = await request.json();
 
-    console.log("BODY /api/lead =", JSON.stringify(json, null, 2));
-
     const parsed = leadSchema.safeParse(json);
 
     if (!parsed.success) {
-      console.error("ZOD ERROR /api/lead =", parsed.error.flatten());
-
       return NextResponse.json(
         {
           ok: false,
@@ -48,47 +43,18 @@ export async function POST(request: Request) {
 
     const payload = parsed.data;
 
-    try {
-      await storeLead(payload);
-      console.log("storeLead OK");
-    } catch (error) {
-      console.error("storeLead ERROR =", error);
-
-      return NextResponse.json(
-        {
-          ok: false,
-          step: "storeLead",
-          message: error instanceof Error ? error.message : "Erreur storeLead",
-        },
-        { status: 500 }
-      );
-    }
-
-    try {
-      await Promise.all([
-        sendLeadNotification(payload),
-        sendLeadConfirmation(payload),
-      ]);
-      console.log("MAILS OK");
-    } catch (error) {
-      console.error("MAILER ERROR =", error);
-
-      return NextResponse.json(
-        {
-          ok: false,
-          step: "mailer",
-          message: error instanceof Error ? error.message : "Erreur mailer",
-        },
-        { status: 500 }
-      );
-    }
+    // 👉 UNIQUEMENT LES MAILS (plus de stockage)
+    await Promise.all([
+      sendLeadNotification(payload),
+      sendLeadConfirmation(payload),
+    ]);
 
     return NextResponse.json({
       ok: true,
       message: "Demande envoyée avec succès.",
     });
   } catch (error) {
-    console.error("API /api/lead GLOBAL ERROR =", error);
+    console.error("API /api/lead ERROR =", error);
 
     return NextResponse.json(
       {
