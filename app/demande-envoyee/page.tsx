@@ -4,7 +4,7 @@ import { PageFrame } from "@/components/projection/PageFrame";
 export default function DemandeEnvoyeePage() {
   return (
     <PageFrame
-      title="Votre demande a bien été envoyée"
+      title="Demande envoyée"
       intro="Nous revenons vers vous sous 48h ouvrées avec un premier retour."
     >
       <div className="mx-auto max-w-3xl">
