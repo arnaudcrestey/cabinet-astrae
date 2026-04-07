@@ -12,10 +12,13 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const form = event.currentTarget;
+
     setLoading(true);
     setError("");
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
 
     const payload = {
       firstName: String(formData.get("firstName") ?? ""),
@@ -41,11 +44,15 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
         body: JSON.stringify(payload),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Impossible d'envoyer votre demande pour le moment.");
+        throw new Error(
+          data?.message || "Impossible d'envoyer votre demande pour le moment."
+        );
       }
 
-      event.currentTarget.reset();
+      form.reset();
       router.push("/demande-envoyee");
     } catch (submitError) {
       setError(
@@ -164,19 +171,19 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
       </form>
 
       <div className="mt-6 space-y-3 border-t border-sage/18 pt-6 text-center">
-  <p className="text-sm font-medium leading-6 text-pine">
-    Vous préférez un échange direct ?
-  </p>
+        <p className="text-sm font-medium leading-6 text-pine">
+          Vous préférez un échange direct ?
+        </p>
 
-  <div className="flex justify-center">
-    <Link
-      href="/reservation"
-      className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
-    >
-      Prendre un rendez-vous visio
-    </Link>
-  </div>
-</div>
+        <div className="flex justify-center">
+          <Link
+            href="/reservation"
+            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
+          >
+            Prendre un rendez-vous visio
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
