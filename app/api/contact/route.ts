@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const json = await request.json();
     const payload = contactSchema.parse(json);
 
-    await sendLeadNotification({
+    const leadPayload = {
       ...payload,
       result: {
         summary: payload.message,
@@ -27,13 +27,17 @@ export async function POST(request: Request) {
           "Un premier cadrage permettra de mieux comprendre la situation et le besoin principal.",
         deeperWork:
           "Un approfondissement pourra ensuite être envisagé à partir des éléments transmis et, si nécessaire, du thème astral.",
-        confidence: "medium",
+        confidence: "medium" as const,
         generatedAt: new Date().toISOString(),
       },
-    });
+    };
+
+    await sendLeadNotification(leadPayload);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
+    console.error("[CONTACT_API_ERROR]", error);
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         {
@@ -45,7 +49,11 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { message: "Envoi momentanément indisponible." },
+      {
+        message: "Envoi momentanément indisponible.",
+        error:
+          error instanceof Error ? error.message : "Erreur inconnue",
+      },
       { status: 500 }
     );
   }
