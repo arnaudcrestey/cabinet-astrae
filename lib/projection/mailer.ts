@@ -120,7 +120,7 @@ export async function sendLeadConfirmation(lead: LeadPayload) {
         </p>
 
         <p>
-          Nous revenons vers vous sous 48h ouvrées avec un retour clair et structuré.
+          Nous revenons vers vous sous 48h ouvrées avec un premier retour.
         </p>
 
         <p>
