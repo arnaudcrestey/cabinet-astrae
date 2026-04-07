@@ -11,60 +11,73 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
   const [error, setError] = useState("");
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const form = event.currentTarget;
+  const form = event.currentTarget;
 
-    setLoading(true);
-    setError("");
+  setLoading(true);
+  setError("");
 
-    const formData = new FormData(form);
+  const formData = new FormData(form);
 
-    const payload = {
-      firstName: String(formData.get("firstName") ?? ""),
-      email: String(formData.get("email") ?? ""),
-      birthDate: String(formData.get("birthDate") ?? ""),
-      birthTime: String(formData.get("birthTime") ?? ""),
-      birthPlace: String(formData.get("birthPlace") ?? ""),
-      message: String(formData.get("message") ?? ""),
-      consent: Boolean(formData.get("consent")),
-      result,
-    };
+  if (!result) {
+    setLoading(false);
+    setError("Une erreur est survenue. Merci de relancer votre analyse.");
+    return;
+  }
 
-    if (!payload.consent) {
-      setLoading(false);
-      setError("Votre consentement est nécessaire pour traiter votre demande.");
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await response.json().catch(() => null);
-
-      if (!response.ok) {
-        throw new Error(
-          data?.message || "Impossible d'envoyer votre demande pour le moment."
-        );
-      }
-
-      form.reset();
-      router.push("/demande-envoyee");
-    } catch (submitError) {
-      setError(
-        submitError instanceof Error
-          ? submitError.message
-          : "Erreur inattendue."
-      );
-    } finally {
-      setLoading(false);
-    }
+  const payload = {
+    firstName: String(formData.get("firstName") ?? ""),
+    email: String(formData.get("email") ?? ""),
+    birthDate: String(formData.get("birthDate") ?? ""),
+    birthTime: String(formData.get("birthTime") ?? ""),
+    birthPlace: String(formData.get("birthPlace") ?? ""),
+    message: String(formData.get("message") ?? ""),
+    consent: Boolean(formData.get("consent")),
+    result: {
+      summary: result?.summary ?? "",
+      dominantDynamic: result?.dominantDynamic ?? "",
+      keyTension: result?.keyTension ?? "",
+      clarityPath: result?.clarityPath ?? "",
+      deeperWork: result?.deeperWork ?? "",
+      confidence: result?.confidence ?? "medium",
+      generatedAt: result?.generatedAt ?? new Date().toISOString(),
+    },
   };
 
+  if (!payload.consent) {
+    setLoading(false);
+    setError("Votre consentement est nécessaire pour traiter votre demande.");
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      throw new Error(
+        data?.message || "Impossible d'envoyer votre demande pour le moment."
+      );
+    }
+
+    form.reset();
+    router.push("/demande-envoyee");
+  } catch (submitError) {
+    setError(
+      submitError instanceof Error
+        ? submitError.message
+        : "Erreur inattendue."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="rounded-[1.9rem] border border-sage/30 bg-white/92 p-5 shadow-[0_14px_40px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-7">
       <form onSubmit={submit} className="space-y-4">
