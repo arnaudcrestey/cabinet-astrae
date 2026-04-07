@@ -29,9 +29,9 @@ export async function POST(request: Request) {
 
     await storeLead(payload);
     await Promise.all([
-      sendLeadNotification(payload),
-      sendLeadConfirmation(payload),
-    ]);
+  sendLeadNotification(payload),
+  sendLeadConfirmation(payload),
+]);
 
     return NextResponse.json({ ok: true, message: "Demande envoyée avec succès." });
   } catch (error) {
