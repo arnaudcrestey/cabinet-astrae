@@ -5,11 +5,11 @@ export default function DemandeEnvoyeePage() {
   return (
     <PageFrame
       title="Votre demande a bien été envoyée"
-      intro="Votre message a bien été transmis. Nous revenons vers vous sous 48h ouvrées avec un retour posé, structuré et adapté à ce que vous traversez."
+      intro="Nous revenons vers vous sous 48h ouvrées avec un premier retour."
     >
       <div className="mx-auto max-w-3xl">
         <section className="rounded-[2rem] border border-sage/22 bg-white/88 p-6 text-center shadow-[0_18px_45px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-8">
-          
+
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-pine/10 text-pine">
             <svg
               viewBox="0 0 24 24"
@@ -19,7 +19,6 @@ export default function DemandeEnvoyeePage() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              aria-hidden="true"
             >
               <path d="M20 6 9 17l-5-5" />
             </svg>
@@ -30,12 +29,12 @@ export default function DemandeEnvoyeePage() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-8 text-umber/90">
-            Les éléments que vous avez partagés vont permettre de poser un premier regard sur votre situation,
-            et, si nécessaire, de préparer une première lecture en amont de l’échange.
+            Les éléments transmis permettent de poser un premier regard sur votre situation et,
+            si nécessaire, de préparer une première lecture en amont de l’échange.
           </p>
 
           <div className="mt-8 rounded-[1.5rem] border border-sage/16 bg-sand/55 p-5 text-left">
-            <p className="text-sm font-medium text-pine">Ce qu’il se passe maintenant</p>
+            <p className="text-sm font-medium text-pine">Suite</p>
 
             <ul className="mt-3 space-y-3 text-sm leading-7 text-umber/88">
               <li>Votre demande est bien prise en compte.</li>
@@ -44,14 +43,13 @@ export default function DemandeEnvoyeePage() {
             </ul>
           </div>
 
-          {/* Signature humaine */}
+          {/* Signature */}
           <p className="mt-8 text-sm leading-7 text-umber/80">
             Virginie Legastelois<br />
             Cabinet Astraé
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            
             <Link
               href="/reservation"
               className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-pine px-6 py-3 text-sm font-medium text-ivory shadow-[0_10px_24px_rgba(46,62,53,0.14)] transition hover:opacity-95"
@@ -65,8 +63,8 @@ export default function DemandeEnvoyeePage() {
             >
               Retour au cabinet
             </Link>
-
           </div>
+
         </section>
       </div>
     </PageFrame>
