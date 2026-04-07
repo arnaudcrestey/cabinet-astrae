@@ -5,79 +5,99 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ProjectionResult } from "@/lib/projection/types";
 
+function formatBirthDate(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 8);
+
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 4) return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+  return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+}
+
+function formatBirthTime(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 4);
+
+  if (digits.length <= 2) return digits;
+  return `${digits.slice(0, 2)}:${digits.slice(2)}`;
+}
+
 export function LeadForm({ result }: { result: ProjectionResult }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [birthTime, setBirthTime] = useState("");
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const form = event.currentTarget;
+    const form = event.currentTarget;
 
-  setLoading(true);
-  setError("");
+    setLoading(true);
+    setError("");
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  if (!result) {
-    setLoading(false);
-    setError("Une erreur est survenue. Merci de relancer votre analyse.");
-    return;
-  }
-
-  const payload = {
-    firstName: String(formData.get("firstName") ?? ""),
-    email: String(formData.get("email") ?? ""),
-    birthDate: String(formData.get("birthDate") ?? ""),
-    birthTime: String(formData.get("birthTime") ?? ""),
-    birthPlace: String(formData.get("birthPlace") ?? ""),
-    message: String(formData.get("message") ?? ""),
-    consent: Boolean(formData.get("consent")),
-    result: {
-      summary: result?.summary ?? "",
-      dominantDynamic: result?.dominantDynamic ?? "",
-      keyTension: result?.keyTension ?? "",
-      clarityPath: result?.clarityPath ?? "",
-      deeperWork: result?.deeperWork ?? "",
-      confidence: result?.confidence ?? "medium",
-      generatedAt: result?.generatedAt ?? new Date().toISOString(),
-    },
-  };
-
-  if (!payload.consent) {
-    setLoading(false);
-    setError("Votre consentement est nécessaire pour traiter votre demande.");
-    return;
-  }
-
-  try {
-    const response = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    const data = await response.json().catch(() => null);
-
-    if (!response.ok) {
-      throw new Error(
-        data?.message || "Impossible d'envoyer votre demande pour le moment."
-      );
+    if (!result) {
+      setLoading(false);
+      setError("Une erreur est survenue. Merci de relancer votre analyse.");
+      return;
     }
 
-    form.reset();
-    router.push("/demande-envoyee");
-  } catch (submitError) {
-    setError(
-      submitError instanceof Error
-        ? submitError.message
-        : "Erreur inattendue."
-    );
-  } finally {
-    setLoading(false);
-  }
-};
+    const payload = {
+      firstName: String(formData.get("firstName") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      birthDate: String(formData.get("birthDate") ?? ""),
+      birthTime: String(formData.get("birthTime") ?? ""),
+      birthPlace: String(formData.get("birthPlace") ?? ""),
+      message: String(formData.get("message") ?? ""),
+      consent: Boolean(formData.get("consent")),
+      result: {
+        summary: result?.summary ?? "",
+        dominantDynamic: result?.dominantDynamic ?? "",
+        keyTension: result?.keyTension ?? "",
+        clarityPath: result?.clarityPath ?? "",
+        deeperWork: result?.deeperWork ?? "",
+        confidence: result?.confidence ?? "medium",
+        generatedAt: result?.generatedAt ?? new Date().toISOString(),
+      },
+    };
+
+    if (!payload.consent) {
+      setLoading(false);
+      setError("Votre consentement est nécessaire pour traiter votre demande.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(
+          data?.message || "Impossible d'envoyer votre demande pour le moment."
+        );
+      }
+
+      form.reset();
+      setBirthDate("");
+      setBirthTime("");
+      router.push("/demande-envoyee");
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Erreur inattendue."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="rounded-[1.9rem] border border-sage/30 bg-white/92 p-5 shadow-[0_14px_40px_rgba(69,89,72,0.08)] backdrop-blur-sm sm:p-7">
       <form onSubmit={submit} className="space-y-4">
@@ -100,6 +120,7 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
           name="firstName"
           type="text"
           required
+          autoComplete="given-name"
           placeholder="Prénom"
           className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
         />
@@ -108,6 +129,7 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
           type="email"
           name="email"
           required
+          autoComplete="email"
           placeholder="Adresse e-mail"
           className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
         />
@@ -122,7 +144,13 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
               name="birthDate"
               required
               inputMode="numeric"
-              placeholder="JJ / MM / AAAA"
+              autoComplete="bday"
+              placeholder="JJ/MM/AAAA"
+              value={birthDate}
+              onChange={(event) => setBirthDate(formatBirthDate(event.target.value))}
+              maxLength={10}
+              pattern="\d{2}/\d{2}/\d{4}"
+              title="Format attendu : JJ/MM/AAAA"
               className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
             />
           </label>
@@ -136,7 +164,13 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
               name="birthTime"
               required
               inputMode="numeric"
+              autoComplete="off"
               placeholder="HH:MM"
+              value={birthTime}
+              onChange={(event) => setBirthTime(formatBirthTime(event.target.value))}
+              maxLength={5}
+              pattern="\d{2}:\d{2}"
+              title="Format attendu : HH:MM"
               className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
             />
           </label>
@@ -146,6 +180,7 @@ export function LeadForm({ result }: { result: ProjectionResult }) {
           type="text"
           name="birthPlace"
           required
+          autoComplete="off"
           placeholder="Lieu de naissance (avec code postal)"
           className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
         />
