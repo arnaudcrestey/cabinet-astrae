@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-type ContactState = "idle" | "loading" | "success" | "error";
+type ContactState = "idle" | "loading" | "error";
 
 export function ContactForm() {
+  const router = useRouter();
   const [state, setState] = useState<ContactState>("idle");
   const [error, setError] = useState("");
 
@@ -43,8 +45,8 @@ export function ContactForm() {
         );
       }
 
-      setState("success");
       form.reset();
+      router.push("/demande-envoyee");
     } catch (submitError) {
       setState("error");
       setError(
@@ -130,20 +132,12 @@ export function ContactForm() {
           className="mt-1 h-4 w-4 rounded border border-sage/40 accent-[#5D815D]"
         />
         <span>
-          J'accepte que mes informations soient utilisées uniquement dans le
+          J&apos;accepte que mes informations soient utilisées uniquement dans le
           cadre de ma demande auprès de Cabinet Astraé.
         </span>
       </label>
 
-      {state === "success" && (
-        <p className="text-sm text-pine">
-          Merci, votre message a bien été envoyé.
-        </p>
-      )}
-
-      {state === "error" && (
-        <p className="text-sm text-umber">{error}</p>
-      )}
+      {state === "error" && <p className="text-sm text-umber">{error}</p>}
 
       <div className="flex justify-center sm:justify-start">
         <button
