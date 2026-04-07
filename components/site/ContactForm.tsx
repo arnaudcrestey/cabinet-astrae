@@ -5,10 +5,27 @@ import { useRouter } from "next/navigation";
 
 type ContactState = "idle" | "loading" | "error";
 
+function formatBirthDate(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 8);
+
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 4) return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+  return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+}
+
+function formatBirthTime(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 4);
+
+  if (digits.length <= 2) return digits;
+  return `${digits.slice(0, 2)}:${digits.slice(2)}`;
+}
+
 export function ContactForm() {
   const router = useRouter();
   const [state, setState] = useState<ContactState>("idle");
   const [error, setError] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [birthTime, setBirthTime] = useState("");
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -46,6 +63,8 @@ export function ContactForm() {
       }
 
       form.reset();
+      setBirthDate("");
+      setBirthTime("");
       router.push("/demande-envoyee");
     } catch (submitError) {
       setState("error");
@@ -54,6 +73,8 @@ export function ContactForm() {
           ? submitError.message
           : "Erreur inattendue."
       );
+    } finally {
+      setState((current) => (current === "error" ? "error" : "idle"));
     }
   };
 
@@ -66,6 +87,7 @@ export function ContactForm() {
         name="firstName"
         type="text"
         required
+        autoComplete="given-name"
         placeholder="Prénom"
         className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
@@ -74,6 +96,7 @@ export function ContactForm() {
         type="email"
         name="email"
         required
+        autoComplete="email"
         placeholder="Adresse e-mail"
         className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
@@ -88,7 +111,13 @@ export function ContactForm() {
             name="birthDate"
             required
             inputMode="numeric"
-            placeholder="JJ / MM / AAAA"
+            autoComplete="bday"
+            placeholder="JJ/MM/AAAA"
+            value={birthDate}
+            onChange={(event) => setBirthDate(formatBirthDate(event.target.value))}
+            maxLength={10}
+            pattern="\d{2}/\d{2}/\d{4}"
+            title="Format attendu : JJ/MM/AAAA"
             className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
           />
         </label>
@@ -102,7 +131,13 @@ export function ContactForm() {
             name="birthTime"
             required
             inputMode="numeric"
+            autoComplete="off"
             placeholder="HH:MM"
+            value={birthTime}
+            onChange={(event) => setBirthTime(formatBirthTime(event.target.value))}
+            maxLength={5}
+            pattern="\d{2}:\d{2}"
+            title="Format attendu : HH:MM"
             className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
           />
         </label>
@@ -112,6 +147,7 @@ export function ContactForm() {
         type="text"
         name="birthPlace"
         required
+        autoComplete="off"
         placeholder="Lieu de naissance (avec code postal)"
         className="w-full rounded-2xl border border-sage/38 bg-[#F8F6F1] px-4 py-3.5 text-sm text-forest outline-none placeholder:text-sage/78 transition focus:border-[#5D815D]/70 focus:bg-white focus:ring-2 focus:ring-[#5D815D]/10"
       />
