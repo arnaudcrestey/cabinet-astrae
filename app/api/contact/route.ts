@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { sendLeadNotification } from "@/lib/projection/mailer";
+import {
+  sendLeadConfirmation,
+  sendLeadNotification,
+} from "@/lib/projection/mailer";
 
 const contactSchema = z.object({
   firstName: z.string().min(2).max(80),
@@ -33,6 +36,7 @@ export async function POST(request: Request) {
     };
 
     await sendLeadNotification(leadPayload);
+    await sendLeadConfirmation(leadPayload);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
@@ -51,8 +55,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message: "Envoi momentanément indisponible.",
-        error:
-          error instanceof Error ? error.message : "Erreur inconnue",
+        error: error instanceof Error ? error.message : "Erreur inconnue",
       },
       { status: 500 }
     );
