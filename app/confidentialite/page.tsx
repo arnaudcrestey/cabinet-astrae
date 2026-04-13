@@ -1,13 +1,40 @@
+import LegalPage from "@/components/legal/LegalPage";
+
 export default function ConfidentialitePage() {
   return (
-    <main className="mx-auto w-full max-w-[900px] px-4 py-16 md:px-8">
-      <h1 className="text-3xl font-semibold text-pine md:text-4xl">
-        Politique de confidentialité
-      </h1>
+    <LegalPage title="Politique de confidentialité">
 
-      <p className="mt-6 text-base leading-7 text-umber/80">
-        La politique de confidentialité du Cabinet Astraé sera précisée prochainement.
+      <h2>Données collectées</h2>
+      <p>
+        Cabinet Astraé peut collecter des informations telles que le prénom,
+        l’email, ainsi que des données liées à la naissance (date, heure, lieu).
       </p>
-    </main>
+
+      <h2>Finalité</h2>
+      <p>
+        Ces données permettent de fournir une analyse personnalisée et de
+        répondre aux demandes.
+      </p>
+
+      <h2>Partage</h2>
+      <p>
+        Les données peuvent être traitées via des outils sécurisés comme Gmail,
+        n8n, Calendly ou Stripe.
+      </p>
+
+      <h2>Transfert hors UE</h2>
+      <p>
+        Certains services impliquent un transfert de données hors Union
+        Européenne, notamment vers les États-Unis, encadré par des garanties
+        appropriées.
+      </p>
+
+      <h2>Droits</h2>
+      <p>
+        Vous pouvez demander l’accès, la modification ou la suppression de vos
+        données à : demande@arnaudcrestey.com
+      </p>
+
+    </LegalPage>
   );
 }
