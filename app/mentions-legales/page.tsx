@@ -11,7 +11,7 @@ export default function MentionsLegalesPage() {
         14410 Valdallière – France<br /><br />
 
         Président : Arnaud Crestey<br />
-        Email : demande@arnaudcrestey.com<br />
+        Email : contact@cabinet-astrae.fr<br />
         SIRET : en cours d’attribution
       </p>
 
