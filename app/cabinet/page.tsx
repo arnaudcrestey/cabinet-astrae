@@ -98,19 +98,18 @@ export default function HomePage() {
         </section>
 
         <section className="astrae-panel rounded-[1.75rem] px-6 py-7 md:px-8 md:py-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm leading-7 text-umber/75 md:text-[1rem]">
-              Plus de{" "}
-              <span className="font-semibold text-pine">40 personnes</span> ont
-              déjà pris un temps d’échange avec Cabinet Astraé.
-            </p>
-            <p className="mt-2 text-sm leading-7 text-umber/62 md:text-[0.98rem]">
-              Chaque situation est différente, mais toutes ont en commun une
-              chose : le besoin de mieux comprendre{" "}
-              <span className="whitespace-nowrap">ce qui se joue.</span>
-            </p>
-          </div>
-        </section>
+  <div className="mx-auto max-w-5xl text-center">
+    <p className="text-sm leading-7 text-umber/75 md:text-[1.02rem] md:leading-8">
+      Plus de{" "}
+      <span className="font-semibold text-pine">40 personnes</span> ont déjà
+      pris un temps d’échange avec Cabinet Astraé.
+    </p>
+
+    <p className="mx-auto mt-3 max-w-[980px] text-sm leading-8 text-umber/68 md:text-[1.02rem]">
+      Chaque situation est différente, mais toutes ont en commun une chose : le besoin de mieux comprendre ce qui se joue.
+    </p>
+  </div>
+</section>
 
         <section className="astrae-panel rounded-[1.9rem] px-6 py-8 md:px-8 md:py-10">
           <div className="mx-auto max-w-3xl text-center">
