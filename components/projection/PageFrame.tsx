@@ -258,20 +258,32 @@ export function PageFrame({
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-                  <Link
-                    href="/mentions-legales"
-                    className="transition-colors duration-300 hover:text-pine"
-                  >
-                    Mentions légales
-                  </Link>
-                  <Link
-                    href="/confidentialite"
-                    className="transition-colors duration-300 hover:text-pine"
-                  >
-                    Politique de confidentialité
-                  </Link>
-                  <span className="text-umber/58">© 2026 Cabinet Astraé</span>
-                </div>
+  <Link
+    href="/mentions-legales"
+    className="transition-colors duration-300 hover:text-pine"
+  >
+    Mentions légales
+  </Link>
+  <Link
+    href="/confidentialite"
+    className="transition-colors duration-300 hover:text-pine"
+  >
+    Politique de confidentialité
+  </Link>
+  <Link
+    href="/cgu"
+    className="transition-colors duration-300 hover:text-pine"
+  >
+    CGU
+  </Link>
+  <Link
+    href="/cookies"
+    className="transition-colors duration-300 hover:text-pine"
+  >
+    Cookies
+  </Link>
+  <span className="text-umber/58">© 2026 Cabinet Astraé</span>
+</div>
               </div>
             </div>
           </div>
