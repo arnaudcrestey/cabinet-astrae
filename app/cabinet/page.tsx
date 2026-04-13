@@ -101,8 +101,8 @@ export default function HomePage() {
   <div className="mx-auto max-w-5xl text-center">
     <p className="text-sm leading-7 text-umber/75 md:text-[1.02rem] md:leading-8">
       Plus de{" "}
-      <span className="font-semibold text-pine">40 personnes</span> ont déjà
-      pris un temps d’échange avec Cabinet Astraé.
+      <span className="font-semibold text-pine">40 premiers échanges</span> ont déjà
+      eu lieu avec Cabinet Astraé.
     </p>
 
     <p className="mx-auto mt-3 max-w-[980px] text-sm leading-8 text-umber/68 md:text-[1.02rem]">
