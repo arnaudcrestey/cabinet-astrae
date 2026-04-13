@@ -106,7 +106,8 @@ export default function HomePage() {
             </p>
             <p className="mt-2 text-sm leading-7 text-umber/62 md:text-[0.98rem]">
               Chaque situation est différente, mais toutes ont en commun une
-              chose : le besoin de mieux comprendre ce qui se joue.
+              chose : le besoin de mieux comprendre{" "}
+              <span className="whitespace-nowrap">ce qui se joue.</span>
             </p>
           </div>
         </section>
