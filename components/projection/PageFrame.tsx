@@ -257,7 +257,7 @@ export function PageFrame({
                   Cabinet Astraé · Espace d’accompagnement personnel
                 </p>
 
-                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
   <Link
     href="/mentions-legales"
     className="transition-colors duration-300 hover:text-pine"
@@ -275,6 +275,12 @@ export function PageFrame({
     className="transition-colors duration-300 hover:text-pine"
   >
     CGU
+  </Link>
+  <Link
+    href="/cgv"
+    className="transition-colors duration-300 hover:text-pine"
+  >
+    CGV
   </Link>
   <Link
     href="/cookies"
