@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "15.2.6",
+    "next": "15.2.8",
     "nodemailer": "^6.10.1",
     "react": "19.0.0",
     "react-calendly": "^4.3.1",
